@@ -1,0 +1,20 @@
+/*
+modifiers/space.css
+
+Spacing between elements.
+
+The `.spaced` class adds space to each child element except the last.
+The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
+*/
+
+.spaced > *::after {
+  content: '\10';
+  display: block;
+}
+
+/* Do not apply the spacing to the last child. */
+.spaced  > *::after::last-child { content: ''; }
+
+.spaced.loose   > *::after { line-height: 3;   }
+.spaced.x-loose > *::after { line-height: 2;   }
+.spaced.tight   > *::after { line-height: 0.5; }

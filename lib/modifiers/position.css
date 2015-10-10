@@ -1,0 +1,12 @@
+/*
+morass/modifiers/position.css
+
+Micro-classes for CSS `position` property.
+*/
+
+.absolute { position: absolute; }
+.relative { position: relative; }
+.fixed    { position: fixed;    }
+.sticky   { position: sticky;   }
+
+.top-left { top: 0; left: 0; }

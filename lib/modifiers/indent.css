@@ -1,0 +1,8 @@
+/**
+* styles/modifiers/indent.css
+*
+* Test indents.
+**/
+
+.indent      { text-indent: 2em; }
+.indent-more { text-indent: 4em; }

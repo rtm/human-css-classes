@@ -1,0 +1,10 @@
+/*
+modifiers/column.css
+
+Column-related microclasses.
+*/
+
+.one-column    { column-count: 1; }
+.two-columns   { column-count: 2; }
+.three-columns { column-count: 3; }
+.four-columns  { column-count: 4; }

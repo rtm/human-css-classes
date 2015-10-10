@@ -1,0 +1,53 @@
+/*
+morass/modifiers/white-space.css
+
+Break down `white-space` semantically.
+
+I don't know about you, but I can never remember the values for `white-space`.
+Every time I want to use one, I have to look it up again.
+Actually, it's quite easy when you break it down.
+The properties each indicate a combination of whether newlines are to be honored,
+whether whitespace is to be preserved, and whether wrapping is desired.
+
+These Morass micro-classes map those concepts into `white-space` values,
+so hopefully you'll never have to consult that page again.
+
+Classes defined:
+
+honor-newline        Treat newlines as newlines.
+preserve-whitespace  Do not collapse whitespace.
+nowrap               Do not wrap.
+white-space-normal   Set things back.
+*/
+
+/*
+Honor newlines, but do not preserve whitespace and wrap.
+This corresponds to the common case of displaying a user post.
+*/
+.honor-newline { white-space: pre-line; }
+
+/*
+Honor newlines while also preserving whitespace.
+*/
+.honor-newline.preserve-whitespace { white-space: pre-wrap; }
+
+/*
+Honor newlines, preserve whitespace, and do not wrap.
+This replicates the behavior of `<pre>'.
+You are probably better off using `pre`, although it will
+also give you a monospaced font and vertical padding.
+*/
+.honor-newline.preserve-whitespace.nowrap { white-space: pre; }
+
+/*
+Without honoring newlines, no wrapping means that the output will be on a single line.
+In this case, whitespace is never preserved.
+CSS offers no alternative for preserving whitespace while not honoring newlines and not wrapping.
+*/
+.nowrap { white-space: nowrap; }
+
+/*
+`white-space` is an inherited property.
+Therefore, in some obscure cases we may need a way to turn it off.
+*/
+.white-space-normal { white-space: normal; }

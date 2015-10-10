@@ -1,0 +1,30 @@
+/**
+ * styles/variables/hsl.css
+ *
+ * Variables for HSL.
+ */
+
+:root {
+  --hue-red:          0%;
+  --hue-orange:       30%;
+  --hue-yellow:       60%;
+  --hue-lime:         90%;
+  --hue-green:        120%;
+  --hue-green-cyan:   150%;
+  --hue-aquamarine:   150%;
+  --hue-cyan:         180%;
+  --hue-cyan-blue:    210%;
+  --hue-azure:        210%;
+  --hue-blue:         240%;
+  --hue-blue-magenta: 270%;
+  --hue-purple:       270%;
+  --hue-magenta:      300%;
+  --hue-magenta-red:  330%;
+  --hue-pink:         330%;
+
+  --lightness-light: 90%;
+  --lightness-dark:  10%;
+
+  --saturation-default: 50%;
+  --saturation-achromatic: 0%;
+}

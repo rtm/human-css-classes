@@ -1,0 +1,15 @@
+/**
+* modifiers/align.css
+*
+* Alignment-related modifiers.
+**/
+
+:not(.flex).left        { text-align: left; }
+:not(.flex).right       { text-align: right; }
+:not(.flex).center      { text-align: center; }
+:not(.flex).justify     { text-align: justify; }
+:not(.flex).justify-all { text-align: justify-all; }
+
+:not(.flex).top         { vertical-align: top; }
+:not(.flex).bottom      { vertical-align: bottom; }
+:not(.flex).middle      { vertical-align: middle; }

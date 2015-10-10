@@ -1,0 +1,11 @@
+/*
+lib/elements/q.css
+
+Morass rules for `<q>`.
+*/
+
+/* Define smart quotes. */
+q { quotes: '\201c' '\201d'; }
+
+q::before { content: open-quote; }
+q::after  { content: close-quote; }

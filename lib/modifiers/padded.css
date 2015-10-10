@@ -1,0 +1,14 @@
+/**
+* styles/modifiers/padding.css
+*
+* Modifier styles for padding.
+*/
+
+.padded        { padding: 0.5em; }
+.padded-more   { padding: 1.0em; }
+
+.padded-x      { padding-left: 0.5em; padding-right:  0.5em; }
+.padded-y      { padding-top:  0.5em; padding-bottom: 0.5em; }
+
+.padded-more-x { padding-left: 1.0em; padding-right:  1.0em; }
+.padded-more-y { padding-top:  1.0em; padding-bottom: 1.0em; }

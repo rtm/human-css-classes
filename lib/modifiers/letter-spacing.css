@@ -1,0 +1,9 @@
+/*
+morass/modifiers/letter-spacing.css
+
+Micro-classes for expanded and condensed text.
+*/
+
+.expanded       { letter-spacing:  0.20em; }
+.expanded-more  { letter-spacing:  0.40em; }
+.condensed      { letter-spacing: -0.05em; }

@@ -1,0 +1,10 @@
+/**
+* styles/modifiers/display.css
+*
+* CSS classes for `display` property.
+*/
+
+.show, .block            { display: block; }
+.hide, .hidden, [hidden] { display: none; }
+.inline                  { display: inline; } /* .inline.flex will yield flex-inline */
+.inline-block            { display: inline-block; }

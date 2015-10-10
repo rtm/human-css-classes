@@ -1,0 +1,22 @@
+{
+  "name": "morass",
+  "version": "0.1.0",
+  "description": "A More Obvious, Reasonable Approach to Style Sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtm/morass.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "rtm@gol.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rtm/morass/issues"
+  },
+  "homepage": "https://github.com/rtm/morass#readme"
+}

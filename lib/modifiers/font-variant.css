@@ -1,0 +1,7 @@
+/*
+modifiers/font-variant.css
+
+Micro-classes for font variants.
+*/
+
+.small-caps { font-variant: small-caps; }

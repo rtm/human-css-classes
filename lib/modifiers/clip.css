@@ -1,0 +1,13 @@
+/*
+lib/modifiers/clip.css
+
+Morass micro-classes for clipping (overflow handling).
+*/
+
+.clip       { overflow:   hidden; }
+.clip-x     { overflow-x: hidden; }
+.clip-y     { overflow-y: hidden; }
+
+.scroll     { overflow:   scroll; }
+.scroll-x   { overflow-x: scroll; }
+.scroll-y   { overflow-y: scroll; }
