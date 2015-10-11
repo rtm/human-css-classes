@@ -12,10 +12,16 @@ Micro-classes for standard colors, including inverted versions.
 .warn             { color: hsl(var(--hue-warn),      var(--saturation-default), var(--lightness-dark)); }
 .error            { color: hsl(var(--hue-error),     var(--saturation-default), var(--lightness-dark)); }
 
+.white            { color: white; }
+.black            { color: black; }
+.inverse .white, .inverse.white    { color: black; }
+.inverse .black, .inverse.black    { color: white; }
+
+
 /* INVERTED VERSIONS */
-.invert default   { color: hsl(0,                    0%,                        var(--lightness-light)); }
-.invert..primary  { color: hsl(var(--hue-primary),   var(--saturation-default), var(--lightness-light)); }
-.invert.secondary { color: hsl(var(--hue-secondary), var(--saturation-default), var(--lightness-light)); }
-.invert.success   { color: hsl(var(--hue-success),   var(--saturation-default), var(--lightness-light)); }
-.invert.warn      { color: hsl(var(--hue-warn),      var(--saturation-default), var(--lightness-light)); }
-.invert.error     { color: hsl(var(--hue-error),     var(--saturation-default), var(--lightness-light)); }
+.inverse default   { color: hsl(0,                    0%,                        var(--lightness-light)); }
+.inverse.primary   { color: hsl(var(--hue-primary),   var(--saturation-default), var(--lightness-light)); }
+.inverse.secondary { color: hsl(var(--hue-secondary), var(--saturation-default), var(--lightness-light)); }
+.inverse.success   { color: hsl(var(--hue-success),   var(--saturation-default), var(--lightness-light)); }
+.inverse.warn      { color: hsl(var(--hue-warn),      var(--saturation-default), var(--lightness-light)); }
+.inverse.error     { color: hsl(var(--hue-error),     var(--saturation-default), var(--lightness-light)); }

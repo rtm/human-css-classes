@@ -1,14 +1,29 @@
 /**
-* styles/modifiers/padding.css
+* styles/modifiers/padded.css
 *
 * Modifier styles for padding.
 */
 
-.padded        { padding: 0.5em; }
-.padded-more   { padding: 1.0em; }
+.padded,        .padded-en        { padding:        var(--en); }
+.padded-x,      .padded-x-en      { padding-left:   var(--en); padding-right:  var(--en); }
+.padded-y,      .padded-y-en      { padding-top:    var(--en); padding-bottom: var(--en); }
+.padded-left,   .padded-left-en   { padding-left:   var(--en); }
+.padded-right,  .padded-right-en  { padding-right:  var(--en); }
+.padded-top,    .padded-top-en    { padding-top:    var(--en); }
+.padded-bottom, .padded-bottom-en { padding-bottom: var(--en); }
 
-.padded-x      { padding-left: 0.5em; padding-right:  0.5em; }
-.padded-y      { padding-top:  0.5em; padding-bottom: 0.5em; }
+.padded-more,   .padded-em        { padding:        var(--em); }
+.padded-x-more, .padded-x-em      { padding-left:   var(--em); padding-right:  var(--em); }
+.padded-y-more, .padded-y-em      { padding-top:    var(--em); padding-bottom: var(--em); }
 
-.padded-more-x { padding-left: 1.0em; padding-right:  1.0em; }
-.padded-more-y { padding-top:  1.0em; padding-bottom: 1.0em; }
+.padded-less                      { padding:      var(--less); }
+.padded-less-x                    { padding-left: var(--less); padding-right:  var(--less); }
+.padded-less-y                    { padding-top:  var(--less); padding-bottom: var(--less); }
+
+.padded-thin                      { padding:      var(--thin); }
+.padded-thin-x                    { padding-left: var(--thin); padding-right:  var(--thin); }
+.padded-thin-y                    { padding-top:  var(--thin); padding-bottom: var(--thin); }
+
+.padded-hair                      { padding:      var(--hair); }
+.padded-x-hair                    { padding-left: var(--thin); padding-right:  var(--hair); }
+.padded-y-hair                    { padding-top:  var(--thin); padding-bottom: var(--hair); }

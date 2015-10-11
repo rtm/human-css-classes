@@ -100,8 +100,8 @@ or for specifying justification on the cross-axis.
 .flex.justify-v         { align-items: space-between;     }
 .flex.justify-v-gap     { align-items: space-around;      }
 
-.flex.vertical.justify  { justify-content: space-between;    }
-.flex.vertical.justify-gap { justify-content: space-between; }
+.flex.vertical.justify  { justify-content: space-between;   }
+.flex.vertical.justify-gap { justify-content: space-around; }
 
 .flex.vertical.top      { justify-content: flex-start; }
 .flex.vertical.bottom   { justify-content: flex-end;   }
@@ -124,6 +124,9 @@ Provide micro-classes for common cases of grow and shrink.
 .grow { flex-grow: 1; }
 .x-grow { flex-grow: 2; }
 .no-shrink { flex-shrink: 0; }
+
+/* TODO: add other self items */
+.self-stretch { align-self: stretch; }
 
 /* ORDER */
 .first { order: -99; }

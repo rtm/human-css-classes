@@ -1,0 +1,15 @@
+/*
+variables/units.css
+
+Units, such as lengths
+*/
+
+/* LENGTHS */
+:root {
+  --em:   1.00em;
+  --en:   0.50em;
+  --less: 0.25em;  /* non-standard; consider deprecating */
+  --thin: 0.20em;
+  --hair: 0.05em;
+  --zero: 0;
+}
