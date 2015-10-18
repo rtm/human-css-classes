@@ -1,33 +1,38 @@
-.padding      { padding: var(--em); }
-.padding.em   { padding: var(--em); }
-.padding.en   { padding: var(--en); }
-.padding.thin { padding: var(--thin); }
-.padding.hair { padding: var(--hair); }
+/*
+modifiers/padding.css
 
-.padding:not(.left):not(.horizontal).right,
-.padding:not(.left):not(.horizontal).top,
-.padding:not(.left):not(.horizontal).bottom,
-.padding:not(.left):not(.horizontal).vertical {
-  padding-left: 0;
-}
+Morass micro-classes for padding.
+Default is `em`.
+*/
 
-.padding:not(.right):not(.horizontal).left,
-.padding:not(.right):not(.horizontal).top,
-.padding:not(.right):not(.horizontal).bottom,
-.padding:not(.right):not(.horizontal).vertical {
-  padding-right: 0;
-}
 
-.padding:not(.top):not(.vertical).left,
-.padding:not(.top):not(.vertical).right,
-.padding:not(.top):not(.vertical).bottom,
-.padding:not(.top):not(.vertical).horizontal {
-  padding-top: 0;
-}
+.padding.left,        .padding.horizontal      { padding-left:   var(--em);   }
+.padding.en.left,     .padding.en.horizontal   { padding-left:   var(--en);   }
+.padding.thin.left,   .padding.thin.horizontal { padding-left:   var(--thin); }
+.padding.hair.left,   .padding.hair.horizontal { padding-left:   var(--hair); }
+.padding.zero.left,   .padding.zero.horizontal { padding-left:   0;           }
 
-.padding:not(.bottom):not(.vertical).left,
-.padding:not(.bottom):not(.vertical).right,
-.padding:not(.bottom):not(.vertical).top,
-.padding:not(.bottom):not(.vertical).horizontal {
-  padding-bottom: 0;
-}
+.padding.right,       .padding.horizontal      { padding-right:  var(--em);   }
+.padding.en.right,    .padding.en.horizontal   { padding-right:  var(--en);   }
+.padding.thin.right,  .padding.this.horizontal { padding-right:  var(--thin); }
+.padding.hair.right,  .padding.hair.horizontal { padding-right:  var(--hair); }
+.padding.zero.right,  .padding.zero.horizontal { padding-right:  0;           }
+
+.padding.top,         .padding.vertical        { padding-top:    var(--em);   }
+.padding.en.top,      .padding.en.vertical     { padding-top:    var(--en);   }
+.padding.thin.top,    .padding.this.vertical   { padding-top:    var(--thin); }
+.padding.hair.top,    .padding.hair.vertical   { padding-top:    var(--hair); }
+.padding.zero.top,    .padding.zero.vertical   { padding-top:    0;           }
+
+.padding.bottom,      .padding.vertical        { padding-bottom: var(--em);   }
+.padding.en.bottom,   .padding.en.vertical     { padding-bottom: var(--en);   }
+.padding.thin.bottom, .padding.thin.vertical   { padding-bottom: var(--thin); }
+.padding.hair.bottom, .padding.hair.vertical   { padding-bottom: var(--hair); }
+.padding.zero.bottom, .padding.zero.vertical   { padding-bottom: 0;           }
+
+/* With no side modifier, set on all sides. */
+.padding:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)      { padding: var(--em);   }
+.padding.en:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)   { padding: var(--en);   }
+.padding.thin:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: var(--thin); }
+.padding.hair:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: var(--hair); }
+.padding.zero:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0;           }

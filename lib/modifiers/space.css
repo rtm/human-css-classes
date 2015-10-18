@@ -15,8 +15,8 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
 /* Do not apply the spacing to the last child. */
 .spaced  > *::after::last-child { content: ''; }
 
-.spaced.loose   > *::after { line-height: 3;   }
-.spaced.x-loose > *::after { line-height: 2;   }
-.spaced.tight   > *::after { line-height: 0.5; }
-.spaced.tight   > *::after { line-height: 0.5; }
-.spaced.tighter > *::after { line-height: 0.25; }
+.spaced         > *::after { line-height: 1.5; }
+.spaced.loose   > *::after { line-height: 2;   }
+.spaced.x-loose > *::after { line-height: 3;   }
+.spaced.tight   > *::after { line-height: 1.0; }
+.spaced.tighter > *::after { line-height: 0.5; }

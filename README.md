@@ -163,11 +163,11 @@ for use in building your own colors based on them.
 ### Spacing
 
 Some large proportion of CSS rules control spacing.
-We have top margins and bottom margins and top padding and bottom padding and special spacing elements.
+People use top margins and bottom margins and top padding and bottom padding and special spacing elements.
 Morass provides two simple mechanisms for controlling spacing.
 The `spaced` micro-class adds space between child elements.
-The `padded` micro-class adds padding around an element.
-Variants of these provide more spacing, less spacing, more padding, less padding,
+The `padding` micro-class adds padding around an element.
+Variants of these (indicated by modifier micro-classes) provide more spacing, less spacing, more padding, less padding,
 and norizontal and vertical padding.
 
 ### flexbox
@@ -237,6 +237,8 @@ Micro-class reference
 | border-success       | border      | Success border color.         |
 | border-warn          | border      | Warning border color.         |
 | border-error         | border      | Error border color.           |
+| bottom               | padding     | Pad on bottom.                |
+| bottom               | margin      | Add margin on bottom.         |
 | capitalize           | text-transform | Capitalized text.          |
 | condensed            | letter-spacing | Condense space between letters. |
 | default              | colors      | Default color.                |
@@ -251,6 +253,8 @@ Micro-class reference
 | ease-in              | transition  | Transition timing "ease-in"   |
 | ease-out             | transition  | Transition timing "ease-out"  |
 | ease-in-out          | transition  | Transition timing "ease-in-out" |
+| em                   | padding, margin     | Padding or margin of 1 em.              |
+| en                   | padding, margin     | Padding or margin of 1/2 em.            |
 | emphasis             | font-style  | Italics.                      |
 | error                | colors      | Error color.                  |
 | expanded             | letter-spacing | Expand space between letters. |
@@ -265,6 +269,7 @@ Micro-class reference
 | full-height          | dimension   | Occupy full height.           |
 | full-width           | dimension   | Occupy full width.            |
 | groove               | border      | Groove-style border.          |
+| hair                 | padding, margin     | Padding or margin of 1/6 em.            |
 | hairline             | font-weight | Lightest font.                |
 | half-height          | dimension   | Occupy half height.           |
 | half-width           | dimension   | Occupy half width.            |
@@ -272,6 +277,7 @@ Micro-class reference
 | hide, hidden         | display     | Hide element.                 |
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
+| horizontal           | padding, margin     | Padding or margin on left and right.    |
 | infront              | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
 | indent-more          | indent      | Indent text more.             |
@@ -285,11 +291,13 @@ Micro-class reference
 | large                | size        | large font size               |
 | larger               | size        | larger font-size              |
 | last                 | flex        | Place item last in flex order. |
+| left                 | padding, margin     | Padding or margin on left.                  |
 | light                | text        | Light font (300).             |
 | lighter              | text        | Decrease boldness.            |
 | linear               | transition  | Transition timing "linear"    |
 | loose                | space       | Looser inter-item spacing.    |
 | lowercase            | text-transform | Lower-cased text.          |
+| margin               | margin      | Add margin to element.        |
 | medium               | size        | Medium font size.             |
 | medium               | border      | Medium border width.          |
 | medium-weight        | font-weight | Medium font weight.           |
@@ -298,12 +306,7 @@ Micro-class reference
 | nowrap               | white-space | Do not wrap.                  |
 | opaque               | opacity     | Full opacity.                 |
 | outset               | border      | Outset-style border.          |
-| padded               | padded      | Pad an element on all sides.  |
-| padded-more          | padded      | Pad an element more.          |
-| padded-more-x        | padded      | Pad an element more left and right. |
-| padded-more-y        | padded      | Pad an element more top and bottom. |
-| padded-x             | padded      | Pad an element left and right. |
-| padded-y             | padded      | Pad an element top and bottom. |
+| padding              | padding     | Pad an element.               |
 | preserve-whitespace  | white-space | Do not collapse whitespace.   |
 | primary              | colors      | Primary color.                |
 | relative             | position    | Relative positioniong.        |
@@ -314,6 +317,7 @@ Micro-class reference
 | resize-y             | resize      | Allow resizing of element vertically. |
 | reverse              | flex        | Reverse flex order.           |
 | ridge                | border      | Ridge-style border.           |
+| right                | padding, margin     | Padding or margin on right.                 |
 | rounded              | border      | Rounded border.               |
 | rounded-more         | border      | More rounded border.          |
 | semi-bold            | font-weight | Weight between normal and bold. |
@@ -334,6 +338,7 @@ Micro-class reference
 | tight                | space       | Tighter inter-item spacing.   |
 | thick                | border      | Thick border.                  |
 | thin                 | border      | Thin border.                  |
+| top                  | padding, margin     | Padding or margin on top. |
 | transparent          | opacity     | Zero opacity.                 |
 | two-columns          | column      | Split content into 2 columns. |
 | three-columns        | column      | Split content into 3 columns. |
@@ -342,6 +347,7 @@ Micro-class reference
 | underline            | font-decoration | Underline text.           |
 | uppercase            | text-transform | Uppercased text.           |
 | vertical             | flex        | Column-oriented flex container. |
+| vertical             | padding, margin     | Padding or margin on top and bottom. |
 | visible              | visibility  | Make visible.                 |
 | x-bold               | font-weight | Font weight 800.              |
 | x-light              | font-weight | Extra-light font.             |
@@ -353,3 +359,4 @@ Micro-class reference
 | xx-small             | size        | Very very small font-size.    |
 | warn                 | colors      | Warning color.                |
 | white-space-normal   | white-space | Restore white space.          |
+| zero                 | padding, margin     | Zero padding or margin. |

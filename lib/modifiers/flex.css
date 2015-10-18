@@ -62,8 +62,8 @@ A `wrap` class turns the `flex-direction` property
 into its wrapped variants.
 Note: `wrap` is an overloaded property with a different meaning without `flex`.
 */
-.flex.wrap             { flex-direction: row-wrap;       }
-.flex.vertical.wrap    { flex-direction: column-wrap;    }
+.flex.wrap             { flex-wrap: wrap; }
+
 .flex.reverse          { flex-direction: row-reverse;    }
 .flex.vertical.reverse { flex-direction: column-reverse; }
 

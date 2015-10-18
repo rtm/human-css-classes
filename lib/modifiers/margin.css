@@ -1,34 +1,38 @@
-.margin      { margin: var(--em); }
-.margin.em   { margin: var(--em); }
-.margin.en   { margin: var(--en); }
-.margin.thin { margin: var(--thin); }
-.margin.hair { margin: var(--hair); }
-.margin.zero { margin: var(--zero); }
+/*
+modifiers/margin.css
 
-.margin:not(.left):not(.horizontal).right,
-.margin:not(.left):not(.horizontal).top,
-.margin:not(.left):not(.horizontal).bottom,
-.margin:not(.left):not(.horizontal).vertical {
-  margin-left: 0;
-}
+Morass micro-classes for margins.
+Default is `em`.
+*/
 
-.margin:not(.right):not(.horizontal).left,
-.margin:not(.right):not(.horizontal).top,
-.margin:not(.right):not(.horizontal).bottom,
-.margin:not(.right):not(.horizontal).vertical {
-  margin-right: 0;
-}
 
-.margin:not(.top):not(.vertical).left,
-.margin:not(.top):not(.vertical).right,
-.margin:not(.top):not(.vertical).bottom,
-.margin:not(.top):not(.vertical).horizontal {
-  margin-top: 0;
-}
+.margin.left,        .margin.horizontal      { margin-left:   var(--em);   }
+.margin.en.left,     .margin.en.horizontal   { margin-left:   var(--en);   }
+.margin.thin.left,   .margin.thin.horizontal { margin-left:   var(--thin); }
+.margin.hair.left,   .margin.hair.horizontal { margin-left:   var(--hair); }
+.margin.zero.left,   .margin.zero.horizontal { margin-left:   0;           }
 
-.margin:not(.bottom):not(.vertical).left,
-.margin:not(.bottom):not(.vertical).right,
-.margin:not(.bottom):not(.vertical).top,
-.margin:not(.bottom):not(.vertical).horizontal {
-  margin-bottom: 0;
-}
+.margin.right,       .margin.horizontal      { margin-right:  var(--em);   }
+.margin.en.right,    .margin.en.horizontal   { margin-right:  var(--en);   }
+.margin.thin.right,  .margin.this.horizontal { margin-right:  var(--thin); }
+.margin.hair.right,  .margin.hair.horizontal { margin-right:  var(--hair); }
+.margin.zero.right,  .margin.zero.horizontal { margin-right:  0;           }
+
+.margin.top,         .margin.vertical        { margin-top:    var(--em);   }
+.margin.en.top,      .margin.en.vertical     { margin-top:    var(--en);   }
+.margin.thin.top,    .margin.this.vertical   { margin-top:    var(--thin); }
+.margin.hair.top,    .margin.hair.vertical   { margin-top:    var(--hair); }
+.margin.zero.top,    .margin.zero.vertical   { margin-top:    0;           }
+
+.margin.bottom,      .margin.vertical        { margin-bottom: var(--em);   }
+.margin.en.bottom,   .margin.en.vertical     { margin-bottom: var(--en);   }
+.margin.thin.bottom, .margin.thin.vertical   { margin-bottom: var(--thin); }
+.margin.hair.bottom, .margin.hair.vertical   { margin-bottom: var(--hair); }
+.margin.zero.bottom, .margin.zero.vertical   { margin-bottom: 0;           }
+
+/* With no side modifier, set on all sides. */
+.margin:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)      { margin: var(--em); }
+.margin.en:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)   { margin: var(--en); }
+.margin.thin:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { margin: var(--thin); }
+.margin.hair:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { margin: var(--hair); }
+.margin.zero:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { margin: 0; }
