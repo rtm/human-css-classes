@@ -4,5 +4,7 @@ modifiers/z-index.js
 Define simple z-index-related micro-classes.
 */
 
-.behind   { z-index: -1; }
-.in-front { z-index: +1; }
+.behind, .back    { z-index: -1;   }
+.in-front, .front { z-index: +1;   }
+.backmost         { z-index: -999; }
+.frontmost        { z-index: +999; }

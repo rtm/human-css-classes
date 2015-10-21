@@ -159,25 +159,6 @@ These colors are exposed as hues in an HSL model,
 in the form of variables named `--hue-success`,
 for use in building your own colors based on them.
 
-
-### Spacing
-
-Some large proportion of CSS rules control spacing.
-People use top margins and bottom margins and top padding and bottom padding and special spacing elements.
-Morass provides two simple mechanisms for controlling spacing.
-The `spaced` micro-class adds space between child elements.
-The `padding` micro-class adds padding around an element.
-Variants of these (indicated by modifier micro-classes) provide more spacing, less spacing, more padding, less padding,
-and norizontal and vertical padding.
-
-### flexbox
-
-Morass expects most layout to be done using flexboxes,
-and provides a solid set of micro-classes to control them.
-The micro-classes available include ones to control direction, wrapping,
-and alignment. You'll no longer need to struggle with trying to remember the names or meanings or values of
-properties like `align-items`.
-
 ### `!important`
 
 Morass neither needs nor uses `!important`, and we recommend you do not either.
@@ -201,6 +182,120 @@ We suggest judicious use of this with your own micro-classes to handle responsiv
 ```css
 @media (--sm-viewport) { }
 ```
+
+Micro-class groupings
+---------------------
+
+### Spacing
+
+Some large proportion of CSS rules control spacing.
+People use top margins and bottom margins and top padding and bottom padding and special spacing elements.
+Morass provides two simple mechanisms for controlling spacing.
+The `spaced` micro-class adds space between child elements.
+The `padding` micro-class adds padding around an element.
+Variants of these (indicated by modifier micro-classes) provide more spacing, less spacing, more padding, less padding,
+and norizontal and vertical padding.
+
+Example of spaced children:
+
+```
+<div class="spaced">
+  <div></div>
+  <div></div>
+</div>
+```
+
+Example of padding:
+
+```
+<div class="padding">
+<div class="padding horizontal en">
+<div class="padding top left hair">
+```
+
+A "hair" is 1/6 em.
+
+### flexbox
+
+Morass expects most layout to be done using flexboxes,
+and provides a solid set of micro-classes to control them.
+The micro-classes available include ones to control direction, wrapping,
+and alignment. You'll no longer need to struggle with trying to remember the names or meanings or values of
+properties like `align-items`.
+
+Examples of flexbox:
+
+```
+<div class="flex">
+
+<div class="flex vertical justify">
+  <div class="grow">
+```
+
+### display and visibility
+
+```
+<div class="show">
+<div class="inline">
+<div class="hide">
+<div class="visible">
+<div class="invisible">
+
+### Font weight and size
+
+```
+<div class="bold">
+```
+
+And many other variations including `light`, `normal`, and `heavy`.
+
+```
+<div class="small">
+<div class="large">
+
+And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, etc.
+```
+
+### Opacity
+
+```
+<div class="opaque">
+<div class="semi-opaque">
+<div class="transparent">
+```
+
+### Z-index
+
+```
+<div class="back">
+<div class="front">
+<div class="backmost">
+<div class="frontmost">
+```
+
+### Position
+
+```
+<div class="absolute">
+<div class="relative">
+<div class="fixed">
+```
+
+### Text transforms
+
+```
+<div class="uppercase">
+<div class="lowercase">
+<div class="capitalize">
+<div class="all-caps">
+```
+
+### Transitions
+
+```
+<div class="transition fast linear delay">
+```
+
 
 Installation
 ------------
@@ -307,6 +402,7 @@ Micro-class reference
 | opaque               | opacity     | Full opacity.                 |
 | outset               | border      | Outset-style border.          |
 | padding              | padding     | Pad an element.               |
+| pointer              | cursor      | Pointing cursor.              |
 | preserve-whitespace  | white-space | Do not collapse whitespace.   |
 | primary              | colors      | Primary color.                |
 | relative             | position    | Relative positioniong.        |

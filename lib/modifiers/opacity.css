@@ -1,3 +1,9 @@
-.opaque { opacity: 1; }
+/*
+modifiers/opacity.css
+
+Morass pseudo-classes for opacity.
+*/
+
+.opaque      { opacity: 1;   }
 .semi-opaque { opacity: 0.5; }
-.transparent { opacity: 0; }
+.transparent { opacity: 0;   }

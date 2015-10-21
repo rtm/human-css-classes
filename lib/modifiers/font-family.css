@@ -1,1 +1,7 @@
-monospace { font-family: monospace; }
+/*
+modifiers/font-family.css
+
+Morass micro-classes for font family.
+*/
+
+.monospace { font-family: monospace; }

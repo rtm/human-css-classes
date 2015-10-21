@@ -1,3 +1,9 @@
-.single-spaced { line-height: 1; }
-.double-spaced { line-height: 2; }
+/*
+modifiers/line-height.css
+
+Morass micro-classes for line spacing.
+*/
+
+.single-spaced    { line-height: 1;   }
+.double-spaced    { line-height: 2;   }
 .space-and-a-half { line-height: 1.5; }

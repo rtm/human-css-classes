@@ -10,6 +10,7 @@
 @import "./background";
 @import "./clip";
 @import "./column";
+@import "./cursor";
 @import "./dimensions";
 @import "./display";
 @import "./flex";
