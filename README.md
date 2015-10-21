@@ -114,6 +114,9 @@ He or she must remember that it magically removes the top margin and changes the
 Morass itself does not modify built-in element styles.
 However, it recommends this as the preferred way to add behavior to standard elements such as `h1` or `a` **when necessary**.
 This reduces the number of classes required and keeps the HTML cleaner.
+`label` and `blockquote` are other good candidates for customizing,
+as well as less-used semantic HTML elements including
+`aside`, `dd/dt/dl`, `fieldset`, `header/footer`, `input`, and `small`.
 
 Preprocessors
 -------------
@@ -182,6 +185,28 @@ We suggest judicious use of this with your own micro-classes to handle responsiv
 ```css
 @media (--sm-viewport) { }
 ```
+
+### Composability
+
+Of course if I want to define my own class for an alement, and add padding, I can do
+
+    <div class="padding my-class">
+
+and this might be the best approach.
+However, what if I want to **include** the `padding` functionality into my own class definition?
+This would allow me to simply say `<div class="my-class">`.
+SuitCSS/rework provide the ability to do this using the `rework-inherit` plug-in, which provides an `inherit` pseudo-property, as follows:
+
+```
+.myclass {
+  color: red;
+  inherit: .padding;
+  }
+  ```
+
+If you really want to go this route, you'll have to make sure to add `rework-inherit` to your package,
+and arrange for it to be added to the list of rework plug-ins used in the preprocessing step.
+Core Morass does not make use of `inherit`.
 
 Micro-class groupings
 ---------------------
@@ -317,6 +342,12 @@ Micro-class reference
 | Name                 | Module      | Description                   |
 | -------------------- | ----------- | ----------------------------- |
 | absolute             | position    | Absolute positioniong.        |
+| align-bottom         | flex        | Align flex items to bottom.   |
+| align-center         | flex        | Align flex items to left.     |
+| align-left           | flex        | Align flex items to left.     |
+| align-middle         | flex        | Align flex items to middle.   |
+| align-right          | flex        | Align flex items to right.    |
+| align-top            | flex        | Align flex items to top.      |
 | fixed                | position    | Fixed positioniong.           |
 | behind               | z-index     | Set element behind.           |
 | bg-default           | background  | Default color background.     |

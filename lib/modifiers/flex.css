@@ -20,12 +20,12 @@ justify-h-gap     Distribute space at left, between items, and at right in horiz
 justify-v         Distribute space between items in vertical direction.
 justify-v-gap     Distribute space at top, between items, and at end in vertical direction.
 
-top               Align tops of horizontal items.
-middle            Align middles of horizontal items.
-bottom            Align bottoms of horizontal items.
-left              Align left edge of vertical items
-center            Align center of vertical items.
-right             Align right edge of vertical items.
+align-top         Align tops of horizontal items.
+align-middle      Align middles of horizontal items.
+align-bottom      Align bottoms of horizontal items.
+align-left        Align left edge of vertical items
+align-center      Align center of vertical items.
+align-right       Align right edge of vertical items.
 
 ON ITEMS:
 
@@ -86,13 +86,13 @@ or for specifying justification on the cross-axis.
 .flex.justify           { justify-content: space-between; }
 .flex.justify-gap       { justify-content: space-around; }
 
-.flex.top               { align-items: flex-start; }
-.flex.bottom            { align-items: flex-end;   }
-.flex.middle            { align-items: center;     }
+.flex.align-top         { align-items: flex-start; }
+.flex.align-bottom      { align-items: flex-end;   }
+.flex.align-middle      { align-items: center;     }
 
-.flex.left              { justify-content: flex-start; }
-.flex.right             { justify-content: flex-end;   }
-.flex.center            { justify-content: center;     }
+.flex.align-left        { justify-content: flex-start; }
+.flex.align-right       { justify-content: flex-end;   }
+.flex.align-center      { justify-content: center;     }
 
 /* For horizontal containers, `justify-h` is the same as `justify`. */
 .flex.justify-h         { justify-content: space-between; }
@@ -103,13 +103,13 @@ or for specifying justification on the cross-axis.
 .flex.vertical.justify  { justify-content: space-between;   }
 .flex.vertical.justify-gap { justify-content: space-around; }
 
-.flex.vertical.top      { justify-content: flex-start; }
-.flex.vertical.bottom   { justify-content: flex-end;   }
-.flex.vertical.middle   { justify-content: center;     }
+.flex.vertical.align-top    { justify-content: flex-start; }
+.flex.vertical.align-bottom { justify-content: flex-end;   }
+.flex.vertical.align-middle { justify-content: center;     }
 
-.flex.vertical.left     { align-items: flex-start; }
-.flex.vertical.right    { align-items: flex-end;   }
-.flex.vertical.center   { align-items: center;     }
+.flex.vertical.align-left   { align-items: flex-start; }
+.flex.vertical.align-right  { align-items: flex-end;   }
+.flex.vertical.align-center { align-items: center;     }
 
 /* For vertical containers, `justify-v` is the same as `justify`. */
 .flex.vertical.justify-h      { align-items: space-between;     }
