@@ -18,7 +18,7 @@ Morass provides the conceptual framework for writing your own micro-classes.
 
 Morass systems make a lot of use of flexbox. For instance, the classic `float: right` is written as
 
-    <div class="flex justify middle">
+    <div class="flex justify align-middle">
       <div>I'm on the left</div>
       <div>I'm on the right</div>
     </div>
@@ -201,8 +201,8 @@ SuitCSS/rework provide the ability to do this using the `rework-inherit` plug-in
 .myclass {
   color: red;
   inherit: .padding;
-  }
-  ```
+}
+```
 
 If you really want to go this route, you'll have to make sure to add `rework-inherit` to your package,
 and arrange for it to be added to the list of rework plug-ins used in the preprocessing step.
@@ -244,8 +244,8 @@ A "hair" is 1/6 em.
 
 Morass expects most layout to be done using flexboxes,
 and provides a solid set of micro-classes to control them.
-The micro-classes available include ones to control direction, wrapping,
-and alignment. You'll no longer need to struggle with trying to remember the names or meanings or values of
+The micro-classes available include ones to control direction, wrapping, and alignment.
+You'll no longer need to struggle with trying to remember the names or meanings or values of
 properties like `align-items`.
 
 Examples of flexbox:
@@ -257,7 +257,7 @@ Examples of flexbox:
   <div class="grow">
 ```
 
-### display and visibility
+### Display and visibility
 
 ```
 <div class="show">
@@ -265,6 +265,7 @@ Examples of flexbox:
 <div class="hide">
 <div class="visible">
 <div class="invisible">
+```
 
 ### Font weight and size
 
@@ -277,9 +278,9 @@ And many other variations including `light`, `normal`, and `heavy`.
 ```
 <div class="small">
 <div class="large">
+```
 
 And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, etc.
-```
 
 ### Opacity
 
