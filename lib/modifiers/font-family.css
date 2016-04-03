@@ -4,4 +4,23 @@ modifiers/font-family.css
 Morass micro-classes for font family.
 */
 
-.monospace { font-family: monospace; }
+/*
+The `heading` and `body` font families are already assigned to
+`heading` and `body` elements.
+Therefore, these micro-classes should only be needed in special situations.
+
+To define the `heading` or `body` font families, use a `@font-face directive as follows:
+
+```
+@font-face {
+  font-family: body;
+  src: local(Helvetica), local(Arial), sans-serif;
+}
+```
+*/
+.heading    { font-family: heading;    }
+.body       { font-family: body;       }
+
+.serif      { font-family: serif;      }
+.sans-serif { font-family: sans-serif; }
+.monospace  { font-family: monospace;  }

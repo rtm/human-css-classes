@@ -1,0 +1,15 @@
+/*
+elements/heading.css
+
+Styling of `heading` element.
+To make this work, enclose your `h1` tags etc. in `heading` tags.
+This design is intended to localize the effect of specifying the `heading` font-family.
+*/
+
+heading {
+  /* To define the `heading` font-family, use a `@font-face` directive.
+     For instance, `@font-face { font-family: heading; src: local(Arial), local(Helvetica); }`.
+     The counterpart of `heading` for body elements is `body`.
+   */
+  font-family: heading;
+}

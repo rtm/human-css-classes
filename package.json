@@ -4,6 +4,7 @@
   "description": "A More Obvious, Reasonable Approach to Style Sheets",
   "main": "index.js",
   "scripts": {
+    "build": "suitcss index.css dist/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/rtm/morass/issues"
   },
-  "homepage": "https://github.com/rtm/morass#readme"
+  "homepage": "https://github.com/rtm/morass#readme",
+  "devDependencies": {
+    "cssnano": "^3.5.2",
+    "suitcss-preprocessor": "^1.0.2"
+  }
 }

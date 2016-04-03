@@ -326,11 +326,14 @@ And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, 
 Installation
 ------------
 
-    npm install morass
+    npm install --save-dev morass
 
 Then, in some file that the suitCSS compilation will process:
 
     @import "morass";
+
+To use the pre-built version, use `dist/index.css`.
+Notice, however, that this will not handle any variables you define yourself.
 
 For your own Morass-type styles, we recommend following the Morass directory structure of `elements`/`modifiers`/`variables`.
 Note that suitCSS always uses the most recently define variable value.
@@ -349,6 +352,7 @@ Micro-class reference
 | align-middle         | flex        | Align flex items to middle.   |
 | align-right          | flex        | Align flex items to right.    |
 | align-top            | flex        | Align flex items to top.      |
+| body                 | font-family | Body font family.             |
 | fixed                | position    | Fixed positioniong.           |
 | behind               | z-index     | Set element behind.           |
 | bg-default           | background  | Default color background.     |
@@ -400,6 +404,7 @@ Micro-class reference
 | hairline             | font-weight | Lightest font.                |
 | half-height          | dimension   | Occupy half height.           |
 | half-width           | dimension   | Occupy half width.            |
+| heading              | font-family | Heading font family.          |
 | heavy                | font-weight | Heaviest font.                |
 | hide, hidden         | display     | Hide element.                 |
 | honor-newline        | white-space | Treat newlines as newlines.   |

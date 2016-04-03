@@ -1,0 +1,885 @@
+/*
+morass/index.css
+
+Entry point for Morass CSS.
+*/
+
+/*
+morass/lib/index.css
+
+Import variables, elements, and modifiers.
+*/
+
+/**
+lib/variables/index.css
+
+Import Morass variable sub-files.
+*/
+
+/*
+lib/variables/colors.css
+
+Default colors for Morass.
+These will almost certainly be overridden by the user.
+
+The color `default` has no hue--it is a gray scale.
+*/
+
+/**
+ * styles/variables/hsl.css
+ *
+ * Variables for HSL.
+ */
+
+/*
+variables/units.css
+
+Units, such as lengths
+*/
+
+/* LENGTHS */
+
+:root {  /* non-standard; consider deprecating */
+}
+
+/*
+morass/lib/elements/index.css
+
+Bring in Morass element CSS.
+*/
+
+/*
+elements/body.css
+
+Styling of body.
+*/
+
+body {
+  height: 100vh;
+
+  /* To define the `body` font-family, use a `@font-face` directive.
+     For instance, `@font-face { font-family: body; src: local(Arial), local(Helvetica); }`.
+     The counterpart of `body` for heading elements is `heading`.
+   */
+  font-family: body;
+}
+
+/*
+elements/heading.css
+
+Styling of `heading` element.
+To make this work, enclose your `h1` tags etc. in `heading` tags.
+This design is intended to localize the effect of specifying the `heading` font-family.
+*/
+
+heading {
+  /* To define the `heading` font-family, use a `@font-face` directive.
+     For instance, `@font-face { font-family: heading; src: local(Arial), local(Helvetica); }`.
+     The counterpart of `heading` for body elements is `body`.
+   */
+  font-family: heading;
+}
+
+/*
+lib/elements/q.css
+
+Morass rules for `<q>`.
+*/
+
+/* Define smart quotes. */
+
+q { quotes: '\201c' '\201d'; }
+
+q::before { content: open-quote; }
+
+q::after  { content: close-quote; }
+
+/**
+ * lib/modifiers/index.css
+ *
+ * Include individual CSS files for modifiers.
+ * Modifiers are orthogonal micro-classes,
+ * often interacting with surrounding elements and other classes.
+ */
+
+/**
+* modifiers/align.css
+*
+* Alignment-related modifiers.
+**/
+
+:not(.flex).left        { text-align: left; }
+
+:not(.flex).right       { text-align: right; }
+
+:not(.flex).center      { text-align: center; }
+
+:not(.flex).justify     { text-align: justify; }
+
+:not(.flex).justify-all { text-align: justify-all; }
+
+:not(.flex).top         { vertical-align: top; }
+
+:not(.flex).bottom      { vertical-align: bottom; }
+
+:not(.flex).middle      { vertical-align: middle; }
+
+/*
+morass/lib/modifiers/background.css
+
+Background-related micro-classes.
+*/
+
+/* REPEAT */
+
+.norepeat { background-repeat: norepeat; }
+
+.repeat-x { background-repeat: repeat-x; }
+
+.repeat-y { background-repeat: repeat-y; }
+
+/* TODO: handle `space` and `round` */
+
+/* COLORS */
+
+.bg-default          { background-color: hsl(0, 0%, 80%); }
+
+.bg-primary          { background-color: hsl(240,   50%, 80%); }
+
+.bg-secondary        { background-color: hsl(270, 50%, 80%); }
+
+.bg-success          { background-color: hsl(120,   50%, 80%); }
+
+.bg-warn             { background-color: hsl(30,      50%, 80%); }
+
+.bg-error            { background-color: hsl(0,     50%, 80%); }
+
+.bg-white            { background-color: white; }
+
+.bg-black            { background-color: black; }
+
+.inverse .bg-white, .inverse.bg-white    { background-color: black; }
+
+.inverse .bg-black, .inverse.bg-black    { background-color: white; }
+
+.inverse.bg-default   { background-color: hsl(0, 0%, 20%); }
+
+.inverse.bg-primary   { background-color: hsl(240,   50%, 20%); }
+
+.inverse.bg-secondary { background-color: hsl(270, 50%, 20%); }
+
+.inverse.bg-success   { background-color: hsl(120,   50%, 20%); }
+
+.inverse.bg-warn      { background-color: hsl(30,      50%, 20%); }
+
+.inverse.bg-error     { background-color: hsl(0,     50%, 20%); }
+
+/*
+lib/modifiers/clip.css
+
+Morass micro-classes for clipping (overflow handling).
+*/
+
+.clip       { overflow:   hidden; }
+
+.clip-x     { overflow-x: hidden; }
+
+.clip-y     { overflow-y: hidden; }
+
+.scroll     { overflow:   scroll; }
+
+.scroll-x   { overflow-x: scroll; }
+
+.scroll-y   { overflow-y: scroll; }
+
+/*
+modifiers/column.css
+
+Column-related microclasses.
+*/
+
+.one-column    { -webkit-column-count: 1; -moz-column-count: 1; column-count: 1; }
+
+.two-columns   { -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; }
+
+.three-columns { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; }
+
+.four-columns  { -webkit-column-count: 4; -moz-column-count: 4; column-count: 4; }
+
+/*
+modifiers/cursor.css
+
+Morass micro-classes for cursor.
+*/
+
+.pointer { cursor: pointer; }
+
+/*
+lib/modifiers/dimension.css
+
+Widths and heights.
+*/
+
+.full-width, .width-100 { width: 100%; }
+
+.half-width, .width-50 { width: 50%; }
+
+.width-10   { width: 10%; }
+
+.width-20   { width: 20%; }
+
+.width-30   { width: 30%; }
+
+.width-40   { width: 40%; }
+
+.width-60   { width: 60%; }
+
+.width-70   { width: 70%; }
+
+.width-80   { width: 80%; }
+
+.width-90   { width: 90%; }
+
+.full-height { height: 100%; }
+
+.half-height { height: 50%; }
+
+.height-10   { height: 10%; }
+
+.height-20   { height: 20%; }
+
+.height-30   { height: 30%; }
+
+.height-40   { height: 40%; }
+
+.height-60   { height: 60%; }
+
+.height-70   { height: 70%; }
+
+.height-80   { height: 80%; }
+
+.height-90   { height: 90%; }
+
+/**
+* styles/modifiers/display.css
+*
+* CSS classes for `display` property.
+*/
+
+.show, .block            { display: block; }
+
+.hide, .hidden, [hidden] { display: none; }
+
+.inline                  { display: inline; }
+
+/* .inline.flex will yield flex-inline */
+
+.inline-block            { display: inline-block; }
+
+/*
+styles/modifiers/flex.css
+Flexbox-related modifiers.
+
+Classes defined:
+
+ON CONTAINER:
+
+flex              Use flex display on this container.
+inline            Use inline flex display on this container.
+horizontal        Distribute items horizontally (default).
+vertical          Distribute items vertically.
+wrap              Let items wrap to next row or column.
+reverse           Layout items in reverse order.
+
+justify           Distribute space between items in main direction.
+justify-gap       Distribute space at start, between items, and end in main direction.
+justify-h         Distribute space between items in horizontal direction.
+justify-h-gap     Distribute space at left, between items, and at right in horizontal direction.
+justify-v         Distribute space between items in vertical direction.
+justify-v-gap     Distribute space at top, between items, and at end in vertical direction.
+
+align-top         Align tops of horizontal items.
+align-middle      Align middles of horizontal items.
+align-bottom      Align bottoms of horizontal items.
+align-left        Align left edge of vertical items
+align-center      Align center of vertical items.
+align-right       Align right edge of vertical items.
+
+ON ITEMS:
+
+grow              Allow this item to grow.
+x-grow            Allow this item to grow more.
+no-shrink         Do not allow this item to shrink.
+
+self-top
+self-middle
+self-bottom
+self-left
+self-center
+self-right
+*/
+
+/*
+Basic display types for flex.
+`inline` is overloaded; by itself it yields `display: inline`.
+*/
+
+.flex                  { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;          }
+
+.flex.inline           { display: -webkit-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex;   }
+
+/*
+FLEX DIRECTION.
+Note that `vertical` and `horizontal` are also overloaded,
+as defined in `direction.css`.
+*/
+
+.flex.vertical         { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+
+.flex.horizontal       { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;    }
+
+/*
+WRAPPING AND REVERSING.
+A `wrap` class turns the `flex-direction` property
+into its wrapped variants.
+Note: `wrap` is an overloaded property with a different meaning without `flex`.
+*/
+
+.flex.wrap             { -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.flex.reverse          { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse;    }
+
+.flex.vertical.reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -webkit-flex-direction: column-reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+
+/*
+JUSTIFYING AND ALIGNING.
+Since I, for one, can never remember the difference between
+`align-items` and `justify-content`, provide human-oriented
+direction-based micro-classes such as `top, `left`, etc.
+These are interpreted differently depending on `flex-direction`.
+
+Note that `horizontal` is the default.
+*/
+
+/*
+`justify` by itself refers to justification on the main axis.
+There are also `justify-v` and `justify-h` variants for clarity
+or for specifying justification on the cross-axis.
+`justify-gap` requests distributing space to start and end as well as between.
+*/
+
+.flex.justify           { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.flex.justify-gap       { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; }
+
+.flex.align-top         { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; -ms-grid-row-align: flex-start; align-items: flex-start; }
+
+.flex.align-bottom      { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; -ms-grid-row-align: flex-end; align-items: flex-end;   }
+
+.flex.align-middle      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; -ms-grid-row-align: center; align-items: center;     }
+
+.flex.align-left        { -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.flex.align-right       { -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;   }
+
+.flex.align-center      { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;     }
+
+/* For horizontal containers, `justify-h` is the same as `justify`. */
+
+.flex.justify-h         { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.flex.justify-h-gap     { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around;  }
+
+.flex.justify-v         { -webkit-box-align: space-between; -webkit-align-items: space-between; -ms-flex-align: space-between; -ms-grid-row-align: space-between; align-items: space-between;     }
+
+.flex.justify-v-gap     { -webkit-box-align: space-around; -webkit-align-items: space-around; -ms-flex-align: space-around; -ms-grid-row-align: space-around; align-items: space-around;      }
+
+.flex.vertical.justify  { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between;   }
+
+.flex.vertical.justify-gap { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; }
+
+.flex.vertical.align-top    { -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.flex.vertical.align-bottom { -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;   }
+
+.flex.vertical.align-middle { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;     }
+
+.flex.vertical.align-left   { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; -ms-grid-row-align: flex-start; align-items: flex-start; }
+
+.flex.vertical.align-right  { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; -ms-grid-row-align: flex-end; align-items: flex-end;   }
+
+.flex.vertical.align-center { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; -ms-grid-row-align: center; align-items: center;     }
+
+/* For vertical containers, `justify-v` is the same as `justify`. */
+
+.flex.vertical.justify-h      { -webkit-box-align: space-between; -webkit-align-items: space-between; -ms-flex-align: space-between; -ms-grid-row-align: space-between; align-items: space-between;     }
+
+.flex.vertical.justify-h-gap  { -webkit-box-align: space-around; -webkit-align-items: space-around; -ms-flex-align: space-around; -ms-grid-row-align: space-around; align-items: space-around;      }
+
+.flex.vertical.justify-v      { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.flex.vertical.justify-v-gap  { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around;  }
+
+/*
+GROWING AND SHRINKING.
+Provide micro-classes for common cases of grow and shrink.
+*/
+
+.grow { -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; }
+
+.x-grow { -webkit-box-flex: 2; -webkit-flex-grow: 2; -ms-flex-positive: 2; flex-grow: 2; }
+
+.no-shrink { -webkit-flex-shrink: 0; -ms-flex-negative: 0; flex-shrink: 0; }
+
+/* TODO: add other self items */
+
+.self-stretch { -webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch; }
+
+/* ORDER */
+
+.first { -webkit-box-ordinal-group: -98; -webkit-order: -99; -ms-flex-order: -99; order: -99; }
+
+.last  { -webkit-box-ordinal-group: 100; -webkit-order: +99; -ms-flex-order: +99; order: +99; }
+
+/*
+modifiers/font-family.css
+
+Morass micro-classes for font family.
+*/
+
+/*
+The `heading` and `body` font families are already assigned to
+`heading` and `body` elements.
+Therefore, these micro-classes should only be needed in special situations.
+
+To define the `heading` or `body` font families, use a `@font-face directive as follows:
+
+```
+@font-face {
+  font-family: body;
+  src: local(Helvetica), local(Arial), sans-serif;
+}
+```
+*/
+
+.heading    { font-family: heading;    }
+
+.body       { font-family: body;       }
+
+.serif      { font-family: serif;      }
+
+.sans-serif { font-family: sans-serif; }
+
+.monospace  { font-family: monospace;  }
+
+/*
+modifiers/font-variant.css
+
+Micro-classes for font variants.
+*/
+
+.small-caps { font-variant: small-caps; }
+
+/*
+morass/modifiers/font-weight.css
+
+font-weight microclasses.
+*/
+
+.hairline                            { font-weight: 100; }
+
+.extra-light, .x-light, .ultra-light { font-weight: 200; }
+
+.light                               { font-weight: 300; }
+
+.normal                              { font-weight: 400; }
+
+.medium-weight                       { font-weight: 500; }
+
+.semi-bold, .demi-bold               { font-weight: 600; }
+
+.strong, .bold                       { font-weight: 700; }
+
+.extra-bold, .x-bold, .ultra-bold    { font-weight: 800; }
+
+.heavy                               { font-weidht: 900; }
+
+.lighter                             { font-weight: lighter; }
+
+.bolder                              { font-weight: bolder;  }
+
+/*
+morass/modifiers/letter-spacing.css
+
+Micro-classes for expanded and condensed text.
+*/
+
+.expanded       { letter-spacing:  0.20em; }
+
+.expanded-more  { letter-spacing:  0.40em; }
+
+.condensed      { letter-spacing: -0.05em; }
+
+/*
+modifiers/line-height.css
+
+Morass micro-classes for line spacing.
+*/
+
+.single-spaced    { line-height: 1;   }
+
+.double-spaced    { line-height: 2;   }
+
+.space-and-a-half { line-height: 1.5; }
+
+/*
+modifiers/opacity.css
+
+Morass pseudo-classes for opacity.
+*/
+
+.opaque      { opacity: 1;   }
+
+.semi-opaque { opacity: 0.5; }
+
+.transparent { opacity: 0;   }
+
+/*
+modifiers/padding.css
+
+Morass micro-classes for padding.
+Default is `em`.
+*/
+
+.padding.left,        .padding.horizontal      { padding-left: 1.00em;   }
+
+.padding.en.left,     .padding.en.horizontal   { padding-left: 0.50em;   }
+
+.padding.thin.left,   .padding.thin.horizontal { padding-left: 0.20em; }
+
+.padding.hair.left,   .padding.hair.horizontal { padding-left: 0.05em; }
+
+.padding.zero.left,   .padding.zero.horizontal { padding-left:   0;           }
+
+.padding.right,       .padding.horizontal      { padding-right: 1.00em;   }
+
+.padding.en.right,    .padding.en.horizontal   { padding-right: 0.50em;   }
+
+.padding.thin.right,  .padding.this.horizontal { padding-right: 0.20em; }
+
+.padding.hair.right,  .padding.hair.horizontal { padding-right: 0.05em; }
+
+.padding.zero.right,  .padding.zero.horizontal { padding-right:  0;           }
+
+.padding.top,         .padding.vertical        { padding-top: 1.00em;   }
+
+.padding.en.top,      .padding.en.vertical     { padding-top: 0.50em;   }
+
+.padding.thin.top,    .padding.this.vertical   { padding-top: 0.20em; }
+
+.padding.hair.top,    .padding.hair.vertical   { padding-top: 0.05em; }
+
+.padding.zero.top,    .padding.zero.vertical   { padding-top:    0;           }
+
+.padding.bottom,      .padding.vertical        { padding-bottom: 1.00em;   }
+
+.padding.en.bottom,   .padding.en.vertical     { padding-bottom: 0.50em;   }
+
+.padding.thin.bottom, .padding.thin.vertical   { padding-bottom: 0.20em; }
+
+.padding.hair.bottom, .padding.hair.vertical   { padding-bottom: 0.05em; }
+
+.padding.zero.bottom, .padding.zero.vertical   { padding-bottom: 0;           }
+
+/* With no side modifier, set on all sides. */
+
+.padding:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)      { padding: 1.00em;   }
+
+.padding.en:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)   { padding: 0.50em;   }
+
+.padding.thin:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0.20em; }
+
+.padding.hair:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0.05em; }
+
+.padding.zero:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0;           }
+
+/*
+morass/modifiers/position.css
+
+Micro-classes for CSS `position` property.
+*/
+
+.absolute { position: absolute; }
+
+.relative { position: relative; }
+
+.fixed    { position: fixed;    }
+
+.sticky   { position: -webkit-sticky; position: sticky;   }
+
+.top-left { top: 0; left: 0; }
+
+/*
+modifiers/resize.css
+
+Morass micro-classes for resizing.
+*/
+
+.resize, .resize.horizontal.vertical { resize: both;       }
+
+.resize-x, .resize.horizontal        { resize: horizontal; }
+
+.resize-y, .resize.vertical          { resize: vertical;   }
+
+/**
+lib/modifiers/colors.css
+
+Micro-classes for standard colors, including inverted versions.
+*/
+
+/* FOREGROUNDS */
+
+.default          { color: hsl(0,                    0%,                        20%); }
+
+.primary          { color: hsl(240,   50%, 20%); }
+
+.secondary        { color: hsl(270, 50%, 20%); }
+
+.success          { color: hsl(120,   50%, 20%); }
+
+.warn             { color: hsl(30,      50%, 20%); }
+
+.error            { color: hsl(0,     50%, 20%); }
+
+.white            { color: white; }
+
+.black            { color: black; }
+
+.inverse .white, .inverse.white    { color: black; }
+
+.inverse .black, .inverse.black    { color: white; }
+
+/* INVERTED VERSIONS */
+
+.inverse default   { color: hsl(0,                    0%,                        80%); }
+
+.inverse.primary   { color: hsl(240,   50%, 80%); }
+
+.inverse.secondary { color: hsl(270, 50%, 80%); }
+
+.inverse.success   { color: hsl(120,   50%, 80%); }
+
+.inverse.warn      { color: hsl(30,      50%, 80%); }
+
+.inverse.error     { color: hsl(0,     50%, 80%); }
+
+.xx-small { font-size: xx-small; }
+
+.x-small  { font-size: x-small; }
+
+.small    { font-size: small; }
+
+.medium   { font-size: medium; }
+
+.large    { font-size: large; }
+
+.x-large  { font-size: x-large; }
+
+.xx-large { font-size: xx-large; }
+
+.larger   { font-size: larger; }
+
+.smaller  { font-size: smaller; }
+
+/*
+modifiers/space.css
+
+Vertical spacing between elements.
+
+The `.spaced` class adds space to each child element except the last.
+The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
+*/
+
+.spaced > *::after {
+  content: '\10';
+  display: block;
+}
+
+/* Do not apply the spacing to the last child. */
+
+.spaced  > *::after::last-child { content: ''; }
+
+.spaced         > *::after { line-height: 1; }
+
+.spaced.loose   > *::after { line-height: 1.5;   }
+
+.spaced.x-loose > *::after { line-height: 2;   }
+
+.spaced.tight   > *::after { line-height: 0.5; }
+
+.spaced.x-tight > *::after { line-height: 0.25; }
+
+/**
+ * Text-related utilities.
+ **/
+
+.strong, .bold { font-weight: bold; }
+
+.x-strong  { font-weight: 900; }
+
+.light     { font-weight: 100; }
+
+.lighter   { font-weight: ligher; }
+
+.bolder    { font-weight: bolder; }
+
+.emphasis, .italic  { font-style: italic; }
+
+.uppercase { text-transform: uppercase; }
+
+.lowercase { text-transform: lowercase; }
+
+.capitalize { text-transform: capitalize; }
+
+.underline { text-decoration: underline; }
+
+.text-right  { text-align: right; }
+
+.text-center { text-align: center; }
+
+.text-left   { text-align: left; }
+
+/*
+morass/modifiers/text-transform.css
+
+Uppercasing, etc.
+*/
+
+.uppercase  { text-transform: uppercase; }
+
+.lowercase  { text-transform: lowercase; }
+
+.capitalize { text-transform: capitalize; }
+
+/*
+morass/modifiers/transition.css
+
+Micro-classes to manage transitions.
+*/
+
+/* TRANSITION ALL PROPERTIES */
+
+.transition {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+/* DURATION */
+
+.fast        { -webkit-transition-duration: 0.4s; transition-duration: 0.4s; }
+
+.faster      { -webkit-transition-duration: 0.2s; transition-duration: 0.2s; }
+
+.slow        { -webkit-transition-duration: 0.8s; transition-duration: 0.8s; }
+
+.slower      { -webkit-transition-duration: 1.6s; transition-duration: 1.6s; }
+
+/* TIMING FUNCTIONS */
+
+.ease        { -webkit-transition-timing-function: ease; transition-timing-function: ease;        }
+
+.ease-in     { -webkit-transition-timing-function: ease-in; transition-timing-function: ease-in;     }
+
+.ease-out    { -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out;    }
+
+.ease-in-out { -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; }
+
+.linear      { -webkit-transition-timing-function: linear; transition-timing-function: linear;      }
+
+.step-start  { -webkit-transition-timing-function: step-start; transition-timing-function: step-start;  }
+
+.step-end    { -webkit-transition-timing-function: step-end; transition-timing-function: step-end;    }
+
+/* DELAY */
+
+.delay       { -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+
+.delay-more  { -webkit-transition-delay: 1.6s; transition-delay: 1.6s; }
+
+.delay-less  { -webkit-transition-delay: 0.4s; transition-delay: 0.4s; }
+
+/*
+morass/modifiers/white-space.css
+
+Break down `white-space` semantically.
+
+I don't know about you, but I can never remember the values for `white-space`.
+Every time I want to use one, I have to look it up again.
+Actually, it's quite easy when you break it down.
+The properties each indicate a combination of whether newlines are to be honored,
+whether whitespace is to be preserved, and whether wrapping is desired.
+
+These Morass micro-classes map those concepts into `white-space` values,
+so hopefully you'll never have to consult that page again.
+
+Classes defined:
+
+honor-newline        Treat newlines as newlines.
+preserve-whitespace  Do not collapse whitespace.
+nowrap               Do not wrap.
+white-space-normal   Set things back.
+*/
+
+/*
+Honor newlines, but do not preserve whitespace and wrap.
+This corresponds to the common case of displaying a user post.
+*/
+
+.honor-newline { white-space: pre-line; }
+
+/*
+Honor newlines while also preserving whitespace.
+*/
+
+.honor-newline.preserve-whitespace { white-space: pre-wrap; }
+
+/*
+Honor newlines, preserve whitespace, and do not wrap.
+This replicates the behavior of `<pre>'.
+You are probably better off using `pre`, although it will
+also give you a monospaced font and vertical padding.
+*/
+
+.honor-newline.preserve-whitespace.nowrap { white-space: pre; }
+
+/*
+Without honoring newlines, no wrapping means that the output will be on a single line.
+In this case, whitespace is never preserved.
+CSS offers no alternative for preserving whitespace while not honoring newlines and not wrapping.
+*/
+
+.nowrap { white-space: nowrap; }
+
+/*
+`white-space` is an inherited property.
+Therefore, in some obscure cases we may need a way to turn it off.
+*/
+
+.white-space-normal { white-space: normal; }
+
+/*
+modifiers/z-index.js
+
+Define simple z-index-related micro-classes.
+*/
+
+.behind, .back    { z-index: -1;   }
+
+.in-front, .front { z-index: +1;   }
+
+.backmost         { z-index: -999; }
+
+.frontmost        { z-index: +999; }
+

@@ -4,4 +4,12 @@ elements/body.css
 Styling of body.
 */
 
-body { height: 100vh; }
+body {
+  height: 100vh;
+
+  /* To define the `body` font-family, use a `@font-face` directive.
+     For instance, `@font-face { font-family: body; src: local(Arial), local(Helvetica); }`.
+     The counterpart of `body` for heading elements is `heading`.
+   */
+  font-family: body;
+}
