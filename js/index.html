@@ -11,11 +11,21 @@
   </head>
 
   <body>
-    <div class="blue" data-morass-media="max-width: 512px">
-      <div class="red" data-morass-on=":hover">
-        Hello, look at my color.
-      </div>
+    <div id="div" class="mobile red">
+      Hello, look at my color.
     </div>
+
+    <div>
+      <p>Test removing and adding classes dynamically</p>
+      <button onclick="document.getElementById('div').classList.remove('hover')">
+        Remove hover
+      </button>
+
+      <button onclick="document.getElementById('div').classList.add('hover')">
+        Add hover
+      </button>
+    </div>
+
   </body>
 
 </html>

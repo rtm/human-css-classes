@@ -1,6 +1,5 @@
 // Test JS for test HTML page to test data-morass-on functionality.
 
-import * as morass from './morass';
+import morass from '..';
 
-morass.init();
-document.addEventListener('DOMContentLoaded', () => morass.process());
+document.addEventListener('DOMContentLoaded', morass);

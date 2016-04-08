@@ -32,7 +32,7 @@ But it uses the suitCSS preprocessor framework, mainly to provide variables.
 Background and Motivation
 -------------------------
 
-Our current CSS systems are a steaming pile of shit.
+Our current CSS systems are a steaming pile of crap.
 We have thousands of lines of CSS.
 Half of these lines of CSS are not even used,
 because no one can remember what they do and are afraid to touch them.
@@ -91,7 +91,6 @@ In cases where the provided micro-classes do not or can not provide the function
 such as box shadows perhaps,
 we recommend defining your own generic micro-classes,
 hopefully following the Morass design principles.
-
 
 Use of elements
 ---------------
@@ -174,17 +173,33 @@ If a page has only one or two such cases, we suggest inlining the rule with the 
 We are not religious zealots, and this can be a better approach than creating a separate CSS file
 and defining an additional class merely in order to target the element.
 
-### Responsiveness
+### Pseudo-classes such as `hover`
 
-Currently, Morass does not explicitly support responsiveness.
-We are not a big fan of current approaches to responsiveness,
-which involve baroque constructs such as `<div class="col-md-4 col-sm-8">`.
-suitCSS supports the `@custom-media` directive for defining breakpoints.
-We suggest judicious use of this with your own micro-classes to handle responsivity, as in
+How can we specify hover behavior, or responsive behavior, using HTML-centric, micro-class-based rules?
+Rules involving pseudo-classes such as `hover` can only be specified as CSS rules.
+The same applies to media queries.
+Morass provides the answer through a simple runtime toegether with classes for the pseudo-elements and media queries.
+Here is an example:
 
-```css
-@media (--sm-viewport) { }
-```
+    <div class="hover red"> I am red if hovered on.</div>
+    <div class="mobile red">I am red if on mobile. </div>
+
+This behavior requires JavaScript to run.
+Add the following line of code to your system:
+
+    import morass from 'morass';
+    document.addEventListener('DOMContentReady', morass);
+
+Elements added dynamically to the DOM, or dynamic changes to classes,
+will be handled properly.
+
+Classes such as `mobile` are built-in as defaults,
+but the user is free to define their own media queries in the initializer.
+Multiple media classes can be specified, and the rules in question will apply to them all.
+
+The built-in pseudo-classes number more than two dozen.
+The user is again free to define their own pseudo-classes and equivalent class names.
+
 
 ### Composability
 
@@ -410,6 +425,7 @@ Micro-class reference
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
 | horizontal           | padding, margin     | Padding or margin on left and right.    |
+| hover                |             | Apply rules in hover state    |
 | infront              | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
 | indent-more          | indent      | Indent text more.             |
