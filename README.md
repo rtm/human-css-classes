@@ -16,18 +16,20 @@ With Morass, many pages may need no specific CSS rules whatsoever.
 Where the provided micro-classes don't get the job done,
 Morass provides the conceptual framework for writing your own micro-classes.
 
-Morass systems make a lot of use of flexbox. For instance, the classic `float: right` is written as
+In the micro-class philosophy, elements are styled withi HTML by addition micro classes, such as
 
-    <div class="flex justify align-middle">
+    <div class="x-large padding">
+
+To create a div with extra-large text, and padding around it.
+
+Morass provides an easy interface to using flexbox,
+removing the need for the baroque grid systems some frameworks and libraries try to provide.
+For instance, the classic `float: right` is written as
+
+    <div class="flex justify">
       <div>I'm on the left</div>
       <div>I'm on the right</div>
     </div>
-
-with the bonus that the middles of the elements to the left and right are vertically aligned.
-
-Morass is independent of any CSS framework.
-But it uses the suitCSS preprocessor framework, mainly to provide variables.
-
 
 Background and Motivation
 -------------------------
@@ -41,19 +43,20 @@ Most of the rest is redundant, verbose, and duplicative.
 Because CSS systems are most often created by "UI designers", rather than engineers,
 basic computing principles of orthogonality and composition are ignored.
 
-We have developed an addiction to CSS preprocessors which do no more
-than provide some basic syntactic sugar, and, more perniciously,
+We have developed an addiction to CSS preprocessors which
+merely provide some basic syntactic sugar, and, more perniciously,
 promote bad design practices.
 Huge sets of rules with complex selectors bog down the browser.
 
 Each new page we write requires dozens or hundreds of new lines of CSS.
 Any UI change requires parallel changes to both HTML and CSS.
 We use CSS in a way which results in inconsistent UIs.
+We rewrite CSS over and over, since there is no way to re-use what we have done.
 There is no reasonable way to understand the CSS, or convince ourselves that it is correct, or test it.
 
 In a futile attempt to escape this maze, we bring in monstrously large, over-engineered
 frameworks such as Bootstrap, which add a massive surface area of new classes to learn and deal with.
-Just as the archaic jQuery attempts to solve JavaScript problems which no longer need solving,
+Just as jQuery attempts to solve JavaScript problems which no longer need solving,
 Bootstrap attempts to solve styling problems which no longer need solving,
 in particular its cumbersome and confusing grid system.
 In addition to added complexity for the programmer, these massive frameworks slow down
@@ -62,8 +65,8 @@ They also make undue use of obsolete CSS features such as floats,
 while failing to support modern CSS features such as flexbox.
 
 As we proliferate these obese classes, we soon run into namespacing problems.
-Names conflict with each other, and we end up needing weird namespace solutions which result
-in classes with names like `Book__chapter--title`.
+Names conflict with each other, and we end up needing weird namespace solutions which call for
+classes with names like `Book__chapter--title`.
 Then we start relying on preprocessors to handle these over-named classes,
 which "help" us by allowing us to write weird-looking rules such as
 
@@ -76,12 +79,14 @@ which "help" us by allowing us to write weird-looking rules such as
      }
 
 
-Micro-classes
--------------
+Design Principles And Features
+------------------------------
+
+### Micro-classes
 
 Morass is a collection of micro-classes: CSS classes which often define no more than one property.
 These classes are assigned to HTML elements, which in this approach may have two or five or even ten classes.
-We are moving the styling logic back into the HTML!
+**We are moving the styling logic back into the HTML!**
 The styling in the HTML becomes semnatic and readable.
 Instead of having a class "book-list-entry" which contains 20 properties over in some distant CSS file,
 we add three or four classes to HTML which clearly identify the styling behavior of the entry.
@@ -92,45 +97,6 @@ such as box shadows perhaps,
 we recommend defining your own generic micro-classes,
 hopefully following the Morass design principles.
 
-Use of elements
----------------
-
-In existing CSS, we see odd rules such as
-
-    <h1 class="h1">...
-
-Then
-
-    .h1 { margin-top: 0; font-size: 24px; }
-
-One is left seriously wondering where the people who write this kind of code were during their Intro to CSS class.
-If we want to change the styling of an `h1`, we should simply modify the `h1`.
-More fundamentally, why are we changing basics of a element like `h1` away from the perfectly reasonable defaults set by the user agent style sheet?
-The same person that is removing the top margin from the `h1` is probably putting back some spacing around it in some other place in his code.
-Every programmer who now wants to write an `h1` must remember to add the class `.h1`.
-He or she must remember that it magically removes the top margin and changes the font size.
-
-Morass itself does not modify built-in element styles.
-However, it recommends this as the preferred way to add behavior to standard elements such as `h1` or `a` **when necessary**.
-This reduces the number of classes required and keeps the HTML cleaner.
-`label` and `blockquote` are other good candidates for customizing,
-as well as less-used semantic HTML elements including
-`aside`, `dd/dt/dl`, `fieldset`, `header/footer`, `input`, and `small`.
-
-Preprocessors
--------------
-
-We hate CSS preprocessors.
-They are bulky, slow, and promote bad rule-writing practices.
-However, preprocessors do provide some useful functionality.
-The key feature is the use of variables.
-Since we do want to use variables, we do use a preprocessor.
-The preprocessor we use is suitCSS, a forward-looking system with a clear migration path to CSS4.
-It also supports imports, allowing us to write our code modularly,
-as well as auto-prefixing.
-
-Design Principles And Features
-------------------------------
 
 ### Performance
 
@@ -145,7 +111,7 @@ This reduces both download and processing time.
 
 ### Floats
 
-Morass does not use or support floats.
+Morass does not use or support floats, and neither should you.
 
 ### Colors
 
@@ -173,12 +139,13 @@ If a page has only one or two such cases, we suggest inlining the rule with the 
 We are not religious zealots, and this can be a better approach than creating a separate CSS file
 and defining an additional class merely in order to target the element.
 
-### Pseudo-classes such as `hover`
+### Pseudo-classes such as `:hover`
 
-How can we specify hover behavior, or responsive behavior, using HTML-centric, micro-class-based rules?
-Rules involving pseudo-classes such as `hover` can only be specified as CSS rules.
-The same applies to media queries.
-Morass provides the answer through a simple runtime toegether with classes for the pseudo-elements and media queries.
+How can we specify hover behavior, or media-query-based responsive behavior,
+using the Morass-style of HTML-centric, micro-class-based rules?
+Normally such rules could be written only in CSS files, not in HTML.
+However, Morass provides a simple solution
+through a simple runtime toegether with classes for the pseudo-elements and media queries.
 Here is an example:
 
     <div class=":hover red"> I am red if hovered on.</div>
@@ -199,11 +166,11 @@ Elements added dynamically to the DOM, or dynamic changes to classes,
 will be handled properly.
 
 Classes such as `@mobile` are built-in as defaults,
-but the user is free to define their own media queries in the initializer.
+but you are free to define your own media queries in the initializer.
 Multiple media classes can be specified, and the rules in question will apply to them all.
 
 The built-in pseudo-classes number more than two dozen.
-The user is again free to define their own pseudo-classes and equivalent class names.
+You are again free to define your own pseudo-classes and equivalent class names.
 
 
 ### Composability
@@ -214,7 +181,8 @@ Of course if I want to define my own class for an alement, and add padding, I ca
 
 and this might be the best approach.
 However, what if I want to **include** the `padding` functionality into my own class definition?
-This would allow me to simply say `<div class="my-class">`.
+We would caution against this approach, which goes against the grain of the micro-class philosophy.
+However, it does have the "advantage" of allowing me to simply say `<div class="my-class">`.
 SuitCSS/rework provide the ability to do this using the `rework-inherit` plug-in, which provides an `inherit` pseudo-property, as follows:
 
 ```
@@ -237,10 +205,12 @@ This spection walks through each of the main groupings of micro-classes.
 
 Some large proportion of CSS rules control spacing.
 People use top margins and bottom margins and top padding and bottom padding and special spacing elements.
-Morass provides two simple mechanisms for controlling spacing.
+Morass provides simple mechanisms for controlling spacing.
 The `spaced` micro-class adds space between child elements.
-The `padding` micro-class adds padding around an element.
-Variants of these (indicated by modifier micro-classes) provide more spacing, less spacing, more padding, less padding,
+The `padding` micro-class adds padding around an element,
+and the `margin` micro-class adds margins.
+Variants of these (indicated by modifier micro-classes) provide more or less spacing,
+more or less margins,
 and norizontal and vertical padding.
 
 Example of spaced children:
@@ -260,11 +230,12 @@ Example of padding:
 <div class="padding top left hair">
 ```
 
-A "hair" is 1/6 em.
+A "hair" is a standard length used in Morass, which corresponds to 1/6 em.
+An "en" is half an "em".
 
 ### flexbox
 
-Morass expects most layout to be done using flexboxes,
+Morass expects most layout to be done using flexbox,
 and provides a solid set of micro-classes to control them.
 The micro-classes available include ones to control direction, wrapping, and alignment.
 You'll no longer need to struggle with trying to remember the names or meanings or values of
@@ -344,6 +315,18 @@ And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, 
 <div class="transition fast linear delay">
 ```
 
+
+Note on Preprocessors
+---------------------
+
+We hate CSS preprocessors.
+They are bulky, slow, and promote bad rule-writing practices.
+However, preprocessors do provide some useful functionality.
+The key feature is the use of variables.
+Since we do want to use variables, we do use a preprocessor.
+The preprocessor we use is suitCSS, a forward-looking system with a clear migration path to CSS4.
+It also supports imports, allowing us to write our code modularly,
+as well as auto-prefixing.
 
 Installation
 ------------
