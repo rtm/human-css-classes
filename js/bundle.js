@@ -23,6 +23,12 @@ var pseudoElements = {}; // aliases for pseudo-elements
 // List of indices for each data-morass-id.
 var rules = {};
 
+// Escape a CSS identifier.
+// Necessary before passing it to `querySelector` as a class name, for example.
+function CssEscape(id) {
+  return typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id.replace(/\W/g, '\\$&');
+}
+
 // Decipher and store options.
 function setOptions() {
   var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
@@ -36,16 +42,17 @@ var _pseudos = ['checked', 'default', 'disabled', 'empty', 'enabled', 'first', '
 // This is a default list of pseudo-elements, suitable for use as the value of the
 // 'pseudoElements' property of the `opts` parameter passed to `init`.
 var defaultPseudoElements = _pseudos.reduce(function (result, x) {
+  x = ':' + x;
   result[x] = x;
   return result;
 }, {});
 
-// This is a default list of media queries, suitable for use as the value of the
-// 'mediaQueries' property of the `opts` parameter passed to `init`.
+// This is a default list of media queries,
+// used if the 'mediaQueries' property of the `opts` parameter passed to `init` is omitted.
 var defaultMediaQueries = {
-  tablet: '(min-width: 768px) and (max-width: 1023)',
-  desktop: 'min-width: 1024px',
-  mobile: 'max-width: 767px'
+  '@mobile': 'max-width: 767px',
+  '@tablet': '(min-width: 768px) and (max-width: 1023px)',
+  '@desktop': 'min-width: 1024px'
 };
 
 function init(opts) {
@@ -82,7 +89,7 @@ function addRule(elt) {
   // For now, make on (pseudo-classes) and media queries mutually exclusive.
   if (pseudo.length) {
     cssRule = '' + idSelector + pseudo.map(function (p) {
-      return ':not(:' + p + ')';
+      return ':not(' + pseudoElements[p] + ')';
     }) + ' { all: unset; }';
   } else if (media.length) cssRule = '@media not all and ' + media.map(function (m) {
     return '(' + mediaQueries[m];
@@ -94,9 +101,10 @@ function addRule(elt) {
 function process() {
   var elt = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
 
+  // Look
   var classes = Object.keys(mediaQueries).concat(Object.keys(pseudoElements));
   var elements = elt.querySelectorAll(classes.map(function (c) {
-    return '.' + c;
+    return '.' + CssEscape(c);
   }).join(','));
   [].concat(_toConsumableArray(elements)).forEach(addRule);
 }

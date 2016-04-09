@@ -14,6 +14,12 @@ var pseudoElements = {};   // aliases for pseudo-elements
 // List of indices for each data-morass-id.
 var rules = {};
 
+// Escape a CSS identifier.
+// Necessary before passing it to `querySelector` as a class name, for example.
+function CssEscape(id) {
+  return typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id.replace(/\W/g, '\\$&');
+}
+
 // Decipher and store options.
 function setOptions(opts = {}) {
   mediaQueries = opts.mediaQueries || defaultMediaQueries;
@@ -29,16 +35,17 @@ const _pseudos = [
 // This is a default list of pseudo-elements, suitable for use as the value of the
 // 'pseudoElements' property of the `opts` parameter passed to `init`.
 const defaultPseudoElements = _pseudos.reduce((result, x) => {
+  x = ':' + x;
   result[x] = x;
   return result;
 }, {});
 
-// This is a default list of media queries, suitable for use as the value of the
-// 'mediaQueries' property of the `opts` parameter passed to `init`.
+// This is a default list of media queries,
+// used if the 'mediaQueries' property of the `opts` parameter passed to `init` is omitted.
 const defaultMediaQueries = {
-  tablet:  '(min-width: 768px) and (max-width: 1023)',
-  desktop: 'min-width: 1024px',
-  mobile:   'max-width: 767px'
+  '@mobile':                          'max-width: 767px',
+  '@tablet':  '(min-width: 768px) and (max-width: 1023px)',
+  '@desktop':  'min-width: 1024px'
 };
 
 function init(opts) {
@@ -70,16 +77,17 @@ function addRule(elt) {
 
   // For now, make on (pseudo-classes) and media queries mutually exclusive.
   if (pseudo.length) {
-    cssRule = `${idSelector}${pseudo.map(p => `:not(:${p})`)} { all: unset; }`;
+    cssRule = `${idSelector}${pseudo.map(p => `:not(${pseudoElements[p]})`)} { all: unset; }`;
   } else if (media.length)
     cssRule = `@media not all and ${media.map(m => `(${mediaQueries[m]}`) . join(' or ')}) { ${idSelector} { all: unset !important; } }`;
 
   if (cssRule) rules[id] = sheet.insertRule(cssRule, sheet.cssRules.length);
-}
+                                                    }
 
-function process(elt = document) {
+  function process(elt = document) {
+    // Look
   var classes = Object.keys(mediaQueries).concat(Object.keys(pseudoElements));
-  var elements = elt.querySelectorAll(classes . map(c => '.' + c) . join(','));
+  var elements = elt.querySelectorAll(classes . map(c => '.' + CssEscape(c)) . join(','));
   [...elements] . forEach(addRule);
 }
 

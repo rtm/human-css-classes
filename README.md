@@ -181,8 +181,13 @@ The same applies to media queries.
 Morass provides the answer through a simple runtime toegether with classes for the pseudo-elements and media queries.
 Here is an example:
 
-    <div class="hover red"> I am red if hovered on.</div>
-    <div class="mobile red">I am red if on mobile. </div>
+    <div class=":hover red"> I am red if hovered on.</div>
+    <div class="@mobile red">I am red if on mobile. </div>
+
+The `:hover` and `@mobile` are not actual classes.
+They indicate that this element should be styled *if** it is in the `hover` state,
+or **if** we are on a mobile device. They are prefixed with `:` and `@` respectively
+to make this aspect clear.
 
 This behavior requires JavaScript to run.
 Add the following line of code to your system:
@@ -193,7 +198,7 @@ Add the following line of code to your system:
 Elements added dynamically to the DOM, or dynamic changes to classes,
 will be handled properly.
 
-Classes such as `mobile` are built-in as defaults,
+Classes such as `@mobile` are built-in as defaults,
 but the user is free to define their own media queries in the initializer.
 Multiple media classes can be specified, and the rules in question will apply to them all.
 
@@ -225,6 +230,8 @@ Core Morass does not make use of `inherit`.
 
 Micro-class groupings
 ---------------------
+
+This spection walks through each of the main groupings of micro-classes.
 
 ### Spacing
 
@@ -368,7 +375,6 @@ Micro-class reference
 | align-right          | flex        | Align flex items to right.    |
 | align-top            | flex        | Align flex items to top.      |
 | body                 | font-family | Body font family.             |
-| fixed                | position    | Fixed positioniong.           |
 | behind               | z-index     | Set element behind.           |
 | bg-default           | background  | Default color background.     |
 | bg-error             | background  | Error color background.       |
@@ -393,6 +399,7 @@ Micro-class reference
 | delay-less           | transition  | Shorter delay transition.     |
 | delay-more           | transition  | Longer delay transition.      |
 | demi-bold            | font-weight | Weight between normal and bold. |
+| @desktop             |             | Apply only on desktop.        |
 | dotted               | border      | Dotted border.                |
 | double-spaced        | line-height | Double line spacing.          |
 | ease                 | transition  | Transition timing "ease".     |
@@ -410,6 +417,7 @@ Micro-class reference
 | fast                 | transition  | Fast transition.              |
 | faster               | transition  | Very fast transition.         |
 | first                | flex        | Place item first in flex order. |
+| fixed                | position    | Fixed positioniong.           |
 | flex                 | flex        | Set up flex container.        |
 | four-columns         | column      | Split content into 4 columns. |
 | full-height          | dimension   | Occupy full height.           |
@@ -425,7 +433,7 @@ Micro-class reference
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
 | horizontal           | padding, margin     | Padding or margin on left and right.    |
-| hover                |             | Apply rules in hover state    |
+| :hover               |             | Apply rules in hover state    |
 | infront              | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
 | indent-more          | indent      | Indent text more.             |
@@ -449,6 +457,7 @@ Micro-class reference
 | medium               | size        | Medium font size.             |
 | medium               | border      | Medium border width.          |
 | medium-weight        | font-weight | Medium font weight.           |
+| @mobile              |             | Apply only on mobile.         |
 | monospace            | font        | Monospaced font.              |
 | norepeat             | background  | Do not repeat background.     |
 | nowrap               | white-space | Do not wrap.                  |
@@ -484,6 +493,7 @@ Micro-class reference
 | step-end             | transition  | Transition timing "step-end"  |
 | strong               | font-weight | Bold text.                    |
 | success              | colors      | Success color.                |
+| @tablet              |             | Apply only on tablet.         |
 | tight                | space       | Tighter inter-item spacing.   |
 | thick                | border      | Thick border.                  |
 | thin                 | border      | Thin border.                  |
