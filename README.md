@@ -139,40 +139,6 @@ If a page has only one or two such cases, we suggest inlining the rule with the 
 We are not religious zealots, and this can be a better approach than creating a separate CSS file
 and defining an additional class merely in order to target the element.
 
-### Pseudo-classes such as `:hover`
-
-How can we specify hover behavior, or media-query-based responsive behavior,
-using the Morass-style of HTML-centric, micro-class-based rules?
-Normally such rules could be written only in CSS files, not in HTML.
-However, Morass provides a simple solution
-through a simple runtime toegether with classes for the pseudo-elements and media queries.
-Here is an example:
-
-    <div class=":hover red"> I am red if hovered on.</div>
-    <div class="@mobile red">I am red if on mobile. </div>
-
-The `:hover` and `@mobile` are not actual classes.
-They indicate that this element should be styled *if** it is in the `hover` state,
-or **if** we are on a mobile device. They are prefixed with `:` and `@` respectively
-to make this aspect clear.
-
-This behavior requires JavaScript to run.
-Add the following line of code to your system:
-
-    import morass from 'morass';
-    document.addEventListener('DOMContentReady', morass);
-
-Elements added dynamically to the DOM, or dynamic changes to classes,
-will be handled properly.
-
-Classes such as `@mobile` are built-in as defaults,
-but you are free to define your own media queries in the initializer.
-Multiple media classes can be specified, and the rules in question will apply to them all.
-
-The built-in pseudo-classes number more than two dozen.
-You are again free to define your own pseudo-classes and equivalent class names.
-
-
 ### Composability
 
 Of course if I want to define my own class for an alement, and add padding, I can do
@@ -199,7 +165,7 @@ Core Morass does not make use of `inherit`.
 Micro-class groupings
 ---------------------
 
-This spection walks through each of the main groupings of micro-classes.
+This section walks through each of the main groupings of micro-classes.
 
 ### Spacing
 
@@ -348,7 +314,7 @@ Therefore, if you include your own variable definitions after importing Morass, 
 Micro-class reference
 ---------------
 
-| Name                 | Module      | Description                   |
+ Name                 | Module      | Description                   |
 | -------------------- | ----------- | ----------------------------- |
 | absolute             | position    | Absolute positioniong.        |
 | align-bottom         | flex        | Align flex items to bottom.   |
@@ -406,6 +372,7 @@ Micro-class reference
 | full-height          | dimension   | Occupy full height.           |
 | full-width           | dimension   | Occupy full width.            |
 | groove               | border      | Groove-style border.          |
+| grow                 | flex        | Allow this item to grow.      |
 | hair                 | padding, margin     | Padding or margin of 1/6 em.            |
 | hairline             | font-weight | Lightest font.                |
 | half-height          | dimension   | Occupy half height.           |
@@ -427,6 +394,13 @@ Micro-class reference
 | invert               | background  | Invert background dark/light. |
 | invisible            | visibility  | Make invisible.               |
 | italic               | font-style  | Italics.                      |
+| justify              | flex        | Justify flexbox items.        |
+| justify-gap          | flex        | Justify flexbox items with gap. |
+| justify-h            | flex        | Justify flexbox items horizontally. |
+| justify-h-gap        | flex        | Justify flexbox items horizontally with gap. |
+| justify-v            | flex        | Justify flexbox items vertically. |
+| justify-v-gap        | flex        | Justify flexbox items vertically with gap. |
+| justify              | flex        | Justify flexbox items.        |
 | large                | size        | large font size               |
 | larger               | size        | larger font-size              |
 | last                 | flex        | Place item last in flex order. |
@@ -491,7 +465,9 @@ Micro-class reference
 | vertical             | flex        | Column-oriented flex container. |
 | vertical             | padding, margin     | Padding or margin on top and bottom. |
 | visible              | visibility  | Make visible.                 |
+| wrap                 | flex        | Wrap flexbox items.           |
 | x-bold               | font-weight | Font weight 800.              |
+| x-grow               | flex        | Allow this item to grow more. |
 | x-light              | font-weight | Extra-light font.             |
 | x-loose              | space       | Very loose inter-item spacing. |
 | x-small              | size        | Very small font size.         |
