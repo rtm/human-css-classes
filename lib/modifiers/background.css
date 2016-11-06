@@ -29,3 +29,7 @@ Background-related micro-classes.
 .inverse.bg-success   { background-color: hsl(var(--hue-success),   var(--saturation-default), var(--lightness-dark)); }
 .inverse.bg-warn      { background-color: hsl(var(--hue-warn),      var(--saturation-default), var(--lightness-dark)); }
 .inverse.bg-error     { background-color: hsl(var(--hue-error),     var(--saturation-default), var(--lightness-dark)); }
+
+/* SIZES */
+.cover { background-size: cover; }
+.contain { background-size: contain; }

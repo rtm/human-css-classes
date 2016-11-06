@@ -307,7 +307,7 @@ To use the pre-built version, use `dist/index.css`.
 Notice, however, that this will not handle any variables you define yourself.
 
 For your own Morass-type styles, we recommend following the Morass directory structure of `elements`/`modifiers`/`variables`.
-Note that suitCSS always uses the most recently define variable value.
+Note that suitCSS always uses the most recently defined variable value.
 Therefore, if you include your own variable definitions after importing Morass, they will take effect.
 
 
@@ -342,6 +342,8 @@ Micro-class reference
 | bottom               | margin      | Add margin on bottom.         |
 | capitalize           | text-transform | Capitalized text.          |
 | condensed            | letter-spacing | Condense space between letters. |
+| contain              | background  | Clip background image         |
+| cover                | background  | Letterbox background image    |
 | default              | colors      | Default color.                |
 | delay                | transition  | Delay transition.             |
 | dashed               | border      | Dashed border.                |
@@ -435,6 +437,14 @@ Micro-class reference
 | right                | padding, margin     | Padding or margin on right.                 |
 | rounded              | border      | Rounded border.               |
 | rounded-more         | border      | More rounded border.          |
+| self-baseline        | flex        | Align flex child to baseline. |
+| self-bottom          | flex        | Align flex child to bottom.   |
+| self-center          | flex        | Align flex child to center.   |
+| self-left            | flex        | Align flex child to left.     |
+| self-middle          | flex        | Align flex child to middle.   |
+| self-right           | flex        | Align flex child to right.    |
+| self-stretch         | flex        | Stretch flex child.           |
+| self-top             | flex        | Align flex child to top.      |
 | semi-bold            | font-weight | Weight between normal and bold. |
 | semi-opaque          | opacity     | 50% opacity.                  |
 | show                 | display     | Display as block.             |

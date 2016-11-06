@@ -33,12 +33,14 @@ grow              Allow this item to grow.
 x-grow            Allow this item to grow more.
 no-shrink         Do not allow this item to shrink.
 
-self-top
-self-middle
-self-bottom
-self-left
-self-center
-self-right
+self-top          Align flex child to top.
+self-middle       Align flex child to middle.
+self-bottom       Align flex child to bottom.
+self-left         Align flex child to left.
+self-center       Align flex child to center.
+self-right        Align flex child to right.
+self-stretch      Stretch flex child.
+self-baselnie     Align flex child to baseline.
 */
 
 /*
@@ -131,3 +133,13 @@ Provide micro-classes for common cases of grow and shrink.
 /* ORDER */
 .first { order: -99; }
 .last  { order: +99; }
+
+/* Self-alignment (of flex children) */
+.flex .self-top      { align-self: flex-start; }
+.flex .self-middle   { align-self: center; }
+.flex .self-bottom   { align-self: flex-end; }
+.flex .self-left     { align-self: flex-start; }
+.flex .self-center   { align-self: center; }
+.flex .self-right    { align-self: flex-end; }
+.flex .self-stretch  { align-self: stretch; }
+.flex .self-baseline { align-self: baseline; }

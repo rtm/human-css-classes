@@ -174,6 +174,12 @@ Background-related micro-classes.
 
 .inverse.bg-error     { background-color: hsl(0,     50%, 20%); }
 
+/* SIZES */
+
+.cover { background-size: cover; }
+
+.contain { background-size: contain; }
+
 /*
 lib/modifiers/clip.css
 
@@ -311,12 +317,14 @@ grow              Allow this item to grow.
 x-grow            Allow this item to grow more.
 no-shrink         Do not allow this item to shrink.
 
-self-top
-self-middle
-self-bottom
-self-left
-self-center
-self-right
+self-top          Align flex child to top.
+self-middle       Align flex child to middle.
+self-bottom       Align flex child to bottom.
+self-left         Align flex child to left.
+self-center       Align flex child to center.
+self-right        Align flex child to right.
+self-stretch      Stretch flex child.
+self-baselnie     Align flex child to baseline.
 */
 
 /*
@@ -440,6 +448,24 @@ Provide micro-classes for common cases of grow and shrink.
 .first { -webkit-box-ordinal-group: -98; -webkit-order: -99; -ms-flex-order: -99; order: -99; }
 
 .last  { -webkit-box-ordinal-group: 100; -webkit-order: +99; -ms-flex-order: +99; order: +99; }
+
+/* Self-alignment (of flex children) */
+
+.flex .self-top      { -webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start; }
+
+.flex .self-middle   { -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }
+
+.flex .self-bottom   { -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end; }
+
+.flex .self-left     { -webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start; }
+
+.flex .self-center   { -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }
+
+.flex .self-right    { -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end; }
+
+.flex .self-stretch  { -webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch; }
+
+.flex .self-baseline { -webkit-align-self: baseline; -ms-flex-item-align: baseline; align-self: baseline; }
 
 /*
 modifiers/font-family.css
