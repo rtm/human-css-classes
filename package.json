@@ -1,6 +1,6 @@
 {
   "name": "morass",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A More Obvious, Reasonable Approach to Style Sheets",
   "main": "index.js",
   "scripts": {
