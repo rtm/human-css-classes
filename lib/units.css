@@ -1,0 +1,40 @@
+/*
+variables/units.css
+
+Units, such as lengths
+*/
+
+/* LENGTHS */
+:root {
+  --em:   1.00em;
+  --en:   0.50em;
+  --less: 0.25em;  /* non-standard; consider deprecating */
+  --thin: 0.20em;
+  --hair: 0.05em;
+  --zero: 0;
+}
+
+.em                 { --length: calc(var(--number) * 1em);  }
+.in, .inch, .inches { --length: calc(var(--number) * 1in);  }
+.rem                { --length: calc(var(--number) * 1rem); }
+.px                 { --length: calc(var(--number) * 1px);  }
+.pc, .picas         { --length: calc(var(--number) * 1pc);  }
+.pt, .points        { --length: calc(var(--number) * 1pt);  }
+.px, .pixels        { --length: calc(var(--number) * 1px);  }
+.ex                 { --length: calc(var(--number) * 1ex);  }
+.q                  { --length: calc(var(--number) * 1q;)   }
+.cm, .centimeter, .centimeters   { --length: calc(var(--number) * 1cm);  }
+.mm, .millimeter, .millimeters   { --length: calc(var(--number) * 1mm);  }
+.ch                 { --length: calc(var(--number) * 1ch);   }
+.vw                 { --length: calc(var(--number) * 1vw);   }
+.vh                 { --length: calc(var(--number) * 1vh);   }
+.vmin               { --length: calc(var(--number) * 1vmin); }
+.vmax               { --length: calc(var(--number) * 1vmax); }
+
+.ms, .milliseconds  { --length: calc(var(--number) * 1ms);   }
+.s, .seconds, .second { --length: calc(var(--number) * 1s;)  }
+
+.deg, .degrees      { --length: calc(var(--number) * 1deg);  }
+.grad, .gradians    { --length: calc(var(--number) * 1grad); }
+.rad, .radians      { --length: calc(var(--number) * 1rad);  }
+.turn, .turns       { --length: calc(var(--number) * 1turn); }

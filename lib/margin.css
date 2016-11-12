@@ -1,0 +1,16 @@
+/*
+modifiers/margin.css
+
+Morass micro-classes for margins.
+Default is `em`.
+*/
+
+.margin      { --length: 1em; }
+
+.margin.left   { margin-left:   var(--length); }
+.margin.right  { margin-right:  var(--length); }
+.margin.top    { margin-top:    var(--length); }
+.margin.bottom { margin-bottom: var(--length); }
+
+/* With no side modifier, set on all sides. */
+.margin:not(.top):not(.bottom):not(.left):not(.right) { margin: var(--length); }

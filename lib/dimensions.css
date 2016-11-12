@@ -1,0 +1,8 @@
+/*
+lib/modifiers/dimension.css
+
+Widths and heights.
+*/
+
+.width  { width:  var(--length); }
+.height { height: var(--length); }

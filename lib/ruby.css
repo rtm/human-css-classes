@@ -1,0 +1,21 @@
+/*
+modifiers/ruby.css
+
+Morass pseudo-classes for ruby.
+*/
+
+.ruby.inter-character { ruby-position: inter-character; }
+.ruby.left            { ruby-position: left;       }
+.ruby.over            { ruby-position: over;       }
+.ruby.right           { ruby-position: right;      }
+.ruby.under           { ruby-position: under;      }
+
+.ruby.align-start     { ruby-align: start;         }
+.ruby-align-center    { ruby-align: center;        }
+
+/* These class names are meant to be aligned with those for flex. */
+.ruby.justify         { ruby-align: space-between; }
+.ruby.justify-gap     { ruby-align: space-around;  }
+
+.ruby-separate        { ruby-merge: separate;      }
+.ruby-collapse        { ruby-merge: collapse;      }

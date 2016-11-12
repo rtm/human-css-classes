@@ -1,0 +1,59 @@
+/**
+ * Text-related utilities.
+ **/
+
+/* FONT WEIGHT */
+.text.hairline    { font-weight: 100; }
+.text.xx-light    { font-weight: 100; }
+.text.extra-light { font-weight: 200; }
+.text.x-light     { font-weight: 200; }
+.text.ultra-light { font-weight: 200; }
+.text.light       { font-weight: 300; }
+.text.normal      { font-weight: 400; }
+.text.medium      { font-weight: 500; }
+.text.semi-bold   { font-weight: 600; }
+.text.demi-bold   { font-weight: 600; }
+.text.bold        { font-weight: 700; }
+.text.strong      { font-weight: 700; }
+.text.extra-bold  { font-weight: 800; }
+.text.x-bold      { font-weight: 800; }
+.text.ultra-bold  { font-weight: 800; }
+.text.heavy       { font-weight: 900; }
+.text.xx-bold     { font-weight: 900; }
+
+.text.lighter     { font-weight: lighter; }
+.text.bolder      { font-weight: bolder;  }
+
+.text.medium             { --font-weight: 500;     }
+.text.font-normal        { --font-weight: normal;  }
+.text.font-light         { --font-weight: 300;     }
+.text.x-light           { --font-weight: 200;     }
+.text.xx-light          { --font-weight: 100;     }
+
+
+/* SIZE */
+.text.xx-small    { font-size: xx-small; }
+.text.x-small     { font-size: x-small;  }
+.text.small       { font-size: small;    }
+.text.medium      { font-size: medium;   }
+.text.large       { font-size: large;    }
+.text.x-large     { font-size: x-large;  }
+.text.xx-large    { font-size: xx-large; }
+.text.larger      { font-size: larger;   }
+.text.smaller     { font-size: smaller;  }
+
+/* ITALICS */
+.emphasis         { font-style: italic;   }
+.italic           { font-style: italic;   }
+
+/* TEXT-TRANSFORM */
+.text.upper       { text-transform: uppercase;  }
+.text.lower       { text-transform: lowercase;  }
+.text.capitalize  { text-transform: capitalize; }
+
+.underline        { text-decoration: underline; }
+
+/* ALIGNMENT */
+.text.align-right  { text-align: right;   }
+.text.align-center { text-align: center;  }
+.text.align-left   { text-align: left;    }

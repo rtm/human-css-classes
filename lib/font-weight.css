@@ -12,7 +12,7 @@ font-weight microclasses.
 .semi-bold, .demi-bold               { font-weight: 600; }
 .strong, .bold                       { font-weight: 700; }
 .extra-bold, .x-bold, .ultra-bold    { font-weight: 800; }
-.heavy                               { font-weidht: 900; }
+.heavy                               { font-weight: 900; }
 
 .lighter                             { font-weight: lighter; }
 .bolder                              { font-weight: bolder;  }

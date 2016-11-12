@@ -1,0 +1,25 @@
+/*
+modifiers/list.css
+
+Morass pseudo-classes for lists.
+*/
+
+.list.inside      { list-style-position: inside;  }
+.list.outside     { list-style-position: outside; }
+
+ul.list           { list-style-type: circle;      }
+ol.list           { list-style-type: decimal;     }
+
+.list.alpha       { list-style-type: lower-alpha; }
+.list.alpha.lower { list-style-type: lower-alpha; }
+.list.alpha.upper { list-style-type: upper-alpha; }
+.list.circle      { list-style-type: circle;      }
+.list.decimal     { list-style-type: decimal;     }
+.list.disc        { list-style-type: disc;        }
+.list.none        { list-style-type: none;        }
+.list.roman       { list-style-type: lower-roman; }
+.list.roman.lower { list-style-type: lower-roman; }
+.list.roman.upper { list-style-type: upper-roman; }
+.list.square      { list-style-type: square;      }
+
+.list > * { display: list-item; }

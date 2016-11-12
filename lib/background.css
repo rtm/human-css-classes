@@ -1,0 +1,60 @@
+/*
+modifiers/background.css
+
+Background-related microclasses.
+*/
+
+/* WIDTHS */
+:root {
+  --background-hue-global:        var(--hue-global);
+  --background-saturation-global: var(--saturation-global);
+  --background-lightness-global:  var(--lightness-global);
+  --background-alpha-global:      var(--alpha-global);;
+}
+
+.background {
+  --background-hue:        var(--background-hue-global, var(--hue-global));
+  --background-saturation: var(--background-saturation-global, var(--saturation-global));
+  --background-lightness:  var(--background-lightness-global, var(--lightness-global));
+  --background-alpha:      var(--background-alpha-globaal, var(--alpha-global));
+
+  background-color: hsla(var(--background-hue), var(--background-saturation), var(--background-lightness), var(--background-alpha));
+}
+
+.background.primary    { --background-hue: var(--hue-primary);    }
+.background.secondary  { --background-hue: var(--hue-secondary);  }
+.background.success    { --background-hue: var(--hue-success);    }
+.background.warn       { --background-hue: var(--hue-warn);       }
+.background.error      { --background-hue: var(--hue-error);      }
+
+.background.red        { --background-hue: var(--hue-red);        }
+.background.orange     { --background-hue: var(--hue-orange);     }
+.background.yellow     { --background-hue: var(--hue-yellow);     }
+.background.lime       { --background-hue: var(--hue-lime);       }
+.background.green      { --background-hue: var(--hue-green);      }
+.background.aquamarine { --background-hue: var(--hue-aquamarine); }
+.background.cyan       { --background-hue: var(--hue-cyan);       }
+.background.azure      { --background-hue: var(--hue-azure);      }
+.background.blue       { --background-hue: var(--hue-blue);       }
+.background.purple     { --background-hue: var(--hue-purple);     }
+.background.magenta    { --background-hue: var(--hue-magenta);    }
+.background.pink       { --background-hue: var(--hue-pink);       }
+
+.background.pure       { --background-saturation: var(--saturation-pure);     }
+.background.x-bright   { --background-saturation: var(--saturation-x-bright); }
+.background.bright     { --background-saturation: var(--saturation-bright);   }
+.background.dull       { --background-saturation: var(--saturation-dull);     }
+.background.x-dull     { --background-saturation: var(--saturation-x-dull);   }
+.background.gray       { --background-saturation: var(--saturation-gray);     }
+
+.background.white      { --background-lightness: var(--lightness-white);      }
+.background.x-light    { --background-lightness: var(--lightness-x-light);    }
+.background.light      { --background-lightness: var(--lightness-light);      }
+.background.dark       { --background-lightness: var(--lightness-dark);       }
+.background.x-dark     { --background-lightness: var(--lightness-x-dark);     }
+.background.black      { --background-lightness: var(--lightness-black);      }
+
+.background-opaque        { --background-alpha: var(--alpha-opaque);          }
+.background-translucent   { --background-alpha: var(--translucent);           }
+.background-x-translucent { --background-alpha: var(--alpha-x-translucent);   }
+.background-transparent   { --background-alpha: var(--alpha-transparent);     }

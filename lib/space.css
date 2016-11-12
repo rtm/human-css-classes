@@ -13,7 +13,7 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
 }
 
 /* Do not apply the spacing to the last child. */
-.spaced  > *::after::last-child { content: ''; }
+.spaced  > *::after:last-child { content: ''; }
 
 .spaced         > *::after { line-height: 1; }
 .spaced.loose   > *::after { line-height: 1.5;   }

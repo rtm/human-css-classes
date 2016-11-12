@@ -1,9 +1,0 @@
-/**
-lib/variables/index.css
-
-Import Morass variable sub-files.
-*/
-
-@import "./colors";
-@import "./hsl";
-@import "./units";

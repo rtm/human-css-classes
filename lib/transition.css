@@ -7,14 +7,14 @@ Micro-classes to manage transitions.
 /* TRANSITION ALL PROPERTIES */
 .transition {
   transition-property: all;
-  transition-duration: 0.8s;
+  transition-duration: var(--length);
 }
 
 /* DURATION */
-.fast        { transition-duration: 0.4s; }
-.faster      { transition-duration: 0.2s; }
-.slow        { transition-duration: 0.8s; }
-.slower      { transition-duration: 1.6s; }
+.fast        { --length: 0.4s; }
+.faster      { --length: 0.2s; }
+.slow        { --length: 0.8s; }
+.slower      { --length: 1.6s; }
 
 /* TIMING FUNCTIONS */
 .ease        { transition-timing-function: ease;        }

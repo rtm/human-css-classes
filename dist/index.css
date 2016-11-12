@@ -5,48 +5,122 @@ Entry point for Morass CSS.
 */
 
 /*
-morass/lib/index.css
-
-Import variables, elements, and modifiers.
-*/
-
-/**
-lib/variables/index.css
-
-Import Morass variable sub-files.
-*/
-
-/*
-lib/variables/colors.css
-
-Default colors for Morass.
-These will almost certainly be overridden by the user.
-
-The color `default` has no hue--it is a gray scale.
-*/
-
-/**
- * styles/variables/hsl.css
- *
- * Variables for HSL.
- */
-
-/*
-variables/units.css
-
-Units, such as lengths
-*/
-
-/* LENGTHS */
-
-:root {  /* non-standard; consider deprecating */
-}
-
-/*
 morass/lib/elements/index.css
 
-Bring in Morass element CSS.
+Bring in Morass CSS.
 */
+
+/**
+* modifiers/align.css
+*
+* Alignment-related modifiers.
+**/
+
+.align.left        { text-align: left;        }
+
+.align.right       { text-align: right;       }
+
+.align.center      { text-align: center;      }
+
+.align.justify     { text-align: justify;     }
+
+.align.justify-all { text-align: justify-all; }
+
+.align.top         { vertical-align: top;     }
+
+.align.bottom      { vertical-align: bottom;  }
+
+.align.middle      { vertical-align: middle;  }
+
+/*
+modifiers/background.css
+
+Background-related microclasses.
+*/
+
+/* WIDTHS */
+
+:root {
+  --background-hue-global:        var(--hue-global);
+  --background-saturation-global: var(--saturation-global);
+  --background-lightness-global:  var(--lightness-global);
+  --background-alpha-global:      var(--alpha-global);;
+}
+
+.background {
+  --background-hue:        var(--background-hue-global, var(--hue-global));
+  --background-saturation: var(--background-saturation-global, var(--saturation-global));
+  --background-lightness:  var(--background-lightness-global, var(--lightness-global));
+  --background-alpha:      var(--background-alpha-globaal, var(--alpha-global));
+
+  background-color: hsla(var(--background-hue), var(--background-saturation), var(--background-lightness), var(--background-alpha));
+}
+
+.background.primary    { --background-hue: var(--hue-primary);    }
+
+.background.secondary  { --background-hue: var(--hue-secondary);  }
+
+.background.success    { --background-hue: var(--hue-success);    }
+
+.background.warn       { --background-hue: var(--hue-warn);       }
+
+.background.error      { --background-hue: var(--hue-error);      }
+
+.background.red        { --background-hue: var(--hue-red);        }
+
+.background.orange     { --background-hue: var(--hue-orange);     }
+
+.background.yellow     { --background-hue: var(--hue-yellow);     }
+
+.background.lime       { --background-hue: var(--hue-lime);       }
+
+.background.green      { --background-hue: var(--hue-green);      }
+
+.background.aquamarine { --background-hue: var(--hue-aquamarine); }
+
+.background.cyan       { --background-hue: var(--hue-cyan);       }
+
+.background.azure      { --background-hue: var(--hue-azure);      }
+
+.background.blue       { --background-hue: var(--hue-blue);       }
+
+.background.purple     { --background-hue: var(--hue-purple);     }
+
+.background.magenta    { --background-hue: var(--hue-magenta);    }
+
+.background.pink       { --background-hue: var(--hue-pink);       }
+
+.background.pure       { --background-saturation: var(--saturation-pure);     }
+
+.background.x-bright   { --background-saturation: var(--saturation-x-bright); }
+
+.background.bright     { --background-saturation: var(--saturation-bright);   }
+
+.background.dull       { --background-saturation: var(--saturation-dull);     }
+
+.background.x-dull     { --background-saturation: var(--saturation-x-dull);   }
+
+.background.gray       { --background-saturation: var(--saturation-gray);     }
+
+.background.white      { --background-lightness: var(--lightness-white);      }
+
+.background.x-light    { --background-lightness: var(--lightness-x-light);    }
+
+.background.light      { --background-lightness: var(--lightness-light);      }
+
+.background.dark       { --background-lightness: var(--lightness-dark);       }
+
+.background.x-dark     { --background-lightness: var(--lightness-x-dark);     }
+
+.background.black      { --background-lightness: var(--lightness-black);      }
+
+.background-opaque        { --background-alpha: var(--alpha-opaque);          }
+
+.background-translucent   { --background-alpha: var(--translucent);           }
+
+.background-x-translucent { --background-alpha: var(--alpha-x-translucent);   }
+
+.background-transparent   { --background-alpha: var(--alpha-transparent);     }
 
 /*
 elements/body.css
@@ -65,154 +139,6 @@ body {
 }
 
 /*
-elements/heading.css
-
-Styling of `heading` element.
-To make this work, enclose your `h1` tags etc. in `heading` tags.
-This design is intended to localize the effect of specifying the `heading` font-family.
-*/
-
-heading {
-  /* To define the `heading` font-family, use a `@font-face` directive.
-     For instance, `@font-face { font-family: heading; src: local(Arial), local(Helvetica); }`.
-     The counterpart of `heading` for body elements is `body`.
-   */
-  font-family: heading;
-}
-
-/*
-lib/elements/q.css
-
-Morass rules for `<q>`.
-*/
-
-/* Define smart quotes. */
-
-q { quotes: '\201c' '\201d'; }
-
-q::before { content: open-quote; }
-
-q::after  { content: close-quote; }
-
-/**
- * lib/modifiers/index.css
- *
- * Include individual CSS files for modifiers.
- * Modifiers are orthogonal micro-classes,
- * often interacting with surrounding elements and other classes.
- */
-
-/**
-* modifiers/align.css
-*
-* Alignment-related modifiers.
-**/
-
-:not(.flex).left        { text-align: left; }
-
-:not(.flex).right       { text-align: right; }
-
-:not(.flex).center      { text-align: center; }
-
-:not(.flex).justify     { text-align: justify; }
-
-:not(.flex).justify-all { text-align: justify-all; }
-
-:not(.flex).top         { vertical-align: top; }
-
-:not(.flex).bottom      { vertical-align: bottom; }
-
-:not(.flex).middle      { vertical-align: middle; }
-
-/*
-morass/lib/modifiers/background.css
-
-Background-related micro-classes.
-*/
-
-/* REPEAT */
-
-.norepeat { background-repeat: norepeat; }
-
-.repeat-x { background-repeat: repeat-x; }
-
-.repeat-y { background-repeat: repeat-y; }
-
-/* TODO: handle `space` and `round` */
-
-/* COLORS */
-
-.bg-default          { background-color: hsl(0, 0%, 80%); }
-
-.bg-primary          { background-color: hsl(240,   50%, 80%); }
-
-.bg-secondary        { background-color: hsl(270, 50%, 80%); }
-
-.bg-success          { background-color: hsl(120,   50%, 80%); }
-
-.bg-warn             { background-color: hsl(30,      50%, 80%); }
-
-.bg-error            { background-color: hsl(0,     50%, 80%); }
-
-.bg-white            { background-color: white; }
-
-.bg-black            { background-color: black; }
-
-.inverse .bg-white, .inverse.bg-white    { background-color: black; }
-
-.inverse .bg-black, .inverse.bg-black    { background-color: white; }
-
-.inverse.bg-default   { background-color: hsl(0, 0%, 20%); }
-
-.inverse.bg-primary   { background-color: hsl(240,   50%, 20%); }
-
-.inverse.bg-secondary { background-color: hsl(270, 50%, 20%); }
-
-.inverse.bg-success   { background-color: hsl(120,   50%, 20%); }
-
-.inverse.bg-warn      { background-color: hsl(30,      50%, 20%); }
-
-.inverse.bg-error     { background-color: hsl(0,     50%, 20%); }
-
-/* SIZES */
-
-.cover { background-size: cover; }
-
-.contain { background-size: contain; }
-
-/*
-lib/modifiers/clip.css
-
-Morass micro-classes for clipping (overflow handling).
-*/
-
-.clip       { overflow:   hidden; }
-
-.clip-x     { overflow-x: hidden; }
-
-.clip-y     { overflow-y: hidden; }
-
-.scroll     { overflow:   scroll; }
-
-.scroll-x   { overflow-x: scroll; }
-
-.scroll-y   { overflow-y: scroll; }
-
-/*
-modifiers/column.css
-
-Column-related microclasses.
-*/
-
-.one-column    { -webkit-column-count: 1; -moz-column-count: 1; column-count: 1; }
-
-.two-columns   { -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; }
-
-.three-columns { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; }
-
-.four-columns  { -webkit-column-count: 4; -moz-column-count: 4; column-count: 4; }
-
-/*
 modifiers/cursor.css
 
 Morass micro-classes for cursor.
@@ -221,50 +147,264 @@ Morass micro-classes for cursor.
 .pointer { cursor: pointer; }
 
 /*
+modifiers/border.css
+
+Border-related microclasses.
+*/
+
+/* WIDTHS */
+
+:root {
+  --border-width-global:      medium;
+  --border-style-global:      none;
+  --border-hue-global:        var(--hue-global);
+  --border-saturation-global: var(--saturation-global);
+  --border-lightness-global:  var(--lightness-global);
+  --border-alpha-global:      var(--alpha-global);;
+}
+
+.border {
+  --border-width:      var(--border-width-global);
+  --border-style:      var(--border-style-global);
+  --border-hue:        var(--border-hue-global, var(--hue-global));
+  --border-saturation: var(--border-saturation-global, var(--saturation-global));
+  --border-lightness:  var(--border-lightness-global, var(--lightness-global));
+  --border-alpha:      var(--border-alpha-globaal, var(--alpha-global));
+}
+
+.border            { --border-width: medium; }
+
+.border.medium     { --border-width: medium; }
+
+.border.thin       { --border-width: thin;   }
+
+.border.thick      { --border-width: thick;  }
+
+.border.hair       { --border-width: var(--hair); }
+
+.border.em         { --border-width: var(--em); }
+
+/* COLORS */
+
+.border.primary    { --border-hue: var(--hue-primary);    }
+
+.border.secondary  { --border-hue: var(--hue-secondary);  }
+
+.border.success    { --border-hue: var(--hue-success);    }
+
+.border.warn       { --border-hue: var(--hue-warn);       }
+
+.border.error      { --border-hue: var(--hue-error);      }
+
+.border.red        { --border-hue: var(--hue-red);        }
+
+.border.orange     { --border-hue: var(--hue-orange);     }
+
+.border.yellow     { --border-hue: var(--hue-yellow);     }
+
+.border.lime       { --border-hue: var(--hue-lime);       }
+
+.border.green      { --border-hue: var(--hue-green);      }
+
+.border.aquamarine { --border-hue: var(--hue-aquamarine); }
+
+.border.cyan       { --border-hue: var(--hue-cyan);       }
+
+.border.azure      { --border-hue: var(--hue-azure);      }
+
+.border.blue       { --border-hue: var(--hue-blue);       }
+
+.border.purple     { --border-hue: var(--hue-purple);     }
+
+.border.magenta    { --border-hue: var(--hue-magenta);    }
+
+.border.pink       { --border-hue: var(--hue-pink);       }
+
+.border.pure       { --border-saturation: var(--saturation-pure);     }
+
+.border.x-bright   { --border-saturation: var(--saturation-x-bright); }
+
+.border.bright     { --border-saturation: var(--saturation-bright);   }
+
+.border.dull       { --border-saturation: var(--saturation-dull);     }
+
+.border.x-dull     { --border-saturation: var(--saturation-x-dull);   }
+
+.border.gray       { --border-saturation: var(--saturation-gray);     }
+
+.border.white      { --border-lightness: var(--lightness-white);      }
+
+.border.x-light    { --border-lightness: var(--lightness-x-light);    }
+
+.border.light      { --border-lightness: var(--lightness-light);      }
+
+.border.dark       { --border-lightness: var(--lightness-dark);       }
+
+.border.x-dark     { --border-lightness: var(--lightness-x-dark);     }
+
+.border.black      { --border-lightness: var(--lightness-black);      }
+
+.border-opaque        { --border-alpha: var(--alpha-opaque);          }
+
+.border-translucent   { --border-alpha: var(--translucent);           }
+
+.border-x-translucent { --border-alpha: var(--alpha-x-translucent);   }
+
+.border-transparent   { --border-alpha: var(--alpha-transparent);     }
+
+/* STYLES */
+
+.border           { --border-style: solid;  }
+
+.border.solid     { --border-style: solid;  }
+
+.border.dotted    { --border-style: dotted; }
+
+.border.dashed    { --border-style: dashed; }
+
+.border.groove    { --border-style: groove; }
+
+.border.ridge     { --border-style: ridge;  }
+
+.border-inset     { --border-style: insert; }
+
+.border.outset    { --border-style: outset; }
+
+/* BORDER RADIUS */
+
+.border.rounded   { border-radius: 0.5em; }
+
+.border.x-rounded { border-radius: 1.0em; }
+
+.border.left   { border-left-style:   var(--border-style); }
+
+.border.right  { border-right-style:  var(--border-style); }
+
+.border.top    { border-top-style:    var(--border-style); }
+
+.border.bottom { border-bottom-style: var(--border-style); }
+
+.border:not(.top):not(.bottom):not(.left):not(.right) { border-style: var(--border-style); }
+
+.border           {
+  border-color: hsla(var(--border-hue), var(--border-saturation), var(--border-lightness), var(--border-alpha));
+  border-width: var(--border-width);
+}
+
+/**
+lib/modifiers/colors.css
+
+Micro-classes for text colors.
+*/
+
+:root {
+  --text-hue-global:        var(--hue-global);
+  --text-saturation-global: var(--saturation-global);
+  --text-lightness-global:  var(--lightness-global);
+  --text-alpha-global:      var(--alpha-global);;
+}
+
+.text {
+  --text-hue:        var(--text-hue-global, var(--hue-global));
+  --text-saturation: var(--text-saturation-global, var(--saturation-global));
+  --text-lightness:  var(--text-lightness-global, var(--lightness-global));
+  --text-alpha:      var(--text-alpha-globaal, var(--alpha-global));
+
+  color: hsla(var(--text-hue), var(--text-saturation), var(--text-lightness), var(--text-alpha));
+}
+
+.text.primary     { --text-hue: var(--primary-hue); }
+
+.text.secondary   { --text-hue: var(--secondary-hue); }
+
+.text.success     { --text-hue: var(--success-hue); }
+
+.text.warn        { --text-hue: var(--warn-hue); }
+
+.text.error       { --text-hue: var(--error-hue); }
+
+.text.red        { --text-hue: var(--hue-red);        }
+
+.text.orange     { --text-hue: var(--hue-orange);     }
+
+.text.yellow     { --text-hue: var(--hue-yellow);     }
+
+.text.lime       { --text-hue: var(--hue-lime);       }
+
+.text.green      { --text-hue: var(--hue-green);      }
+
+.text.aquamarine { --text-hue: var(--hue-aquamarine); }
+
+.text.cyan       { --text-hue: var(--hue-cyan);       }
+
+.text.azure      { --text-hue: var(--hue-azure);      }
+
+.text.blue       { --text-hue: var(--hue-blue);       }
+
+.text.purple     { --text-hue: var(--hue-purple);     }
+
+.text.magenta    { --text-hue: var(--hue-magenta);    }
+
+.text.pink       { --text-hue: var(--hue-pink);       }
+
+.text.pure       { --text-saturation: var(--saturation-pure);     }
+
+.text.x-bright   { --text-saturation: var(--saturation-x-bright); }
+
+.text.bright     { --text-saturation: var(--saturation-bright);   }
+
+.text.dull       { --text-saturation: var(--saturation-dull);     }
+
+.text.x-dull     { --text-saturation: var(--saturation-x-dull);   }
+
+.text.gray       { --text-saturation: var(--saturation-gray);     }
+
+.text.white      { --text-lightness: var(--lightness-white);      }
+
+.text.x-light    { --text-lightness: var(--lightness-x-light);    }
+
+.text.light      { --text-lightness: var(--lightness-light);      }
+
+.text.dark       { --text-lightness: var(--lightness-dark);       }
+
+.text.x-dark     { --text-lightness: var(--lightness-x-dark);     }
+
+.text.black      { --text-lightness: var(--lightness-black);      }
+
+.text-opaque        { --text-alpha: var(--alpha-opaque);          }
+
+.text-translucent   { --text-alpha: var(--translucent);           }
+
+.text-x-translucent { --text-alpha: var(--alpha-x-translucent);   }
+
+.text-transparent   { --text-alpha: var(--alpha-transparent);     }
+
+/*
+modifiers/column.css
+
+Column-related microclasses.
+The `--number` variable will be set by classes such as "two".
+*/
+
+.columns, .column { column-count: var(--number, 1); }
+
+.column.balance { column-fill: balance; }
+
+.column.auto    { column-fill: auto; }
+
+.column.span    { column-span: all; -webkit-column-span: all; }
+
+/* TODO: column-rule, column-gap */
+
+/*
 lib/modifiers/dimension.css
 
 Widths and heights.
 */
 
-.full-width, .width-100 { width: 100%; }
+.width  { width:  var(--length); }
 
-.half-width, .width-50 { width: 50%; }
-
-.width-10   { width: 10%; }
-
-.width-20   { width: 20%; }
-
-.width-30   { width: 30%; }
-
-.width-40   { width: 40%; }
-
-.width-60   { width: 60%; }
-
-.width-70   { width: 70%; }
-
-.width-80   { width: 80%; }
-
-.width-90   { width: 90%; }
-
-.full-height { height: 100%; }
-
-.half-height { height: 50%; }
-
-.height-10   { height: 10%; }
-
-.height-20   { height: 20%; }
-
-.height-30   { height: 30%; }
-
-.height-40   { height: 40%; }
-
-.height-60   { height: 60%; }
-
-.height-70   { height: 70%; }
-
-.height-80   { height: 80%; }
-
-.height-90   { height: 90%; }
+.height { height: var(--length); }
 
 /**
 * styles/modifiers/display.css
@@ -332,9 +472,9 @@ Basic display types for flex.
 `inline` is overloaded; by itself it yields `display: inline`.
 */
 
-.flex                  { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;          }
+.flex                  { display: flex;          }
 
-.flex.inline           { display: -webkit-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex;   }
+.flex.inline           { display: inline-flex;   }
 
 /*
 FLEX DIRECTION.
@@ -342,9 +482,9 @@ Note that `vertical` and `horizontal` are also overloaded,
 as defined in `direction.css`.
 */
 
-.flex.vertical         { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+.flex.vertical         { flex-direction: column; }
 
-.flex.horizontal       { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;    }
+.flex.horizontal       { flex-direction: row;    }
 
 /*
 WRAPPING AND REVERSING.
@@ -353,11 +493,11 @@ into its wrapped variants.
 Note: `wrap` is an overloaded property with a different meaning without `flex`.
 */
 
-.flex.wrap             { -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.flex.wrap             { flex-wrap: wrap; }
 
-.flex.reverse          { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse;    }
+.flex.reverse          { flex-direction: row-reverse;    }
 
-.flex.vertical.reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -webkit-flex-direction: column-reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+.flex.vertical.reverse { flex-direction: column-reverse; }
 
 /*
 JUSTIFYING AND ALIGNING.
@@ -376,96 +516,96 @@ or for specifying justification on the cross-axis.
 `justify-gap` requests distributing space to start and end as well as between.
 */
 
-.flex.justify           { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+.flex.justify           { justify-content: space-between; }
 
-.flex.justify-gap       { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; }
+.flex.justify-gap       { justify-content: space-around; }
 
-.flex.align-top         { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; -ms-grid-row-align: flex-start; align-items: flex-start; }
+.flex.align-top         { align-items: flex-start; }
 
-.flex.align-bottom      { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; -ms-grid-row-align: flex-end; align-items: flex-end;   }
+.flex.align-bottom      { align-items: flex-end;   }
 
-.flex.align-middle      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; -ms-grid-row-align: center; align-items: center;     }
+.flex.align-middle      { align-items: center;     }
 
-.flex.align-left        { -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+.flex.align-left        { justify-content: flex-start; }
 
-.flex.align-right       { -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;   }
+.flex.align-right       { justify-content: flex-end;   }
 
-.flex.align-center      { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;     }
+.flex.align-center      { justify-content: center;     }
 
 /* For horizontal containers, `justify-h` is the same as `justify`. */
 
-.flex.justify-h         { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+.flex.justify-h         { justify-content: space-between; }
 
-.flex.justify-h-gap     { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around;  }
+.flex.justify-h-gap     { justify-content: space-around;  }
 
-.flex.justify-v         { -webkit-box-align: space-between; -webkit-align-items: space-between; -ms-flex-align: space-between; -ms-grid-row-align: space-between; align-items: space-between;     }
+.flex.justify-v         { align-items: space-between;     }
 
-.flex.justify-v-gap     { -webkit-box-align: space-around; -webkit-align-items: space-around; -ms-flex-align: space-around; -ms-grid-row-align: space-around; align-items: space-around;      }
+.flex.justify-v-gap     { align-items: space-around;      }
 
-.flex.vertical.justify  { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between;   }
+.flex.vertical.justify  { justify-content: space-between;   }
 
-.flex.vertical.justify-gap { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; }
+.flex.vertical.justify-gap { justify-content: space-around; }
 
-.flex.vertical.align-top    { -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+.flex.vertical.align-top    { justify-content: flex-start; }
 
-.flex.vertical.align-bottom { -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;   }
+.flex.vertical.align-bottom { justify-content: flex-end;   }
 
-.flex.vertical.align-middle { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;     }
+.flex.vertical.align-middle { justify-content: center;     }
 
-.flex.vertical.align-left   { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; -ms-grid-row-align: flex-start; align-items: flex-start; }
+.flex.vertical.align-left   { align-items: flex-start; }
 
-.flex.vertical.align-right  { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; -ms-grid-row-align: flex-end; align-items: flex-end;   }
+.flex.vertical.align-right  { align-items: flex-end;   }
 
-.flex.vertical.align-center { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; -ms-grid-row-align: center; align-items: center;     }
+.flex.vertical.align-center { align-items: center;     }
 
 /* For vertical containers, `justify-v` is the same as `justify`. */
 
-.flex.vertical.justify-h      { -webkit-box-align: space-between; -webkit-align-items: space-between; -ms-flex-align: space-between; -ms-grid-row-align: space-between; align-items: space-between;     }
+.flex.vertical.justify-h      { align-items: space-between;     }
 
-.flex.vertical.justify-h-gap  { -webkit-box-align: space-around; -webkit-align-items: space-around; -ms-flex-align: space-around; -ms-grid-row-align: space-around; align-items: space-around;      }
+.flex.vertical.justify-h-gap  { align-items: space-around;      }
 
-.flex.vertical.justify-v      { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+.flex.vertical.justify-v      { justify-content: space-between; }
 
-.flex.vertical.justify-v-gap  { -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around;  }
+.flex.vertical.justify-v-gap  { justify-content: space-around;  }
 
 /*
 GROWING AND SHRINKING.
 Provide micro-classes for common cases of grow and shrink.
 */
 
-.grow { -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; }
+.grow { flex-grow: 1; }
 
-.x-grow { -webkit-box-flex: 2; -webkit-flex-grow: 2; -ms-flex-positive: 2; flex-grow: 2; }
+.x-grow { flex-grow: 2; }
 
-.no-shrink { -webkit-flex-shrink: 0; -ms-flex-negative: 0; flex-shrink: 0; }
+.no-shrink { flex-shrink: 0; }
 
 /* TODO: add other self items */
 
-.self-stretch { -webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch; }
+.self-stretch { align-self: stretch; }
 
 /* ORDER */
 
-.first { -webkit-box-ordinal-group: -98; -webkit-order: -99; -ms-flex-order: -99; order: -99; }
+.first { order: -99; }
 
-.last  { -webkit-box-ordinal-group: 100; -webkit-order: +99; -ms-flex-order: +99; order: +99; }
+.last  { order: +99; }
 
 /* Self-alignment (of flex children) */
 
-.flex .self-top      { -webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start; }
+.flex .self-top      { align-self: flex-start; }
 
-.flex .self-middle   { -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }
+.flex .self-middle   { align-self: center; }
 
-.flex .self-bottom   { -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end; }
+.flex .self-bottom   { align-self: flex-end; }
 
-.flex .self-left     { -webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start; }
+.flex .self-left     { align-self: flex-start; }
 
-.flex .self-center   { -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }
+.flex .self-center   { align-self: center; }
 
-.flex .self-right    { -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end; }
+.flex .self-right    { align-self: flex-end; }
 
-.flex .self-stretch  { -webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch; }
+.flex .self-stretch  { align-self: stretch; }
 
-.flex .self-baseline { -webkit-align-self: baseline; -ms-flex-item-align: baseline; align-self: baseline; }
+.flex .self-baseline { align-self: baseline; }
 
 /*
 modifiers/font-family.css
@@ -528,11 +668,84 @@ font-weight microclasses.
 
 .extra-bold, .x-bold, .ultra-bold    { font-weight: 800; }
 
-.heavy                               { font-weidht: 900; }
+.heavy                               { font-weight: 900; }
 
 .lighter                             { font-weight: lighter; }
 
 .bolder                              { font-weight: bolder;  }
+
+/*
+elements/heading.css
+
+Styling of `heading` element.
+To make this work, enclose your `h1` tags etc. in `heading` tags.
+This design is intended to localize the effect of specifying the `heading` font-family.
+*/
+
+heading {
+  /* To define the `heading` font-family, use a `@font-face` directive.
+     For instance, `@font-face { font-family: heading; src: local(Arial), local(Helvetica); }`.
+     The counterpart of `heading` for body elements is `body`.
+   */
+  font-family: heading;
+}
+
+/**
+ * styles/variables/hsl.css
+ *
+ * Variables for HSL.
+ */
+
+:root {
+  --hue-red:          0;
+  --hue-orange:       30;
+  --hue-yellow:       60;
+  --hue-lime:         90;
+  --hue-green:        120;
+  --hue-aquamarine:   150;
+  --hue-cyan:         180;
+  --hue-azure:        210;
+  --hue-blue:         240;
+  --hue-purple:       270;
+  --hue-magenta:      300;
+  --hue-pink:         330;
+
+  --saturation-pure:     100%;
+  --saturation-x-bright: 80%;
+  --saturation-bright:   60%;
+  --saturation-default:  50%;
+  --saturation-dull:     40%;
+  --saturation-x-dull:   20%;
+  --saturation-gray:     0%;
+
+  --lightness-white:     100%;
+  --lightness-x-light:   80%;
+  --lightness-light:     60%;
+  --lightness-default:   50%;
+  --lightness-dark:      40%;
+  --lightness-x-dark:    20%;
+  --lightness-black:     0%;
+
+  --alpha-opaque:        1.0;
+  --alpha-translucent:   0.8;
+  --alpha-x-translucent: 0.6;
+  --alpha-transparent:   0.0;
+
+  --hue-global:          var(--hue-primary);
+  --saturation-global:   var(--saturation-default);
+  --lightness-global:    var(--lightness-default);
+  --alpha-global:        var(--alpha-opaque);
+}
+
+/**
+* styles/modifiers/indent.css
+*
+* Test indents.
+**/
+
+.indent      { text-indent: 2em; }
+
+.indent-more { text-indent: 4em; }
 
 /*
 morass/modifiers/letter-spacing.css
@@ -559,6 +772,172 @@ Morass micro-classes for line spacing.
 .space-and-a-half { line-height: 1.5; }
 
 /*
+modifiers/list.css
+
+Morass pseudo-classes for lists.
+*/
+
+.list.inside      { list-style-position: inside;  }
+
+.list.outside     { list-style-position: outside; }
+
+ul.list           { list-style-type: circle;      }
+
+ol.list           { list-style-type: decimal;     }
+
+.list.alpha       { list-style-type: lower-alpha; }
+
+.list.alpha.lower { list-style-type: lower-alpha; }
+
+.list.alpha.upper { list-style-type: upper-alpha; }
+
+.list.circle      { list-style-type: circle;      }
+
+.list.decimal     { list-style-type: decimal;     }
+
+.list.disc        { list-style-type: disc;        }
+
+.list.none        { list-style-type: none;        }
+
+.list.roman       { list-style-type: lower-roman; }
+
+.list.roman.lower { list-style-type: lower-roman; }
+
+.list.roman.upper { list-style-type: upper-roman; }
+
+.list.square      { list-style-type: square;      }
+
+.list > * { display: list-item; }
+
+/*
+modifiers/padding.css
+
+Morass micro-classes for padding.
+Default is `em`.
+*/
+
+.padding      { --length: 1em; }
+
+.padding.left   { padding-left:   var(--length);   }
+
+.padding.right  { padding-right:  var(--length);   }
+
+.padding.top    { padding-top:    var(--length);   }
+
+.padding.bottom { padding-bottom: var(--length);   }
+
+/* With no side modifier, set on all sides. */
+
+.padding:not(.top):not(.bottom):not(.left):not(.right) { padding: var(--length); }
+
+/**
+ * numbers.css
+ *
+ * Morass micro-classes for numbers, such as number of columns.
+ **/
+
+/* NUMBERS */
+
+.zero    { --number: 0; }
+
+.one     { --number: 1; }
+
+.two     { --number: 2; }
+
+.three   { --number: 3; }
+
+.four    { --number: 4; }
+
+.five    { --number: 5; }
+
+.six     { --number: 6; }
+
+.seven   { --number: 7; }
+
+.eight   { --number: 8; }
+
+.nine    { --number: 9; }
+
+.ten     { --number: 10; }
+
+.\31     { --number: 1; }
+
+.\32     { --number: 2; }
+
+.\33     { --number: 3; }
+
+.\34     { --number: 4; }
+
+.\35     { --number: 5; }
+
+.\36     { --number: 6; }
+
+.\37     { --number: 7; }
+
+.\38     { --number: 8; }
+
+.\39     { --number: 9; }
+
+.\31 0   { --number: 10; }
+
+.\31 1   { --number: 11; }
+
+/* and so on*/
+
+/* PERCENTAGES */
+
+.full, .\31 00\%                     { --length: 100%;   }
+
+.half, .one-half, .\31 \/2, .\35 0\% { --length: 50%;    }
+
+.one-third, .\31 \/3                 { --length: 33.33%; }
+
+.one-fourth, .\31 \/4,               { --length: 25%;    }
+
+.three-fourths, .\31 \/4, \37 5\%    { --length: 75%;    }
+
+.\31 0\%        { --length: 10%; }
+
+.\32 0\%        { --length: 20%; }
+
+.\33 0\%        { --length: 30%; }
+
+.\34 0\%        { --length: 40%; }
+
+.\36 0\%        { --length: 60%; }
+
+.\37 0\%        { --length: 70%; }
+
+.\38 0\%        { --length: 80%; }
+
+.\39 0\%        { --length: 90%; }
+
+.\30            { --length: 0; }
+
+.percent { --length: calc(100% * var(--number) / 100); }
+
+/*
+modifiers/margin.css
+
+Morass micro-classes for margins.
+Default is `em`.
+*/
+
+.margin      { --length: 1em; }
+
+.margin.left   { margin-left:   var(--length); }
+
+.margin.right  { margin-right:  var(--length); }
+
+.margin.top    { margin-top:    var(--length); }
+
+.margin.bottom { margin-bottom: var(--length); }
+
+/* With no side modifier, set on all sides. */
+
+.margin:not(.top):not(.bottom):not(.left):not(.right) { margin: var(--length); }
+
+/*
 modifiers/opacity.css
 
 Morass pseudo-classes for opacity.
@@ -570,64 +949,17 @@ Morass pseudo-classes for opacity.
 
 .transparent { opacity: 0;   }
 
-/*
-modifiers/padding.css
+/* overflow.css -- Morass classes related to overflow */
 
-Morass micro-classes for padding.
-Default is `em`.
-*/
+.overflow.scroll { --overflow: scroll; }
 
-.padding.left,        .padding.horizontal      { padding-left: 1.00em;   }
+.overflow.hidden { --overflow: hidden; }
 
-.padding.en.left,     .padding.en.horizontal   { padding-left: 0.50em;   }
+.overflow.x, .overflow.horizontal { overflow-x: var(--overflow); }
 
-.padding.thin.left,   .padding.thin.horizontal { padding-left: 0.20em; }
+.overflow.y, .overflow.vertical   { overflow-y: var(--overflow); }
 
-.padding.hair.left,   .padding.hair.horizontal { padding-left: 0.05em; }
-
-.padding.zero.left,   .padding.zero.horizontal { padding-left:   0;           }
-
-.padding.right,       .padding.horizontal      { padding-right: 1.00em;   }
-
-.padding.en.right,    .padding.en.horizontal   { padding-right: 0.50em;   }
-
-.padding.thin.right,  .padding.this.horizontal { padding-right: 0.20em; }
-
-.padding.hair.right,  .padding.hair.horizontal { padding-right: 0.05em; }
-
-.padding.zero.right,  .padding.zero.horizontal { padding-right:  0;           }
-
-.padding.top,         .padding.vertical        { padding-top: 1.00em;   }
-
-.padding.en.top,      .padding.en.vertical     { padding-top: 0.50em;   }
-
-.padding.thin.top,    .padding.this.vertical   { padding-top: 0.20em; }
-
-.padding.hair.top,    .padding.hair.vertical   { padding-top: 0.05em; }
-
-.padding.zero.top,    .padding.zero.vertical   { padding-top:    0;           }
-
-.padding.bottom,      .padding.vertical        { padding-bottom: 1.00em;   }
-
-.padding.en.bottom,   .padding.en.vertical     { padding-bottom: 0.50em;   }
-
-.padding.thin.bottom, .padding.thin.vertical   { padding-bottom: 0.20em; }
-
-.padding.hair.bottom, .padding.hair.vertical   { padding-bottom: 0.05em; }
-
-.padding.zero.bottom, .padding.zero.vertical   { padding-bottom: 0;           }
-
-/* With no side modifier, set on all sides. */
-
-.padding:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)      { padding: 1.00em;   }
-
-.padding.en:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right)   { padding: 0.50em;   }
-
-.padding.thin:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0.20em; }
-
-.padding.hair:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0.05em; }
-
-.padding.zero:not(.vertical):not(.horizontal):not(.top):not(.bottom):not(.left):not(.right) { padding: 0;           }
+.overflow:not(.x):not(.horizontal):not(.y):not(.vertical) { overflow: var(--overflow); }
 
 /*
 morass/modifiers/position.css
@@ -641,9 +973,23 @@ Micro-classes for CSS `position` property.
 
 .fixed    { position: fixed;    }
 
-.sticky   { position: -webkit-sticky; position: sticky;   }
+.sticky   { position: sticky;   }
 
 .top-left { top: 0; left: 0; }
+
+/*
+lib/elements/q.css
+
+Morass rules for `<q>`.
+*/
+
+/* Define smart quotes. */
+
+q { quotes: '\201c' '\201d'; }
+
+q::before { content: open-quote; }
+
+q::after  { content: close-quote; }
 
 /*
 modifiers/resize.css
@@ -657,65 +1003,35 @@ Morass micro-classes for resizing.
 
 .resize-y, .resize.vertical          { resize: vertical;   }
 
-/**
-lib/modifiers/colors.css
+/*
+modifiers/ruby.css
 
-Micro-classes for standard colors, including inverted versions.
+Morass pseudo-classes for ruby.
 */
 
-/* FOREGROUNDS */
+.ruby.inter-character { ruby-position: inter-character; }
 
-.default          { color: hsl(0,                    0%,                        20%); }
+.ruby.left            { ruby-position: left;       }
 
-.primary          { color: hsl(240,   50%, 20%); }
+.ruby.over            { ruby-position: over;       }
 
-.secondary        { color: hsl(270, 50%, 20%); }
+.ruby.right           { ruby-position: right;      }
 
-.success          { color: hsl(120,   50%, 20%); }
+.ruby.under           { ruby-position: under;      }
 
-.warn             { color: hsl(30,      50%, 20%); }
+.ruby.align-start     { ruby-align: start;         }
 
-.error            { color: hsl(0,     50%, 20%); }
+.ruby-align-center    { ruby-align: center;        }
 
-.white            { color: white; }
+/* These class names are meant to be aligned with those for flex. */
 
-.black            { color: black; }
+.ruby.justify         { ruby-align: space-between; }
 
-.inverse .white, .inverse.white    { color: black; }
+.ruby.justify-gap     { ruby-align: space-around;  }
 
-.inverse .black, .inverse.black    { color: white; }
+.ruby-separate        { ruby-merge: separate;      }
 
-/* INVERTED VERSIONS */
-
-.inverse default   { color: hsl(0,                    0%,                        80%); }
-
-.inverse.primary   { color: hsl(240,   50%, 80%); }
-
-.inverse.secondary { color: hsl(270, 50%, 80%); }
-
-.inverse.success   { color: hsl(120,   50%, 80%); }
-
-.inverse.warn      { color: hsl(30,      50%, 80%); }
-
-.inverse.error     { color: hsl(0,     50%, 80%); }
-
-.xx-small { font-size: xx-small; }
-
-.x-small  { font-size: x-small; }
-
-.small    { font-size: small; }
-
-.medium   { font-size: medium; }
-
-.large    { font-size: large; }
-
-.x-large  { font-size: x-large; }
-
-.xx-large { font-size: xx-large; }
-
-.larger   { font-size: larger; }
-
-.smaller  { font-size: smaller; }
+.ruby-collapse        { ruby-merge: collapse;      }
 
 /*
 modifiers/space.css
@@ -733,7 +1049,7 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
 
 /* Do not apply the spacing to the last child. */
 
-.spaced  > *::after::last-child { content: ''; }
+.spaced  > *::after:last-child { content: ''; }
 
 .spaced         > *::after { line-height: 1; }
 
@@ -749,43 +1065,126 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
  * Text-related utilities.
  **/
 
-.strong, .bold { font-weight: bold; }
+/* FONT WEIGHT */
 
-.x-strong  { font-weight: 900; }
+.text.hairline    { font-weight: 100; }
 
-.light     { font-weight: 100; }
+.text.xx-light    { font-weight: 100; }
 
-.lighter   { font-weight: ligher; }
+.text.extra-light { font-weight: 200; }
 
-.bolder    { font-weight: bolder; }
+.text.x-light     { font-weight: 200; }
 
-.emphasis, .italic  { font-style: italic; }
+.text.ultra-light { font-weight: 200; }
 
-.uppercase { text-transform: uppercase; }
+.text.light       { font-weight: 300; }
 
-.lowercase { text-transform: lowercase; }
+.text.normal      { font-weight: 400; }
 
-.capitalize { text-transform: capitalize; }
+.text.medium      { font-weight: 500; }
 
-.underline { text-decoration: underline; }
+.text.semi-bold   { font-weight: 600; }
 
-.text-right  { text-align: right; }
+.text.demi-bold   { font-weight: 600; }
 
-.text-center { text-align: center; }
+.text.bold        { font-weight: 700; }
 
-.text-left   { text-align: left; }
+.text.strong      { font-weight: 700; }
+
+.text.extra-bold  { font-weight: 800; }
+
+.text.x-bold      { font-weight: 800; }
+
+.text.ultra-bold  { font-weight: 800; }
+
+.text.heavy       { font-weight: 900; }
+
+.text.xx-bold     { font-weight: 900; }
+
+.text.lighter     { font-weight: lighter; }
+
+.text.bolder      { font-weight: bolder;  }
+
+.text.medium             { --font-weight: 500;     }
+
+.text.font-normal        { --font-weight: normal;  }
+
+.text.font-light         { --font-weight: 300;     }
+
+.text.x-light           { --font-weight: 200;     }
+
+.text.xx-light          { --font-weight: 100;     }
+
+/* SIZE */
+
+.text.xx-small    { font-size: xx-small; }
+
+.text.x-small     { font-size: x-small;  }
+
+.text.small       { font-size: small;    }
+
+.text.medium      { font-size: medium;   }
+
+.text.large       { font-size: large;    }
+
+.text.x-large     { font-size: x-large;  }
+
+.text.xx-large    { font-size: xx-large; }
+
+.text.larger      { font-size: larger;   }
+
+.text.smaller     { font-size: smaller;  }
+
+/* ITALICS */
+
+.emphasis         { font-style: italic;   }
+
+.italic           { font-style: italic;   }
+
+/* TEXT-TRANSFORM */
+
+.text.upper       { text-transform: uppercase;  }
+
+.text.lower       { text-transform: lowercase;  }
+
+.text.capitalize  { text-transform: capitalize; }
+
+.underline        { text-decoration: underline; }
+
+/* ALIGNMENT */
+
+.text.align-right  { text-align: right;   }
+
+.text.align-center { text-align: center;  }
+
+.text.align-left   { text-align: left;    }
 
 /*
-morass/modifiers/text-transform.css
+morass/modifiers/visibility.css
 
-Uppercasing, etc.
+Morass micro-classes related to the `visibility` property.
 */
 
-.uppercase  { text-transform: uppercase; }
+.visible   { visibility: visible; }
 
-.lowercase  { text-transform: lowercase; }
+.invisible { visibility: hidden;  }
 
-.capitalize { text-transform: capitalize; }
+/*
+lib/variables/colors.css
+
+Default colors for Morass.
+These will almost certainly be overridden by the user.
+
+The color `default` has no hue--it is a gray scale.
+*/
+
+:root {
+  --hue-primary:   var(--hue-blue);
+  --hue-secondary: var(--hue-purple);
+  --hue-success:   var(--hue-green);
+  --hue-warn:      var(--hue-orange);
+  --hue-error:     var(--hue-red);
+}
 
 /*
 morass/modifiers/transition.css
@@ -796,45 +1195,104 @@ Micro-classes to manage transitions.
 /* TRANSITION ALL PROPERTIES */
 
 .transition {
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  transition-duration: var(--length);
 }
 
 /* DURATION */
 
-.fast        { -webkit-transition-duration: 0.4s; transition-duration: 0.4s; }
+.fast        { --length: 0.4s; }
 
-.faster      { -webkit-transition-duration: 0.2s; transition-duration: 0.2s; }
+.faster      { --length: 0.2s; }
 
-.slow        { -webkit-transition-duration: 0.8s; transition-duration: 0.8s; }
+.slow        { --length: 0.8s; }
 
-.slower      { -webkit-transition-duration: 1.6s; transition-duration: 1.6s; }
+.slower      { --length: 1.6s; }
 
 /* TIMING FUNCTIONS */
 
-.ease        { -webkit-transition-timing-function: ease; transition-timing-function: ease;        }
+.ease        { transition-timing-function: ease;        }
 
-.ease-in     { -webkit-transition-timing-function: ease-in; transition-timing-function: ease-in;     }
+.ease-in     { transition-timing-function: ease-in;     }
 
-.ease-out    { -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out;    }
+.ease-out    { transition-timing-function: ease-out;    }
 
-.ease-in-out { -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; }
+.ease-in-out { transition-timing-function: ease-in-out; }
 
-.linear      { -webkit-transition-timing-function: linear; transition-timing-function: linear;      }
+.linear      { transition-timing-function: linear;      }
 
-.step-start  { -webkit-transition-timing-function: step-start; transition-timing-function: step-start;  }
+.step-start  { transition-timing-function: step-start;  }
 
-.step-end    { -webkit-transition-timing-function: step-end; transition-timing-function: step-end;    }
+.step-end    { transition-timing-function: step-end;    }
 
 /* DELAY */
 
-.delay       { -webkit-transition-delay: 0.8s; transition-delay: 0.8s; }
+.delay       { transition-delay: 0.8s; }
 
-.delay-more  { -webkit-transition-delay: 1.6s; transition-delay: 1.6s; }
+.delay-more  { transition-delay: 1.6s; }
 
-.delay-less  { -webkit-transition-delay: 0.4s; transition-delay: 0.4s; }
+.delay-less  { transition-delay: 0.4s; }
+
+/*
+variables/units.css
+
+Units, such as lengths
+*/
+
+/* LENGTHS */
+
+:root {
+  --em:   1.00em;
+  --en:   0.50em;
+  --less: 0.25em;  /* non-standard; consider deprecating */
+  --thin: 0.20em;
+  --hair: 0.05em;
+  --zero: 0;
+}
+
+.em                 { --length: calc(var(--number) * 1em);  }
+
+.in, .inch, .inches { --length: calc(var(--number) * 1in);  }
+
+.rem                { --length: calc(var(--number) * 1rem); }
+
+.px                 { --length: calc(var(--number) * 1px);  }
+
+.pc, .picas         { --length: calc(var(--number) * 1pc);  }
+
+.pt, .points        { --length: calc(var(--number) * 1pt);  }
+
+.px, .pixels        { --length: calc(var(--number) * 1px);  }
+
+.ex                 { --length: calc(var(--number) * 1ex);  }
+
+.q                  { --length: calc(var(--number) * 1q;)   }
+
+.cm, .centimeter, .centimeters   { --length: calc(var(--number) * 1cm);  }
+
+.mm, .millimeter, .millimeters   { --length: calc(var(--number) * 1mm);  }
+
+.ch                 { --length: calc(var(--number) * 1ch);   }
+
+.vw                 { --length: calc(var(--number) * 1vw);   }
+
+.vh                 { --length: calc(var(--number) * 1vh);   }
+
+.vmin               { --length: calc(var(--number) * 1vmin); }
+
+.vmax               { --length: calc(var(--number) * 1vmax); }
+
+.ms, .milliseconds  { --length: calc(var(--number) * 1ms);   }
+
+.s, .seconds, .second { --length: calc(var(--number) * 1s;)  }
+
+.deg, .degrees      { --length: calc(var(--number) * 1deg);  }
+
+.grad, .gradians    { --length: calc(var(--number) * 1grad); }
+
+.rad, .radians      { --length: calc(var(--number) * 1rad);  }
+
+.turn, .turns       { --length: calc(var(--number) * 1turn); }
 
 /*
 morass/modifiers/white-space.css
@@ -908,4 +1366,3 @@ Define simple z-index-related micro-classes.
 .backmost         { z-index: -999; }
 
 .frontmost        { z-index: +999; }
-

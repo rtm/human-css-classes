@@ -1,0 +1,46 @@
+/**
+ * styles/variables/hsl.css
+ *
+ * Variables for HSL.
+ */
+
+:root {
+  --hue-red:          0;
+  --hue-orange:       30;
+  --hue-yellow:       60;
+  --hue-lime:         90;
+  --hue-green:        120;
+  --hue-aquamarine:   150;
+  --hue-cyan:         180;
+  --hue-azure:        210;
+  --hue-blue:         240;
+  --hue-purple:       270;
+  --hue-magenta:      300;
+  --hue-pink:         330;
+
+  --saturation-pure:     100%;
+  --saturation-x-bright: 80%;
+  --saturation-bright:   60%;
+  --saturation-default:  50%;
+  --saturation-dull:     40%;
+  --saturation-x-dull:   20%;
+  --saturation-gray:     0%;
+
+  --lightness-white:     100%;
+  --lightness-x-light:   80%;
+  --lightness-light:     60%;
+  --lightness-default:   50%;
+  --lightness-dark:      40%;
+  --lightness-x-dark:    20%;
+  --lightness-black:     0%;
+
+  --alpha-opaque:        1.0;
+  --alpha-translucent:   0.8;
+  --alpha-x-translucent: 0.6;
+  --alpha-transparent:   0.0;
+
+  --hue-global:          var(--hue-primary);
+  --saturation-global:   var(--saturation-default);
+  --lightness-global:    var(--lightness-default);
+  --alpha-global:        var(--alpha-opaque);
+}

@@ -1,0 +1,70 @@
+/**
+ * numbers.css
+ *
+ * Morass micro-classes for numbers and percentages.
+ **/
+
+/* NUMBERS */
+.zero    { --number: 0; }
+.one     { --number: 1; }
+.two     { --number: 2; }
+.three   { --number: 3; }
+.four    { --number: 4; }
+.five    { --number: 5; }
+.six     { --number: 6; }
+.seven   { --number: 7; }
+.eight   { --number: 8; }
+.nine    { --number: 9; }
+.ten     { --number: 10; }
+.twenty  { --number: 20; }
+.thirty  { --number: 30; }
+.forty   { --number: 40; }
+.fifty   { --number: 50; }
+.sixty   { --number: 60; }
+.seventy { --number: 70; }
+.eighty  { --number: 80; }
+.ninety  { --number: 90; }
+.hundred, .one-hundred { --number: 100; }
+
+/* Allow use of raw numbers. */
+.\31     { --number: 1; }
+.\32     { --number: 2; }
+.\33     { --number: 3; }
+.\34     { --number: 4; }
+.\35     { --number: 5; }
+.\36     { --number: 6; }
+.\37     { --number: 7; }
+.\38     { --number: 8; }
+.\39     { --number: 9; }
+.\31 0   { --number: 10; }
+.\32 0   { --number: 20; }
+.\33 0   { --number: 30; }
+.\34 0   { --number: 40; }
+.\35 0   { --number: 50; }
+.\36 0   { --number: 60; }
+.\37 0   { --number: 70; }
+.\38 0   { --number: 80; }
+.\39 0   { --number: 90; }
+.\31 00  { --number: 100; }
+
+/* PERCENTAGES */
+.full, .\31 00\%                     { --length: 100%;   }
+.half, .one-half, .\31 \/2, .\35 0\% { --length: 50%;    }
+.one-third, .\31 \/3                 { --length: 33.33%; }
+.one-fourth, .\31 \/4,               { --length: 25%;    }
+.three-fourths, .\31 \/4, \37 5\%    { --length: 75%;    }
+
+/* Support "10%" etc. */
+.\31 0\%        { --length: 10%; }
+.\32 0\%        { --length: 20%; }
+.\33 0\%        { --length: 30%; }
+.\34 0\%        { --length: 40%; }
+.\36 0\%        { --length: 60%; }
+.\37 0\%        { --length: 70%; }
+.\38 0\%        { --length: 80%; }
+.\39 0\%        { --length: 90%; }
+
+.\30            { --length: 0; }
+
+/* Support things such as "ten percent" */
+.percent { --length: calc(100% * var(--number) / 100); }

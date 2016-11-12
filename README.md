@@ -269,9 +269,9 @@ And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, 
 ### Text transforms
 
 ```
-<div class="uppercase">
-<div class="lowercase">
-<div class="capitalize">
+<div class="text upper">
+<div class="text lower">
+<div class="text capitalize">
 <div class="all-caps">
 ```
 
@@ -319,31 +319,28 @@ Micro-class reference
 | absolute             | position    | Absolute positioniong.        |
 | align-bottom         | flex        | Align flex items to bottom.   |
 | align-center         | flex        | Align flex items to left.     |
+| align-center         | ruby        | Align ruby to center.         |
 | align-left           | flex        | Align flex items to left.     |
 | align-middle         | flex        | Align flex items to middle.   |
 | align-right          | flex        | Align flex items to right.    |
+| align-start          | ruby        | Align ruby to start.          |
 | align-top            | flex        | Align flex items to top.      |
+| alpha                | list        | Alpha list markers.           |
+| backmost             | z-index     | Set element to very back.     |
+| background           | background  | Set background color.         |
 | body                 | font-family | Body font family.             |
 | behind               | z-index     | Set element behind.           |
-| bg-default           | background  | Default color background.     |
-| bg-error             | background  | Error color background.       |
-| bg-primary           | background  | Primary color background.     |
-| bg-secondary         | background  | Secondary color background.   |
-| bg-success           | background  | Success color background.     |
-| bg-warn              | background  | Warning color background.     |
 | bold                 | text        | Bold font.                    |
 | bolder               | text        | Increase boldness.            |
-| border-primary       | border      | Primary border color.         |
-| border-secondary     | border      | Secondary border color.       |
-| border-success       | border      | Success border color.         |
-| border-warn          | border      | Warning border color.         |
-| border-error         | border      | Error border color.           |
+| border               | border      | Set border.                   |
 | bottom               | padding     | Pad on bottom.                |
 | bottom               | margin      | Add margin on bottom.         |
 | capitalize           | text-transform | Capitalized text.          |
+| circle               | list        | Circle list marker.           |
 | condensed            | letter-spacing | Condense space between letters. |
 | contain              | background  | Clip background image         |
 | cover                | background  | Letterbox background image    |
+| decimal              | list        | Decimal list markers.         |
 | default              | colors      | Default color.                |
 | delay                | transition  | Delay transition.             |
 | dashed               | border      | Dashed border.                |
@@ -351,6 +348,7 @@ Micro-class reference
 | delay-more           | transition  | Longer delay transition.      |
 | demi-bold            | font-weight | Weight between normal and bold. |
 | @desktop             |             | Apply only on desktop.        |
+| disc                 | list        | Disc list marker.             |
 | dotted               | border      | Dotted border.                |
 | double-spaced        | line-height | Double line spacing.          |
 | ease                 | transition  | Transition timing "ease".     |
@@ -371,6 +369,8 @@ Micro-class reference
 | fixed                | position    | Fixed positioniong.           |
 | flex                 | flex        | Set up flex container.        |
 | four-columns         | column      | Split content into 4 columns. |
+| front                | z-index     | Set element in front.         |
+| frontmost            | z-index     | Set element to very front.    |
 | full-height          | dimension   | Occupy full height.           |
 | full-width           | dimension   | Occupy full width.            |
 | groove               | border      | Groove-style border.          |
@@ -385,19 +385,24 @@ Micro-class reference
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
 | horizontal           | padding, margin     | Padding or margin on left and right.    |
+| horizontal           | overflow    | Set horizontal overflow.      |
 | :hover               |             | Apply rules in hover state    |
-| infront              | z-index     | Set element in front.         |
+| in-front             | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
 | indent-more          | indent      | Indent text more.             |
 | inline               | flex        | Set up inline flex container. |
 | inline               | display     | Inline display.               |
 | inline-block         | display     | Inline block display.         |
 | inset                | border      | Inset-style border.           |
+| inside               | list        | Inside list markers.          |
+| inter-character      | ruby        | Ruby between characters.      |
 | invert               | background  | Invert background dark/light. |
 | invisible            | visibility  | Make invisible.               |
 | italic               | font-style  | Italics.                      |
 | justify              | flex        | Justify flexbox items.        |
+| justify              | ruby        | Justify ruby.                 |
 | justify-gap          | flex        | Justify flexbox items with gap. |
+| justify-gap          | ruby        | Justify ruby with gap.        |
 | justify-h            | flex        | Justify flexbox items horizontally. |
 | justify-h-gap        | flex        | Justify flexbox items horizontally with gap. |
 | justify-v            | flex        | Justify flexbox items vertically. |
@@ -407,21 +412,27 @@ Micro-class reference
 | larger               | size        | larger font-size              |
 | last                 | flex        | Place item last in flex order. |
 | left                 | padding, margin     | Padding or margin on left.                  |
+| left                 | ruby        | Ruby to left.                 |
 | light                | text        | Light font (300).             |
 | lighter              | text        | Decrease boldness.            |
 | linear               | transition  | Transition timing "linear"    |
+| list                 | list        | Define list.                  |
 | loose                | space       | Looser inter-item spacing.    |
-| lowercase            | text-transform | Lower-cased text.          |
+| lower                | text-transform | Lower-cased text.          |
+| lower                | list        | Lower-cased list markers.     |
 | margin               | margin      | Add margin to element.        |
 | medium               | size        | Medium font size.             |
 | medium               | border      | Medium border width.          |
 | medium-weight        | font-weight | Medium font weight.           |
-| @mobile              |             | Apply only on mobile.         |
 | monospace            | font        | Monospaced font.              |
 | norepeat             | background  | Do not repeat background.     |
+| none                 | list        | No list markers.              |
 | nowrap               | white-space | Do not wrap.                  |
 | opaque               | opacity     | Full opacity.                 |
 | outset               | border      | Outset-style border.          |
+| outside              | list        | Outside list markers.         |
+| over                 | ruby        | Ruby on top.                  |
+| overflow             | overflow    | Set overflow behavior.        |
 | padding              | padding     | Pad an element.               |
 | pointer              | cursor      | Pointing cursor.              |
 | preserve-whitespace  | white-space | Do not collapse whitespace.   |
@@ -435,6 +446,8 @@ Micro-class reference
 | reverse              | flex        | Reverse flex order.           |
 | ridge                | border      | Ridge-style border.           |
 | right                | padding, margin     | Padding or margin on right.                 |
+| right                | ruby        | Ruby to right.                |
+| roman                | list        | Roman list markers.           |
 | rounded              | border      | Rounded border.               |
 | rounded-more         | border      | More rounded border.          |
 | self-baseline        | flex        | Align flex child to baseline. |
@@ -456,11 +469,11 @@ Micro-class reference
 | small-caps           | font-variant | Small caps font variant.     |
 | solid                | border      | Solid border.                 |
 | space-and-a-half     | line-height | 1.5 line spacing.             |
+| square               | list        | Square list marker.           |
 | step-start           | transition  | Transition timing "step-start" |
 | step-end             | transition  | Transition timing "step-end"  |
 | strong               | font-weight | Bold text.                    |
 | success              | colors      | Success color.                |
-| @tablet              |             | Apply only on tablet.         |
 | tight                | space       | Tighter inter-item spacing.   |
 | thick                | border      | Thick border.                  |
 | thin                 | border      | Thin border.                  |
@@ -470,10 +483,13 @@ Micro-class reference
 | three-columns        | column      | Split content into 3 columns. |
 | ultra-bold           | font-weight | Bolder than bold.             |
 | ultra-light          | font-weight | Extra-light font.             |
+| under                | ruby        | Ruby on bottom.               |
 | underline            | font-decoration | Underline text.           |
-| uppercase            | text-transform | Uppercased text.           |
+| upper                | text-transform | Uppercased text.           |
+| upper                | list        | Uppercased list marker.       |
 | vertical             | flex        | Column-oriented flex container. |
 | vertical             | padding, margin     | Padding or margin on top and bottom. |
+| vertical             | overflow    | Set vertical                  |
 | visible              | visibility  | Make visible.                 |
 | wrap                 | flex        | Wrap flexbox items.           |
 | x-bold               | font-weight | Font weight 800.              |
@@ -483,6 +499,7 @@ Micro-class reference
 | x-small              | size        | Very small font size.         |
 | x-large              | size        | Very large font size.         |
 | x-strong             | font-weight | Very bold text.               |
+| xx-bold              | font-weight | Font weight 900.              |
 | xx-large             | size        | Very very large font size.    |
 | xx-small             | size        | Very very small font-size.    |
 | warn                 | colors      | Warning color.                |

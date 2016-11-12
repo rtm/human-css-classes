@@ -1,7 +1,7 @@
 /*
 morass/modifiers/visibility.css
 
-Morass micro-classes related to the `visibility` class.
+Morass micro-classes related to the `visibility` property.
 */
 
 .visible   { visibility: visible; }
