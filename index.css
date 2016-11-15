@@ -4,4 +4,7 @@ morass/index.css
 Entry point for Morass CSS.
 */
 
+@import "@rtm/human-css-numbers";
+@import "@rtm/human-css-colors";
+
 @import "./lib/";

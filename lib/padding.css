@@ -14,3 +14,11 @@ Default is `em`.
 
 /* With no side modifier, set on all sides. */
 .padding:not(.top):not(.bottom):not(.left):not(.right) { padding: var(--length); }
+
+/* TODO: handle
+padding-block-end
+padding-block-start
+padding-bottom
+padding-inline-end
+padding-inline-start
+*/

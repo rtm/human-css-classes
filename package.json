@@ -1,7 +1,7 @@
 {
-  "name": "morass",
-  "version": "0.4.0",
-  "description": "A More Obvious, Reasonable Approach to Style Sheets",
+  "name": "@rtm/human-css-classes",
+  "version": "0.3.0",
+  "description": "Human-friendly CSS micro-classes",
   "main": "index.js",
   "scripts": {
     "build": "postcss --use postcss-import --dir dist index.css",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rtm/morass.git"
+    "url": "git+https://github.com/rtm/human-css-classes.git"
   },
   "keywords": [
     "css"
@@ -17,15 +17,15 @@
   "author": "rtm@gol.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rtm/morass/issues"
+    "url": "https://github.com/rtm/human-css-classes/issues"
   },
-  "homepage": "https://github.com/rtm/morass#readme",
+  "homepage": "https://github.com/human-css-classes#readme",
   "devDependencies": {
-    "babel-eslint": "^6.0.2",
-    "babel-preset-es2015": "^6.6.0",
-    "babelify": "^7.2.0",
     "cssnano": "^3.5.2",
     "postcss-cli": "^2.6.0",
     "postcss-import": "^8.2.0"
+  },
+  "dependencies": {
+    "@rtm/human-css-numbers": "^0.1.0"
   }
 }

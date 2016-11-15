@@ -5,6 +5,903 @@ Entry point for Morass CSS.
 */
 
 /*
+index.css: entry point for @rtm/human-css-numbers.
+*/
+
+/* UNITS */
+
+.em                 { --length: calc(var(--number) * 1em);  }
+
+.in, .inch, .inches { --length: calc(var(--number) * 1in);  }
+
+.rem                { --length: calc(var(--number) * 1rem); }
+
+.px                 { --length: calc(var(--number) * 1px);  }
+
+.pc, .picas         { --length: calc(var(--number) * 1pc);  }
+
+.pt, .points        { --length: calc(var(--number) * 1pt);  }
+
+.px, .pixels        { --length: calc(var(--number) * 1px);  }
+
+.ex                 { --length: calc(var(--number) * 1ex);  }
+
+.q                  { --length: calc(var(--number) * 1q;)   }
+
+.cm, .cms, .centimeter, .centimeters   { --length: calc(var(--number) * 1cm);  }
+
+.mm, .mms, .millimeter, .millimeters   { --length: calc(var(--number) * 1mm);  }
+
+.ch                 { --length: calc(var(--number) * 1ch);   }
+
+.vw                 { --length: calc(var(--number) * 1vw);   }
+
+.vh                 { --length: calc(var(--number) * 1vh);   }
+
+.vmin               { --length: calc(var(--number) * 1vmin); }
+
+.vmax               { --length: calc(var(--number) * 1vmax); }
+
+.ms, .milliseconds  { --length: calc(var(--number) * 1ms);   }
+
+.s, .seconds, .second { --length: calc(var(--number) * 1s;)  }
+
+.deg, .degrees      { --length: calc(var(--number) * 1deg);  }
+
+.grad, .gradian, .gradians    { --length: calc(var(--number) * 1grad); }
+
+.rad, .radian, .radians      { --length: calc(var(--number) * 1rad);  }
+
+.turn, .turns       { --length: calc(var(--number) * 1turn); }
+
+* {
+  --denominator: 1;
+  --sign: +1;
+  --ones: 1;
+  --tens: 0;
+  --hundreds: 0;
+
+  --number: calc(var(--unsigned-number) * var(--sign));
+}
+
+:not(.hundred) {
+  --unsigned-number: calc((10 * var(--tens) + var(--ones)) / var(--denominator));
+}
+
+/* NUMBERS */
+
+.hundred   { --unsigned-number: calc(100 * var(--ones) + 10 * var(--tens)); --ones: 0; }
+
+.ten       { --tens: 1; --ones: 0; }
+
+.twenty    { --tens: 2; --ones: 0; }
+
+.thirty    { --tens: 3; --ones: 0; }
+
+.forty     { --tens: 4; --ones: 0; }
+
+.fifty     { --tens: 5; --ones: 0; }
+
+.sixty     { --tens: 6; --ones: 0; }
+
+.seventy   { --tens: 7; --ones: 0; }
+
+.eighty    { --tens: 8; --ones: 0; }
+
+.ninety    { --tens: 9; --ones: 0; }
+
+/* "Ones" values are used in calculating unsigned number. */
+
+.zero      { --number: 0; }
+
+.one       { --ones: 1; }
+
+.two       { --ones: 2; }
+
+.three     { --ones: 3; }
+
+.four      { --ones: 4; }
+
+.five      { --ones: 5; }
+
+.six       { --ones: 6; }
+
+.seven     { --ones: 7; }
+
+.eight     { --ones: 8; }
+
+.nine      { --ones: 9; }
+
+.eleven    { --ones: 11; }
+
+.twelve    { --ones: 12; }
+
+.thirteen  { --ones: 13; }
+
+.fourteen  { --ones: 14; }
+
+.fifteen   { --ones: 15; }
+
+.sixteen   { --ones: 16; }
+
+.seventeen { --ones: 17; }
+
+.eighteen  { --ones: 18; }
+
+.nineteen  { --ones: 19; }
+
+/* If `hundred` is present, they apply to it. */
+
+/* FRACTIONS */
+
+.\30 \.1   { --unsigned-number: 0.1;  }
+
+.\30 \.2   { --unsigned-number: 0.2;  }
+
+.\30 \.25  { --unsigned-number: 0.25; }
+
+.\30 \.3   { --unsigned-number: 0.3;  }
+
+.\30 \.4   { --unsigned-number: 0.4;  }
+
+.\30 \.5   { --unsigned-number: 0.5;  }
+
+.\30 \.6   { --unsigned-number: 0.6;  }
+
+.\30 \.7   { --unsigned-number: 0.7;  }
+
+.\30 \.75  { --unsigned-number: 0.75; }
+
+.\30 \.8   { --unsigned-number: 0.8;  }
+
+.\31 \.0   { --unsigned-number: 1.0;  }
+
+.\31 \.5   { --unsigned-number: 1.5;  }
+
+.\32 \.0   { --unsigned-number: 2.0;  }
+
+.-\30 \.1   { --number: -0.1;  }
+
+.-\30 \.2   { --number: -0.2;  }
+
+.-\30 \.25  { --number: -0.25; }
+
+.-\30 \.3   { --number: -0.3;  }
+
+.-\30 \.4   { --number: -0.4;  }
+
+.-\30 \.5   { --number: -0.5;  }
+
+.-\30 \.6   { --number: -0.6;  }
+
+.-\30 \.7   { --number: -0.7;  }
+
+.-\30 \.75  { --number: -0.75; }
+
+.-\30 \.8   { --number: -0.8;  }
+
+.-\31 \.0   { --number: -1.0;  }
+
+.-\31 \.5   { --number: -1.5;  }
+
+.-\32 \.0   { --number: -2.0;  }
+
+/* Raw numbers. */
+
+.\31     { --unsigned-number: 1; }
+
+.\32     { --unsigned-number: 2; }
+
+.\33     { --unsigned-number: 3; }
+
+.\34     { --unsigned-number: 4; }
+
+.\35     { --unsigned-number: 5; }
+
+.\36     { --unsigned-number: 6; }
+
+.\37     { --unsigned-number: 7; }
+
+.\38     { --unsigned-number: 8; }
+
+.\39     { --unsigned-number: 9; }
+
+.\31 0   { --unsigned-number: 10; }
+
+.\32 0   { --unsigned-number: 20; }
+
+.\33 0   { --unsigned-number: 30; }
+
+.\34 0   { --unsigned-number: 40; }
+
+.\35 0   { --unsigned-number: 50; }
+
+.\36 0   { --unsigned-number: 60; }
+
+.\37 0   { --unsigned-number: 70; }
+
+.\38 0   { --unsigned-number: 80; }
+
+.\39 0   { --unsigned-number: 90; }
+
+.\31 00  { --unsigned-number: 100; }
+
+.\32 00  { --unsigned-number: 200; }
+
+.\33 00  { --unsigned-number: 300; }
+
+.\34 00  { --unsigned-number: 400; }
+
+.\35 00  { --unsigned-number: 500; }
+
+.\36 00  { --unsigned-number: 600; }
+
+.\37 00  { --unsigned-number: 700; }
+
+.\38 00  { --unsigned-number: 800; }
+
+.\39 00  { --unsigned-number: 900; }
+
+.\31 000 { --unsigned-number: 1000; }
+
+.\32 000 { --unsigned-number: 2000; }
+
+/* Negative numberbs. */
+
+.-\31     { --number: -1; }
+
+.-\32     { --number: -2; }
+
+.-\33     { --number: -3; }
+
+.-\34     { --number: -4; }
+
+.-\35     { --number: -5; }
+
+.-\36     { --number: -6; }
+
+.-\37     { --number: -7; }
+
+.-\38     { --number: -8; }
+
+.-\39     { --number: -9; }
+
+.-\31 0   { --number: -10; }
+
+.-\32 0   { --number: -20; }
+
+.-\33 0   { --number: -30; }
+
+.-\34 0   { --number: -40; }
+
+.-\35 0   { --number: -50; }
+
+.-\36 0   { --number: -60; }
+
+.-\37 0   { --number: -70; }
+
+.-\38 0   { --number: -80; }
+
+.-\39 0   { --number: -90; }
+
+.-\31 00  { --number: -100; }
+
+.-\32 00  { --number: -200; }
+
+.-\33 00  { --number: -300; }
+
+.-\34 00  { --number: -400; }
+
+.-\35 00  { --number: -500; }
+
+.-\36 00  { --number: -600; }
+
+.-\37 00  { --number: -700; }
+
+.-\38 00  { --number: -800; }
+
+.-\39 00  { --number: -900; }
+
+.-\31 000 { --number: -1000; }
+
+.-\32 000 { --number: -2000; }
+
+/* PERCENTAGES */
+
+.full         { --number: 1; }
+
+/* RATIONALS */
+
+.\31 \/2      { --unsigned-number: calc(1 / 2); }
+
+.\31 \/3      { --unsigned-number: calc(1 / 3); }
+
+.\31 \/4      { --unsigned-number: calc(1 / 5); }
+
+.\31 \/5      { --unsigned-number: calc(1 / 5); }
+
+.\31 \/6      { --unsigned-number: calc(1 / 6); }
+
+.\31 \/7      { --unsigned-number: calc(1 / 7); }
+
+.\31 \/8      { --unsigned-number: calc(1 / 8); }
+
+.\31 \/9      { --unsigned-number: calc(1 / 9); }
+
+.\31 \/10     { --unsigned-number: calc(1 / 10); }
+
+.-\31 \/2      { --number: calc(-1 / 2); }
+
+.-\31 \/3      { --number: calc(-1 / 3); }
+
+.-\31 \/4      { --number: calc(-1 / 5); }
+
+.-\31 \/5      { --number: calc(-1 / 5); }
+
+.-\31 \/6      { --number: calc(-1 / 6); }
+
+.-\31 \/7      { --number: calc(-1 / 7); }
+
+.-\31 \/8      { --number: calc(-1 / 8); }
+
+.-\31 \/9      { --number: calc(-1 / 9); }
+
+.-\31 \/10     { --number: calc(-1 / 10); }
+
+/* Support "10%" etc. */
+
+.\31 0\%       { --length: 10%; }
+
+.\32 0\%       { --length: 20%; }
+
+.\32 5\%       { --length: 25%; }
+
+.\33 0\%       { --length: 30%; }
+
+.\34 0\%       { --length: 40%; }
+
+.\34 0\%       { --length: 50%; }
+
+.\36 0\%       { --length: 60%; }
+
+.\37 0\%       { --length: 70%; }
+
+.\37 5\%       { --length: 75%; }
+
+.\38 0\%       { --length: 80%; }
+
+.\39 0\%       { --length: 90%; }
+
+.\31 00\%      { --length: 100%; }
+
+.-\31 0\%      { --length: -10%; }
+
+.-\32 0\%      { --length: -20%; }
+
+.-\32 5\%      { --length: -25%; }
+
+.-\33 0\%      { --length: -30%; }
+
+.-\34 0\%      { --length: -40%; }
+
+.-\34 0\%      { --length: -50%; }
+
+.-\36 0\%      { --length: -60%; }
+
+.-\37 0\%      { --length: -70%; }
+
+.-\37 5\%      { --length: -75%; }
+
+.-\38 0\%      { --length: -80%; }
+
+.-\39 0\%      { --length: -90%; }
+
+.-\31 00\%     { --lenngth: -100%; }
+
+.\30           { --length: 0; }
+
+/* Support "three fifths" etc. */
+
+.halves, .half      { --denominator: 2; }
+
+.thirds, .third     { --denominator: 3; }
+
+.fourths, .fourth   { --denominator: 4; }
+
+.fifths, .fifth     { --denominator: 5; }
+
+.sixths, .sixth     { --denominator: 6; }
+
+.sevenths, .seventh { --denominator: 7; }
+
+.eighths, .eighth   { --denominator: 8; }
+
+.ninths, .ninth     { --denominator: 9; }
+
+.tenths, .tenth     { --denominator: 10; }
+
+.minus   { --sign: -1; }
+
+.size    { --length: calc(100% * var(--number)); }
+
+.percent { --length: calc(1% * var(--number)); }
+
+/* human-css-colors/index.css: main code */
+
+/**
+ * styles/variables/hsl.css
+ *
+ * Variables for HSL.
+ */
+
+/* GLOBAL DEFINITIONS OF STANDARD HSL VALUES */
+
+:root {
+  --hue-red:             0;
+  --hue-orange:          30;
+  --hue-yellow:          60;
+  --hue-lime:            90;
+  --hue-green:           120;
+  --hue-aquamarine:      150;
+  --hue-cyan:            180;
+  --hue-azure:           210;
+  --hue-blue:            240;
+  --hue-purple:          270;
+  --hue-magenta:         300;
+  --hue-pink:            330;
+
+  --saturation-pure:     100%;
+  --saturation-x-bright: 80%;
+  --saturation-bright:   60%;
+  --saturation-medium:   50%;
+  --saturation-dull:     40%;
+  --saturation-x-dull:   20%;
+  --saturation-gray:     0%;
+
+  --lightness-white:     100%;
+  --lightness-x-light:   80%;
+  --lightness-light:     60%;
+  --lightness-dark:      40%;
+  --lightness-x-dark:    20%;
+  --lightness-black:     0%;
+
+  --alpha-opaque:        1.0;
+  --alpha-translucent:   0.8;
+  --alpha-x-translucent: 0.6;
+  --alpha-transparent:   0.0;
+
+  /* Overfide these values to change global defaults. */
+  --default-hue:         240;
+  --default-saturation:  75%;
+  --default-lightness:   50%;
+  --default-alpha:       1.0;
+
+  --global-hue:          var(--default-hue);
+  --global-saturation:   var(--default-saturation);
+  --global-lightness:    var(--default-lightness);
+  --global-alpha:        var(--default-alpha);
+}
+
+* {
+  --hue:        var(--global-hue);
+  --lightness:  var(--global-lightness);
+  --saturation: var(--global-saturation);
+  --alpha:      var(--global-alpha);
+
+  --color: hsla(var(--hue, 0), var(--saturation, 50%), var(--lightness, 50%), var(--alpha, 1.0));
+}
+
+.red        { --hue: var(--hue-red);        }
+
+.orange     { --hue: var(--hue-orange);     }
+
+.yellow     { --hue: var(--hue-yellow);     }
+
+.lime       { --hue: var(--hue-lime);       }
+
+.green      { --hue: var(--hue-green);      }
+
+.aquamarine { --hue: var(--hue-aquamarine); }
+
+.cyan       { --hue: var(--hue-cyan);       }
+
+.azure      { --hue: var(--hue-azure);      }
+
+.blue       { --hue: var(--hue-blue);       }
+
+.purple     { --hue: var(--hue-purple);     }
+
+.magenta    { --hue: var(--hue-magenta);    }
+
+.pink       { --hue: var(--hue-pink);       }
+
+.pure       { --saturation: var(--saturation-pure);     }
+
+.x-bright   { --saturation: var(--saturation-x-bright); }
+
+.bright     { --saturation: var(--saturation-bright);   }
+
+.dull       { --saturation: var(--saturation-dull);     }
+
+.x-dull     { --saturation: var(--saturation-x-dull);   }
+
+.gray       { --saturation: var(--saturation-gray);     }
+
+.purer      { --saturation: calc(var(--global-saturation) + 10%); }
+
+.brighter   { --saturation: calc(var(--global-saturation) + 10%); }
+
+.duller     { --saturation: calc(var(--global-saturation) - 10%); }
+
+.grayer     { --saturation: calc(var(--global-saturation) - 10%); }
+
+.x-purer      { --saturation: calc(var(--global-saturation) + 20%); }
+
+.x-brighter   { --saturation: calc(var(--global-saturation) + 20%); }
+
+.x-duller     { --saturation: calc(var(--global-saturation) - 20%); }
+
+.x-grayer     { --saturation: calc(var(--global-saturation) - 20%); }
+
+.white      { --lightness: var(--lightness-white);      }
+
+.x-light    { --lightness: var(--lightness-x-light);    }
+
+.light      { --lightness: var(--lightness-light);      }
+
+.dark       { --lightness: var(--lightness-dark);       }
+
+.x-dark     { --lightness: var(--lightness-x-dark);     }
+
+.black      { --lightness: var(--lightness-black);      }
+
+.whiter     { --lightness: calc(var(--global-lightness) + 10%); }
+
+.lighter    { --lightness: calc(var(--global-lightness) + 10%); }
+
+.x-whiter   { --lightness: calc(var(--global-lightness) + 20%); }
+
+.x-lighter  { --lightness: calc(var(--global-lightness) + 20%); }
+
+.darker     { --lightness: calc(var(--global-lightness) - 10%); }
+
+.blacker    { --lightness: calc(var(--global-lightness) - 10%); }
+
+.x-darker   { --lightness: calc(var(--global-lightness) - 20%); }
+
+.x-blacker  { --lightness: calc(var(--global-lightness) - 20%); }
+
+-opaque        { --alpha: var(--alpha-opaque);          }
+
+-translucent   { --alpha: var(--translucent);           }
+
+-x-translucent { --alpha: var(--alpha-x-translucent);   }
+
+-transparent   { --alpha: var(--alpha-transparent);     }
+
+.currentColor { --color: currentColor; }
+
+/* RESET GLOBALS USING `hue`, `saturation`, `lightness` and `alpha` classes */
+
+.hue.red             { --global-hue: var(--hue-red);        }
+
+.hue.orange          { --global-hue: var(--hue-orange);     }
+
+.hue.yellow          { --global-hue: var(--hue-yellow);     }
+
+.hue.lime            { --global-hue: var(--hue-lime);       }
+
+.hue.green           { --global-hue: var(--hue-green);      }
+
+.hue.aquamarine      { --global-hue: var(--hue-aquamarine); }
+
+.hue.cyan            { --global-hue: var(--hue-cyan);       }
+
+.hue.azure           { --global-hue: var(--hue-azure);      }
+
+.hue.blue            { --global-hue: var(--hue-blue);       }
+
+.hue.purple          { --global-hue: var(--hue-purple);     }
+
+.hue.magenta         { --global-hue: var(--hue-magenta);    }
+
+.hue.pine            { --global-hue: var(--hue-pink);       }
+
+.saturation.pure     { --global-saturation: var(--saturation-pure);     }
+
+.saturation.x-bright { --global-saturation: var(--saturation-x-bright); }
+
+.saturation.bright   { --global-saturation: var(--saturation-bright);   }
+
+.saturation.dull     { --global-saturation: var(--saturation-dull);     }
+
+.saturaation.x-dull  { --global-saturation: var(--saturation-x-dull);   }
+
+.satuation.gray      { --global-saturation: var(--saturation-gray);     }
+
+.lightness.white     { --global-lightness: var(--lightness-white);      }
+
+.lightness.x-light   { --global-lightness: var(--lightness-x-light);    }
+
+.lightness.light     { --global-lightness: var(--lightness-light);      }
+
+.lightness.dark      { --global-lightness: var(--lightness-dark);       }
+
+.lightness.x-dark    { --global-lightness: var(--lightness-x-dark);     }
+
+.lightness.black     { --global-lightness: var(--lightness-black);      }
+
+.alpha-opaque        { --global-alpha: var(--alpha-opaque);             }
+
+.alpha-translucent   { --global-alpha: var(--translucent);              }
+
+.alpha-x-translucent { --global-alpha: var(--alpha-x-translucent);      }
+
+/* HTML COLORS */
+
+.aliceblue { --color: aliceblue; }
+
+.antiquewhite { --color: antiquewhite; }
+
+.aqua { --color: aqua; }
+
+.aquamarine.color { --color: aquamarine; }
+
+.azure.color { --color: azure; }
+
+.beige { --color: beige; }
+
+.bisque { --color: bisque; }
+
+.blanchedalmond { --color: blanchedalmond; }
+
+.blue.color { --color: blue; }
+
+.blueviolet { --color: blueviolet; }
+
+.brown { --color: brown; }
+
+.burlywood { --color: burlywood; }
+
+.cadet { --color: cadet; }
+
+.chartreuse { --color: chartreuse; }
+
+.chocolate { --color: chocolate; }
+
+.coral { --color: coral; }
+
+.cornflower { --color: cornflower; }
+
+.cornsilk { --color: cornsilk; }
+
+.crimson { --color: crimson; }
+
+.cyan.color { --color: cyan; }
+
+.darkblue { --color: darkblue; }
+
+.darkcyan { --color: darkcyan; }
+
+.darkgoldenrod { --color: darkgoldenrod; }
+
+.darkgray { --color: darkgray; }
+
+.darkgreen { --color: darkgreen; }
+
+.darkkhaki { --color: darkkhaki; }
+
+.darkmagenta { --color: darkmagenta; }
+
+.darkolivegreen { --color: darkolivegreen; }
+
+.darkorange { --color: darkorange; }
+
+.darkorchid { --color: darkorchid; }
+
+.darkred { --color: darkred; }
+
+.darksalmon { --color: darksalmon; }
+
+.darkseagreen { --color: darkseagreen; }
+
+.darkslateblue { --color: darkslateblue; }
+
+.darkslategray { --color: darkslategray; }
+
+.darkturquoise { --color: darkturquoise; }
+
+.darkviolet { --color: darkviolet; }
+
+.deeppink { --color: deeppink; }
+
+.deepskyblue { --color: deepskyblue; }
+
+.dimgray { --color: dimgray; }
+
+.dodger { --color: dodger; }
+
+.gainsboro { --color: gainsboro; }
+
+.green.color { --color: webgreen; }
+
+.greenyellow { --color: greenyellow; }
+
+.honeydew { --color: honeydew; }
+
+.hotpink { --color: hotpink; }
+
+.indianred { --color: indianred; }
+
+.indigo { --color: indigo; }
+
+.ivory { --color: ivory; }
+
+.khaki { --color: khaki; }
+
+.lavender { --color: lavender; }
+
+.lavenderblush { --color: lavenderblush; }
+
+.lawngreen { --color: lawngreen; }
+
+.lemonchiffon { --color: lemonchiffon; }
+
+.lightblue { --color: lightblue; }
+
+.lightcoral { --color: lightcoral; }
+
+.lightcyan { --color: lightcyan; }
+
+.lightgoldenrod { --color: lightgoldenrod; }
+
+.lightgray { --color: lightgray; }
+
+.lightgreen { --color: lightgreen; }
+
+.lightpink { --color: lightpink; }
+
+.lightsalmon { --color: lightsalmon; }
+
+.lightseagreen { --color: lightseagreen; }
+
+.lightskyblue { --color: lightskyblue; }
+
+.lightslategray { --color: lightslategray; }
+
+.lightsteelblue { --color: lightsteelblue; }
+
+.lightyellow { --color: lightyellow; }
+
+.lime.color { --color: lime; }
+
+.limegreen { --color: limegreen; }
+
+.linen { --color: linen; }
+
+.magenta.color { --color: magenta; }
+
+.maroon { --color: maroon; }
+
+.webmaroon { --color: webmaroon; }
+
+.mediumaquamarine { --color: mediumaquamarine; }
+
+.mediumblue { --color: mediumblue; }
+
+.mediumorchid { --color: mediumorchid; }
+
+.mediumpurple { --color: mediumpurple; }
+
+.mediumseagreen { --color: mediumseagreen; }
+
+.mediumslateblue { --color: mediumslateblue; }
+
+.mediumspringgreen { --color: mediumspringgreen; }
+
+.mediumturquoise { --color: mediumturquoise; }
+
+.mediumvioletred { --color: mediumvioletred; }
+
+.midnightblue { --color: midnightblue; }
+
+.mintcream { --color: mintcream; }
+
+.mistyrose { --color: mistyrose; }
+
+.moccasin { --color: moccasin; }
+
+.navajowhite { --color: navajowhite; }
+
+.oldlace { --color: oldlace; }
+
+.olive { --color: olive; }
+
+.olivedrab { --color: olivedrab; }
+
+.orange.color { --color: orange; }
+
+.orangered { --color: orangered; }
+
+.orchid { --color: orchid; }
+
+.palegoldenrod { --color: palegoldenrod; }
+
+.paleturquoise { --color: paleturquoise; }
+
+.palevioletred { --color: palevioletred; }
+
+.papayawhip { --color: papayawhip; }
+
+.peachpuff { --color: peachpuff; }
+
+.peru { --color: peru; }
+
+.pink.color { --color: pink; }
+
+.plum { --color: plum; }
+
+.powderblue { --color: powderblue; }
+
+.purple.color { --color: purple; }
+
+.webpurple { --color: webpurple; }
+
+.rebeccapurple { --color: rebeccapurple; }
+
+.red.color { --color: red; }
+
+.rosybrown { --color: rosybrown; }
+
+.royalblue { --color: royalblue; }
+
+.saddlebrown { --color: saddlebrown; }
+
+.salmon { --color: salmon; }
+
+.sandybrown { --color: sandybrown; }
+
+.seagreen { --color: seagreen; }
+
+.seashell { --color: seashell; }
+
+.sienna { --color: sienna; }
+
+.silver { --color: silver; }
+
+.skyblue { --color: skyblue; }
+
+.slateblue { --color: slateblue; }
+
+.slategray { --color: slategray; }
+
+.snow { --color: snow; }
+
+.springgreen { --color: springgreen; }
+
+.steelblue { --color: steelblue; }
+
+.tan { --color: tan; }
+
+.teal { --color: teal; }
+
+.thistle { --color: thistle; }
+
+.tomato { --color: tomato; }
+
+.turquoise { --color: turquoise; }
+
+.violet { --color: violet; }
+
+.wheat { --color: wheat; }
+
+.whitesmoke { --color: whitesmoke; }
+
+.yellow.color { --color: yellow; }
+
+.yellowgreen { --color: yellowgreen; }
+
+/*
 morass/lib/elements/index.css
 
 Bring in Morass CSS.
@@ -38,89 +935,13 @@ modifiers/background.css
 Background-related microclasses.
 */
 
-/* WIDTHS */
-
-:root {
-  --background-hue-global:        var(--hue-global);
-  --background-saturation-global: var(--saturation-global);
-  --background-lightness-global:  var(--lightness-global);
-  --background-alpha-global:      var(--alpha-global);;
-}
-
 .background {
-  --background-hue:        var(--background-hue-global, var(--hue-global));
-  --background-saturation: var(--background-saturation-global, var(--saturation-global));
-  --background-lightness:  var(--background-lightness-global, var(--lightness-global));
-  --background-alpha:      var(--background-alpha-globaal, var(--alpha-global));
-
-  background-color: hsla(var(--background-hue), var(--background-saturation), var(--background-lightness), var(--background-alpha));
+  background-color: var(--color);
 }
 
-.background.primary    { --background-hue: var(--hue-primary);    }
+.background.cover { background-size: cover; }
 
-.background.secondary  { --background-hue: var(--hue-secondary);  }
-
-.background.success    { --background-hue: var(--hue-success);    }
-
-.background.warn       { --background-hue: var(--hue-warn);       }
-
-.background.error      { --background-hue: var(--hue-error);      }
-
-.background.red        { --background-hue: var(--hue-red);        }
-
-.background.orange     { --background-hue: var(--hue-orange);     }
-
-.background.yellow     { --background-hue: var(--hue-yellow);     }
-
-.background.lime       { --background-hue: var(--hue-lime);       }
-
-.background.green      { --background-hue: var(--hue-green);      }
-
-.background.aquamarine { --background-hue: var(--hue-aquamarine); }
-
-.background.cyan       { --background-hue: var(--hue-cyan);       }
-
-.background.azure      { --background-hue: var(--hue-azure);      }
-
-.background.blue       { --background-hue: var(--hue-blue);       }
-
-.background.purple     { --background-hue: var(--hue-purple);     }
-
-.background.magenta    { --background-hue: var(--hue-magenta);    }
-
-.background.pink       { --background-hue: var(--hue-pink);       }
-
-.background.pure       { --background-saturation: var(--saturation-pure);     }
-
-.background.x-bright   { --background-saturation: var(--saturation-x-bright); }
-
-.background.bright     { --background-saturation: var(--saturation-bright);   }
-
-.background.dull       { --background-saturation: var(--saturation-dull);     }
-
-.background.x-dull     { --background-saturation: var(--saturation-x-dull);   }
-
-.background.gray       { --background-saturation: var(--saturation-gray);     }
-
-.background.white      { --background-lightness: var(--lightness-white);      }
-
-.background.x-light    { --background-lightness: var(--lightness-x-light);    }
-
-.background.light      { --background-lightness: var(--lightness-light);      }
-
-.background.dark       { --background-lightness: var(--lightness-dark);       }
-
-.background.x-dark     { --background-lightness: var(--lightness-x-dark);     }
-
-.background.black      { --background-lightness: var(--lightness-black);      }
-
-.background-opaque        { --background-alpha: var(--alpha-opaque);          }
-
-.background-translucent   { --background-alpha: var(--translucent);           }
-
-.background-x-translucent { --background-alpha: var(--alpha-x-translucent);   }
-
-.background-transparent   { --background-alpha: var(--alpha-transparent);     }
+.background.contain { background-size: contain; }
 
 /*
 elements/body.css
@@ -141,10 +962,14 @@ body {
 /*
 modifiers/cursor.css
 
-Morass micro-classes for cursor.
+Morass micro-classes for cursor and pointer events.
 */
 
 .pointer { cursor: pointer; }
+
+.pointer-events, .pointer-events.auto {pointer-events: auto; }
+
+.pointer-events.no, .pointer-events.none { pointer-events: none; }
 
 /*
 modifiers/border.css
@@ -291,93 +1116,9 @@ Border-related microclasses.
   border-width: var(--border-width);
 }
 
-/**
-lib/modifiers/colors.css
+/* TODO */
 
-Micro-classes for text colors.
-*/
-
-:root {
-  --text-hue-global:        var(--hue-global);
-  --text-saturation-global: var(--saturation-global);
-  --text-lightness-global:  var(--lightness-global);
-  --text-alpha-global:      var(--alpha-global);;
-}
-
-.text {
-  --text-hue:        var(--text-hue-global, var(--hue-global));
-  --text-saturation: var(--text-saturation-global, var(--saturation-global));
-  --text-lightness:  var(--text-lightness-global, var(--lightness-global));
-  --text-alpha:      var(--text-alpha-globaal, var(--alpha-global));
-
-  color: hsla(var(--text-hue), var(--text-saturation), var(--text-lightness), var(--text-alpha));
-}
-
-.text.primary     { --text-hue: var(--primary-hue); }
-
-.text.secondary   { --text-hue: var(--secondary-hue); }
-
-.text.success     { --text-hue: var(--success-hue); }
-
-.text.warn        { --text-hue: var(--warn-hue); }
-
-.text.error       { --text-hue: var(--error-hue); }
-
-.text.red        { --text-hue: var(--hue-red);        }
-
-.text.orange     { --text-hue: var(--hue-orange);     }
-
-.text.yellow     { --text-hue: var(--hue-yellow);     }
-
-.text.lime       { --text-hue: var(--hue-lime);       }
-
-.text.green      { --text-hue: var(--hue-green);      }
-
-.text.aquamarine { --text-hue: var(--hue-aquamarine); }
-
-.text.cyan       { --text-hue: var(--hue-cyan);       }
-
-.text.azure      { --text-hue: var(--hue-azure);      }
-
-.text.blue       { --text-hue: var(--hue-blue);       }
-
-.text.purple     { --text-hue: var(--hue-purple);     }
-
-.text.magenta    { --text-hue: var(--hue-magenta);    }
-
-.text.pink       { --text-hue: var(--hue-pink);       }
-
-.text.pure       { --text-saturation: var(--saturation-pure);     }
-
-.text.x-bright   { --text-saturation: var(--saturation-x-bright); }
-
-.text.bright     { --text-saturation: var(--saturation-bright);   }
-
-.text.dull       { --text-saturation: var(--saturation-dull);     }
-
-.text.x-dull     { --text-saturation: var(--saturation-x-dull);   }
-
-.text.gray       { --text-saturation: var(--saturation-gray);     }
-
-.text.white      { --text-lightness: var(--lightness-white);      }
-
-.text.x-light    { --text-lightness: var(--lightness-x-light);    }
-
-.text.light      { --text-lightness: var(--lightness-light);      }
-
-.text.dark       { --text-lightness: var(--lightness-dark);       }
-
-.text.x-dark     { --text-lightness: var(--lightness-x-dark);     }
-
-.text.black      { --text-lightness: var(--lightness-black);      }
-
-.text-opaque        { --text-alpha: var(--alpha-opaque);          }
-
-.text-translucent   { --text-alpha: var(--translucent);           }
-
-.text-x-translucent { --text-alpha: var(--alpha-x-translucent);   }
-
-.text-transparent   { --text-alpha: var(--alpha-transparent);     }
+/* block-end, block-start, inline-start, inline-end */
 
 /*
 modifiers/column.css
@@ -402,9 +1143,39 @@ lib/modifiers/dimension.css
 Widths and heights.
 */
 
-.width  { width:  var(--length); }
+.width      { width:      var(--length); }
 
-.height { height: var(--length); }
+.height     { height:     var(--length); }
+
+.max-height { max-height: var(--length); }
+
+.min-height { min-height: var(--length); }
+
+.max-width  { max-width:  var(--length); }
+
+.min-width  { min-width:  var(--length); }
+
+.block-size { block-size: var(--length); }
+
+.max-block-size { max-block-size: var(--length); }
+
+.min-block-size { min-block-size: var(--length); }
+
+.max-content        { --length: max-content; }
+
+.min-content        { --length: min-content; }
+
+.available          { --length: available;   }
+
+.fit-content        { --length: fit-content; }
+
+.border-box         { --box: border-box; }
+
+.content-box        { --box: content-box; }
+
+.ltr { direction: ltr; }
+
+.rtl { direction: rtl; }
 
 /**
 * styles/modifiers/display.css
@@ -691,53 +1462,6 @@ heading {
 }
 
 /**
- * styles/variables/hsl.css
- *
- * Variables for HSL.
- */
-
-:root {
-  --hue-red:          0;
-  --hue-orange:       30;
-  --hue-yellow:       60;
-  --hue-lime:         90;
-  --hue-green:        120;
-  --hue-aquamarine:   150;
-  --hue-cyan:         180;
-  --hue-azure:        210;
-  --hue-blue:         240;
-  --hue-purple:       270;
-  --hue-magenta:      300;
-  --hue-pink:         330;
-
-  --saturation-pure:     100%;
-  --saturation-x-bright: 80%;
-  --saturation-bright:   60%;
-  --saturation-default:  50%;
-  --saturation-dull:     40%;
-  --saturation-x-dull:   20%;
-  --saturation-gray:     0%;
-
-  --lightness-white:     100%;
-  --lightness-x-light:   80%;
-  --lightness-light:     60%;
-  --lightness-default:   50%;
-  --lightness-dark:      40%;
-  --lightness-x-dark:    20%;
-  --lightness-black:     0%;
-
-  --alpha-opaque:        1.0;
-  --alpha-translucent:   0.8;
-  --alpha-x-translucent: 0.6;
-  --alpha-transparent:   0.0;
-
-  --hue-global:          var(--hue-primary);
-  --saturation-global:   var(--saturation-default);
-  --lightness-global:    var(--lightness-default);
-  --alpha-global:        var(--alpha-opaque);
-}
-
-/**
 * styles/modifiers/indent.css
 *
 * Test indents.
@@ -765,11 +1489,31 @@ modifiers/line-height.css
 Morass micro-classes for line spacing.
 */
 
-.single-spaced    { line-height: 1;   }
+.line.spacing {
+  --line-height: 1.5;
+  line-height: var(--line-height);
+}
 
-.double-spaced    { line-height: 2;   }
+.line.spacing.single    { --line-height: 1;   }
 
-.space-and-a-half { line-height: 1.5; }
+.line.spacing.double    { --line-height: 2;   }
+
+.line-spacing.normal    { --line-height: 1.5; }
+
+/* CHARACTER SPACING */
+
+.character.spacing {
+  --spacing: var(--length);
+  letter-spacing: var(--spacing);
+}
+
+.character.spacing.tight   { --spacing: -0.1em; }
+
+.character.spacing.loose   { --spacing: 0.1em;  }
+
+.character.spacing.x-loose { --spacing: 0.2em;  }
+
+.character.spacing.normal  { --spacing: normal; }
 
 /*
 modifiers/list.css
@@ -830,97 +1574,18 @@ Default is `em`.
 
 .padding:not(.top):not(.bottom):not(.left):not(.right) { padding: var(--length); }
 
-/**
- * numbers.css
- *
- * Morass micro-classes for numbers, such as number of columns.
- **/
-
-/* NUMBERS */
-
-.zero    { --number: 0; }
-
-.one     { --number: 1; }
-
-.two     { --number: 2; }
-
-.three   { --number: 3; }
-
-.four    { --number: 4; }
-
-.five    { --number: 5; }
-
-.six     { --number: 6; }
-
-.seven   { --number: 7; }
-
-.eight   { --number: 8; }
-
-.nine    { --number: 9; }
-
-.ten     { --number: 10; }
-
-.\31     { --number: 1; }
-
-.\32     { --number: 2; }
-
-.\33     { --number: 3; }
-
-.\34     { --number: 4; }
-
-.\35     { --number: 5; }
-
-.\36     { --number: 6; }
-
-.\37     { --number: 7; }
-
-.\38     { --number: 8; }
-
-.\39     { --number: 9; }
-
-.\31 0   { --number: 10; }
-
-.\31 1   { --number: 11; }
-
-/* and so on*/
-
-/* PERCENTAGES */
-
-.full, .\31 00\%                     { --length: 100%;   }
-
-.half, .one-half, .\31 \/2, .\35 0\% { --length: 50%;    }
-
-.one-third, .\31 \/3                 { --length: 33.33%; }
-
-.one-fourth, .\31 \/4,               { --length: 25%;    }
-
-.three-fourths, .\31 \/4, \37 5\%    { --length: 75%;    }
-
-.\31 0\%        { --length: 10%; }
-
-.\32 0\%        { --length: 20%; }
-
-.\33 0\%        { --length: 30%; }
-
-.\34 0\%        { --length: 40%; }
-
-.\36 0\%        { --length: 60%; }
-
-.\37 0\%        { --length: 70%; }
-
-.\38 0\%        { --length: 80%; }
-
-.\39 0\%        { --length: 90%; }
-
-.\30            { --length: 0; }
-
-.percent { --length: calc(100% * var(--number) / 100); }
+/* TODO: handle
+padding-block-end
+padding-block-start
+padding-bottom
+padding-inline-end
+padding-inline-start
+*/
 
 /*
 modifiers/margin.css
 
 Morass micro-classes for margins.
-Default is `em`.
 */
 
 .margin      { --length: 1em; }
@@ -948,6 +1613,8 @@ Morass pseudo-classes for opacity.
 .semi-opaque { opacity: 0.5; }
 
 .transparent { opacity: 0;   }
+
+.opacity { opacity: var(--number); }
 
 /* overflow.css -- Morass classes related to overflow */
 
@@ -1065,6 +1732,13 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
  * Text-related utilities.
  **/
 
+/* COLORS */
+
+.test {
+  color: var(--color);
+  font-size: var(--length);
+}
+
 /* FONT WEIGHT */
 
 .text.hairline    { font-weight: 100; }
@@ -1105,35 +1779,25 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
 
 .text.bolder      { font-weight: bolder;  }
 
-.text.medium             { --font-weight: 500;     }
-
-.text.font-normal        { --font-weight: normal;  }
-
-.text.font-light         { --font-weight: 300;     }
-
-.text.x-light           { --font-weight: 200;     }
-
-.text.xx-light          { --font-weight: 100;     }
-
 /* SIZE */
 
-.text.xx-small    { font-size: xx-small; }
+.text.xx-small    { --length: xx-small; }
 
-.text.x-small     { font-size: x-small;  }
+.text.x-small     { --length: x-small;  }
 
-.text.small       { font-size: small;    }
+.text.small       { --length: small;    }
 
-.text.medium      { font-size: medium;   }
+.text.medium      { --length: medium;   }
 
-.text.large       { font-size: large;    }
+.text.large       { --length: large;    }
 
-.text.x-large     { font-size: x-large;  }
+.text.x-large     { --length: x-large;  }
 
-.text.xx-large    { font-size: xx-large; }
+.text.xx-large    { --length: xx-large; }
 
-.text.larger      { font-size: larger;   }
+.text.larger      { --length: larger;   }
 
-.text.smaller     { font-size: smaller;  }
+.text.smaller     { --length: smaller;  }
 
 /* ITALICS */
 
@@ -1170,23 +1834,6 @@ Morass micro-classes related to the `visibility` property.
 .invisible { visibility: hidden;  }
 
 /*
-lib/variables/colors.css
-
-Default colors for Morass.
-These will almost certainly be overridden by the user.
-
-The color `default` has no hue--it is a gray scale.
-*/
-
-:root {
-  --hue-primary:   var(--hue-blue);
-  --hue-secondary: var(--hue-purple);
-  --hue-success:   var(--hue-green);
-  --hue-warn:      var(--hue-orange);
-  --hue-error:     var(--hue-red);
-}
-
-/*
 morass/modifiers/transition.css
 
 Micro-classes to manage transitions.
@@ -1201,13 +1848,13 @@ Micro-classes to manage transitions.
 
 /* DURATION */
 
-.fast        { --length: 0.4s; }
+.fast        { --length: 0.50s; }
 
-.faster      { --length: 0.2s; }
+.faster      { --length: 0.25s; }
 
-.slow        { --length: 0.8s; }
+.slow        { --length: 1.00s; }
 
-.slower      { --length: 1.6s; }
+.slower      { --length: 2.00s; }
 
 /* TIMING FUNCTIONS */
 
@@ -1232,67 +1879,6 @@ Micro-classes to manage transitions.
 .delay-more  { transition-delay: 1.6s; }
 
 .delay-less  { transition-delay: 0.4s; }
-
-/*
-variables/units.css
-
-Units, such as lengths
-*/
-
-/* LENGTHS */
-
-:root {
-  --em:   1.00em;
-  --en:   0.50em;
-  --less: 0.25em;  /* non-standard; consider deprecating */
-  --thin: 0.20em;
-  --hair: 0.05em;
-  --zero: 0;
-}
-
-.em                 { --length: calc(var(--number) * 1em);  }
-
-.in, .inch, .inches { --length: calc(var(--number) * 1in);  }
-
-.rem                { --length: calc(var(--number) * 1rem); }
-
-.px                 { --length: calc(var(--number) * 1px);  }
-
-.pc, .picas         { --length: calc(var(--number) * 1pc);  }
-
-.pt, .points        { --length: calc(var(--number) * 1pt);  }
-
-.px, .pixels        { --length: calc(var(--number) * 1px);  }
-
-.ex                 { --length: calc(var(--number) * 1ex);  }
-
-.q                  { --length: calc(var(--number) * 1q;)   }
-
-.cm, .centimeter, .centimeters   { --length: calc(var(--number) * 1cm);  }
-
-.mm, .millimeter, .millimeters   { --length: calc(var(--number) * 1mm);  }
-
-.ch                 { --length: calc(var(--number) * 1ch);   }
-
-.vw                 { --length: calc(var(--number) * 1vw);   }
-
-.vh                 { --length: calc(var(--number) * 1vh);   }
-
-.vmin               { --length: calc(var(--number) * 1vmin); }
-
-.vmax               { --length: calc(var(--number) * 1vmax); }
-
-.ms, .milliseconds  { --length: calc(var(--number) * 1ms);   }
-
-.s, .seconds, .second { --length: calc(var(--number) * 1s;)  }
-
-.deg, .degrees      { --length: calc(var(--number) * 1deg);  }
-
-.grad, .gradians    { --length: calc(var(--number) * 1grad); }
-
-.rad, .radians      { --length: calc(var(--number) * 1rad);  }
-
-.turn, .turns       { --length: calc(var(--number) * 1turn); }
 
 /*
 morass/modifiers/white-space.css
@@ -1352,6 +1938,8 @@ Therefore, in some obscure cases we may need a way to turn it off.
 */
 
 .white-space-normal { white-space: normal; }
+
+.break-word { overflow-wrap: break-word; }
 
 /*
 modifiers/z-index.js

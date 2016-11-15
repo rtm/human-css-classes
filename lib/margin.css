@@ -2,7 +2,6 @@
 modifiers/margin.css
 
 Morass micro-classes for margins.
-Default is `em`.
 */
 
 .margin      { --length: 1em; }

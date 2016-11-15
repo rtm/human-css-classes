@@ -51,3 +51,5 @@ CSS offers no alternative for preserving whitespace while not honoring newlines 
 Therefore, in some obscure cases we may need a way to turn it off.
 */
 .white-space-normal { white-space: normal; }
+
+.break-word { overflow-wrap: break-word; }

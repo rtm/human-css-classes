@@ -4,6 +4,22 @@ modifiers/line-height.css
 Morass micro-classes for line spacing.
 */
 
-.single-spaced    { line-height: 1;   }
-.double-spaced    { line-height: 2;   }
-.space-and-a-half { line-height: 1.5; }
+.line.spacing {
+  --line-height: 1.5;
+  line-height: var(--line-height);
+}
+
+.line.spacing.single    { --line-height: 1;   }
+.line.spacing.double    { --line-height: 2;   }
+.line-spacing.normal    { --line-height: 1.5; }
+
+/* CHARACTER SPACING */
+.character.spacing {
+  --spacing: var(--length);
+  letter-spacing: var(--spacing);
+}
+
+.character.spacing.tight   { --spacing: -0.1em; }
+.character.spacing.loose   { --spacing: 0.1em;  }
+.character.spacing.x-loose { --spacing: 0.2em;  }
+.character.spacing.normal  { --spacing: normal; }

@@ -11,10 +11,10 @@ Micro-classes to manage transitions.
 }
 
 /* DURATION */
-.fast        { --length: 0.4s; }
-.faster      { --length: 0.2s; }
-.slow        { --length: 0.8s; }
-.slower      { --length: 1.6s; }
+.fast        { --length: 0.50s; }
+.faster      { --length: 0.25s; }
+.slow        { --length: 1.00s; }
+.slower      { --length: 2.00s; }
 
 /* TIMING FUNCTIONS */
 .ease        { transition-timing-function: ease;        }

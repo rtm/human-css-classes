@@ -7,3 +7,5 @@ Morass pseudo-classes for opacity.
 .opaque      { opacity: 1;   }
 .semi-opaque { opacity: 0.5; }
 .transparent { opacity: 0;   }
+
+.opacity { opacity: var(--number); }

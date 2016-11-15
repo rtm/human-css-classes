@@ -1,28 +1,21 @@
-MORASS
+Human CSS Classes
 ======
 
-Morass is a More Obvious, Reasonable Approach to Style Sheets.
-
-Summary
--------
-
-Morass provides **micro-classes** which make HTML files more semantic and readable,
-while also reducing or even eliminating the need for complex CSS rules.
+Human CSS classes is a system of **micro-classes** which allow HTML to be styled much more semantically and readably,
+while graetly reducing the need for individual CSS rules.
 The great majority of common styling needs can be met by a suitable combination of micro-classes.
+In the micro-class philosophy, elements are styled within HTML by specifying one or more micro-classes.
+With human CSS classes, many pages may need no specific CSS rules whatsoever.
 
-Our key design objective was to reduce CSS sprawl.
-With Morass, many pages may need no specific CSS rules whatsoever.
+For instance, consider:
 
-Where the provided micro-classes don't get the job done,
-Morass provides the conceptual framework for writing your own micro-classes.
+```
+<span class="large dark red bold text">
+<div class="thin light green top border">
+<div class="one third width">
+```
 
-In the micro-class philosophy, elements are styled withi HTML by addition micro classes, such as
-
-    <div class="x-large padding">
-
-To create a div with extra-large text, and padding around it.
-
-Morass provides an easy interface to using flexbox,
+Human CSS classes provide an easy interface to using flexbox,
 removing the need for the baroque grid systems some frameworks and libraries try to provide.
 For instance, the classic `float: right` is written as
 
@@ -41,7 +34,7 @@ because no one can remember what they do and are afraid to touch them.
 Most of the rest is redundant, verbose, and duplicative.
 
 Because CSS systems are most often created by "UI designers", rather than engineers,
-basic computing principles of orthogonality and composition are ignored.
+basic computing principles of orthogonality, factoring, and composition are ignored.
 
 We have developed an addiction to CSS preprocessors which
 merely provide some basic syntactic sugar, and, more perniciously,
@@ -51,7 +44,7 @@ Huge sets of rules with complex selectors bog down the browser.
 Each new page we write requires dozens or hundreds of new lines of CSS.
 Any UI change requires parallel changes to both HTML and CSS.
 We use CSS in a way which results in inconsistent UIs.
-We rewrite CSS over and over, since there is no way to re-use what we have done.
+We rewrite CSS over and over, since often there is no way to re-use what we have done.
 There is no reasonable way to understand the CSS, or convince ourselves that it is correct, or test it.
 
 In a futile attempt to escape this maze, we bring in monstrously large, over-engineered
@@ -68,7 +61,7 @@ As we proliferate these obese classes, we soon run into namespacing problems.
 Names conflict with each other, and we end up needing weird namespace solutions which call for
 classes with names like `Book__chapter--title`.
 Then we start relying on preprocessors to handle these over-named classes,
-which "help" us by allowing us to write weird-looking rules such as
+which "help" us by allowing us to write weird-looking, brittle rules such as
 
     .Book {
       &__chapter {
@@ -78,106 +71,130 @@ which "help" us by allowing us to write weird-looking rules such as
         }
      }
 
+Human CSS classes are is designed to put an end to this madness.
 
-Design Principles And Features
-------------------------------
+### Caveat
+
+Human CSS classes use CSS custom properties, also known as CSS variables, in its implementation.
+This excludes IE11 from consideration.
+Note that development of custom properties is underway for Edge.
+
+Design Principles, Concepts and Features
+----------------------------------------
 
 ### Micro-classes
 
-Morass is a collection of micro-classes: CSS classes which often define no more than one property.
-These classes are assigned to HTML elements, which in this approach may have two or five or even ten classes.
+Human CSS classes is a collection of micro-classes: CSS classes with very specific meaning.
+These classes are assigned to HTML elements,
+which in this approach may have two or five or even ten classes.
 **We are moving the styling logic back into the HTML!**
 The styling in the HTML becomes semnatic and readable.
 Instead of having a class "book-list-entry" which contains 20 properties over in some distant CSS file,
 we add three or four classes to HTML which clearly identify the styling behavior of the entry.
 In the best case, which is readily realizable in practice, no element-specific class is necessary at all.
 
-In cases where the provided micro-classes do not or can not provide the functionality you need,
-such as box shadows perhaps,
-we recommend defining your own generic micro-classes,
-hopefully following the Morass design principles.
+### Combining micro-classes
 
+Human CSS classes use a relatively limited number of general-purpose micro-classes.
+So `green` means green for text, or borders, or backgrounds.
+But what if I want to specify both text color **and** border color on an element?
+How do I know which color is which?
+Other micro-class frameworks solve this by a proliferation of classes such as `green-border`, and `green-text`.
+We take a different approach, which is to place the classes on individual, nested HTML elements:
 
-### Performance
+```
+<div class="one em margin">
+  <div class="thick dark blue border">
+    <div class="x-light pink background">
+      <div class="five percent padding">
+        <div class="large bold white text">
+          Bob
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
-CSS is rarely the major bottleneck in application performance.
-Of course there may be exceptions involving huge systems,
-or poorly written CSS rules,
-or use of CSS properites with known performance implications.
-
-Morass offers improved performance because the dozens or hundreds of CSS files often seen in
-poorly-engineered applications are much smaller (or not needed at all).
-This reduces both download and processing time.
-
-### Floats
-
-Morass does not use or support floats, and neither should you.
+oAlthough this does result in more deeply nested HTML,
+it also has major advantages.
+Each element has a single, well-define purpose,
+and as mentioned above we need only generic classes such as `blue` which work everywhere.
 
 ### Colors
 
-In order to conform to the micro-class principle,
-Morass defines five standard colors: primary, secondary, success, error, and warn.
-Each color is itself a micro-class which sets that as the foreground color.
-Variants such as `bg-success` and `border-success` apply the color to backgrounds and borders.
-An `invert` micro-class swaps light and dark, so we can write
+Human CSS classes uses a companion library for (human CSS colors)[ttp://github.com/rtm/human-css-colors].
+This HSL-based library allows you to easily think of colors in terms of their hue, lightness, and saturation,
+using micro-classes for hues (`red`), as well as saturations such as ``bright` and ligthnesses such as `dark`.
 
-    <div class="primary bg-primary invert">Light on dark</div>
+See that library for more details.
 
-These colors are exposed as hues in an HSL model,
-in the form of variables named `--hue-success`,
-for use in building your own colors based on them.
+### Units and measures
 
-### `!important`
-
-Morass neither needs nor uses `!important`, and we recommend you do not either.
-
-### Inline styles
-
-Some element-specific styling can obviously not be handled with micro-classes,
-`background-image` for example.
-If a page has only one or two such cases, we suggest inlining the rule with the `style` attribute.
-We are not religious zealots, and this can be a better approach than creating a separate CSS file
-and defining an additional class merely in order to target the element.
-
-### Composability
-
-Of course if I want to define my own class for an alement, and add padding, I can do
-
-    <div class="padding my-class">
-
-and this might be the best approach.
-However, what if I want to **include** the `padding` functionality into my own class definition?
-We would caution against this approach, which goes against the grain of the micro-class philosophy.
-However, it does have the "advantage" of allowing me to simply say `<div class="my-class">`.
-SuitCSS/rework provide the ability to do this using the `rework-inherit` plug-in, which provides an `inherit` pseudo-property, as follows:
+Many micro-class frameworks suffer from a proliferation of classes such as `width-75`.
+This limits the user to only the classes the designer provides.
+In contrast, human CSS classes provide separate micro-classes for numbers, lengths, and units,
+via a companion library for (human CSS numbers)[ttp://github.com/rtm/human-css-numbers],
+so we can write
 
 ```
-.myclass {
-  color: red;
-  inherit: .padding;
-}
+<div class="50% width">
+<div class="two rem border">
+<div class="three columns">
 ```
 
-If you really want to go this route, you'll have to make sure to add `rework-inherit` to your package,
-and arrange for it to be added to the list of rework plug-ins used in the preprocessing step.
-Core Morass does not make use of `inherit`.
+All standard CSS units are provided as micro-classes,
+including lengths such as `px`, `em`, and `rem`.
+Common numbers and percentages may also be used as micro-classes,
+in addition to built-in classes such as `1/2`.
 
-Micro-class groupings
----------------------
+See that library for more details.
 
-This section walks through each of the main groupings of micro-classes.
+### Text
+
+The text micro-class grouping provides control over text color, fonts, alignment, and so on.
+It is introduced by the micro-class `text`.
+`text` is combined with micro-classes for color,
+font size using standard synonyms such as `large` (or any length),
+font weight using standard synonyms such as `bold`, and others.
+
+Other text features include `italic`, `underline`, `upper`, `lower`, `capitalize`, `small-caps`, and so on.
+
+### Borders, margins, outlines, and padding
+
+Borders, margins, outlines, and padding are introduced by the `border`, `margin`, `outline`, and `padding` micro-classes.
+The classes `top`, `left`, `bottom`, and `right` may be given to indicate which side or sides are to be affected.
+A number or length, or keyword such as `thick` or `thin`,  specifies the size of the border, margin, outline, or padding.
+For borders and outlines, the standard types such as `solid` and `dotted` are available as micro-classes.
+Colors may also be specified for borders and padding.
+
+### Background
+
+The `background` micro-class provides a background of the specified color.
+
+```
+<div class="beige background">
+```
+
+### Sizes
+
+Box sizes are indicated with micro-classes such as `width` and `height`,
+which are given together with other micro-classes indicating the size,
+as a length, percentage, or keyword such as `half`.
+
+```
+<div class="half width">
+<div class="40% height">
+<div class="max-height 50 vh">
+```
 
 ### Spacing
 
-Some large proportion of CSS rules control spacing.
-People use top margins and bottom margins and top padding and bottom padding and special spacing elements.
-Morass provides simple mechanisms for controlling spacing.
+People commonly use top margins and bottom margins and top padding and bottom padding and special spacing elements
+to space out their elements.
+Human CSS classes provide a simple mechanisms for controlling spacing.
 The `spaced` micro-class adds space between child elements.
-The `padding` micro-class adds padding around an element,
-and the `margin` micro-class adds margins.
-Variants of these (indicated by modifier micro-classes) provide more or less spacing,
-more or less margins,
-and norizontal and vertical padding.
+Variants of these (indicated by modifier micro-classes) provide more or less spacing.
 
 Example of spaced children:
 
@@ -188,20 +205,9 @@ Example of spaced children:
 </div>
 ```
 
-Example of padding:
-
-```
-<div class="padding">
-<div class="padding horizontal en">
-<div class="padding top left hair">
-```
-
-A "hair" is a standard length used in Morass, which corresponds to 1/6 em.
-An "en" is half an "em".
-
 ### flexbox
 
-Morass expects most layout to be done using flexbox,
+Human CSS classes expect most layout to be done using flexbox,
 and provides a solid set of micro-classes to control them.
 The micro-classes available include ones to control direction, wrapping, and alignment.
 You'll no longer need to struggle with trying to remember the names or meanings or values of
@@ -210,10 +216,12 @@ properties like `align-items`.
 Examples of flexbox:
 
 ```
-<div class="flex">
+<div class="flex wrap">
+  <div class="basis one-third">
+  <div class="basis one-third">
+  <div class="basis one-third">
 
-<div class="flex vertical justify">
-  <div class="grow">
+<div class="flex vertical justify align-center">
 ```
 
 ### Display and visibility
@@ -226,27 +234,13 @@ Examples of flexbox:
 <div class="invisible">
 ```
 
-### Font weight and size
-
-```
-<div class="bold">
-```
-
-And many other variations including `light`, `normal`, and `heavy`.
-
-```
-<div class="small">
-<div class="large">
-```
-
-And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, etc.
-
 ### Opacity
 
 ```
 <div class="opaque">
 <div class="semi-opaque">
 <div class="transparent">
+<div class="opacity 0.8">
 ```
 
 ### Z-index
@@ -266,53 +260,42 @@ And many other variations, including `x-large`, `x-small`, `smaller`, `larger`, 
 <div class="fixed">
 ```
 
-### Text transforms
-
-```
-<div class="text upper">
-<div class="text lower">
-<div class="text capitalize">
-<div class="all-caps">
-```
-
 ### Transitions
 
 ```
 <div class="transition fast linear delay">
 ```
 
+### Things not supported
 
-Note on Preprocessors
----------------------
+The following CSS features require more complex properties which are not well-suited to the micro-class approach,
+and therefore are not (currently) supported:
 
-We hate CSS preprocessors.
-They are bulky, slow, and promote bad rule-writing practices.
-However, preprocessors do provide some useful functionality.
-The key feature is the use of variables.
-Since we do want to use variables, we do use a preprocessor.
-The preprocessor we use is suitCSS, a forward-looking system with a clear migration path to CSS4.
-It also supports imports, allowing us to write our code modularly,
-as well as auto-prefixing.
+1. Animations or more complex transitions
+2. Box shadows and text shadows
+3. Properties involving URLs, such as `background-image`
+4. Pseudo-classes
+5. Pseudo-elements
 
 Installation
 ------------
 
-    npm install --save-dev morass
+    npm install --save-dev @rtm/human-css-classes
 
 Then, in some file that the suitCSS compilation will process:
 
-    @import "morass";
+    @import "@rtm/human-css-classes";
 
-To use the pre-built version, use `dist/index.css`.
+To use the pre-built version, use `dist/index.css` or `dist/index.min.css`.
 Notice, however, that this will not handle any variables you define yourself.
 
-For your own Morass-type styles, we recommend following the Morass directory structure of `elements`/`modifiers`/`variables`.
-Note that suitCSS always uses the most recently defined variable value.
-Therefore, if you include your own variable definitions after importing Morass, they will take effect.
-
+Note that postCSS always uses the most recently defined variable value.
+Therefore, if you include your own variable definitions after importing human CSS classes, they will not take effect.
 
 Micro-class reference
 ---------------
+
+This table omits the micro-classes from the human CSS numbers and human CSS colors libraries.
 
  Name                 | Module      | Description                   |
 | -------------------- | ----------- | ----------------------------- |
@@ -347,7 +330,6 @@ Micro-class reference
 | delay-less           | transition  | Shorter delay transition.     |
 | delay-more           | transition  | Longer delay transition.      |
 | demi-bold            | font-weight | Weight between normal and bold. |
-| @desktop             |             | Apply only on desktop.        |
 | disc                 | list        | Disc list marker.             |
 | dotted               | border      | Dotted border.                |
 | double-spaced        | line-height | Double line spacing.          |
@@ -355,8 +337,6 @@ Micro-class reference
 | ease-in              | transition  | Transition timing "ease-in"   |
 | ease-out             | transition  | Transition timing "ease-out"  |
 | ease-in-out          | transition  | Transition timing "ease-in-out" |
-| em                   | padding, margin     | Padding or margin of 1 em.              |
-| en                   | padding, margin     | Padding or margin of 1/2 em.            |
 | emphasis             | font-style  | Italics.                      |
 | error                | colors      | Error color.                  |
 | expanded             | letter-spacing | Expand space between letters. |
@@ -381,12 +361,12 @@ Micro-class reference
 | half-width           | dimension   | Occupy half width.            |
 | heading              | font-family | Heading font family.          |
 | heavy                | font-weight | Heaviest font.                |
+| height               | dimensions  | Set element height.            |
 | hide, hidden         | display     | Hide element.                 |
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
 | horizontal           | padding, margin     | Padding or margin on left and right.    |
 | horizontal           | overflow    | Set horizontal overflow.      |
-| :hover               |             | Apply rules in hover state    |
 | in-front             | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
 | indent-more          | indent      | Indent text more.             |
@@ -421,9 +401,13 @@ Micro-class reference
 | lower                | text-transform | Lower-cased text.          |
 | lower                | list        | Lower-cased list markers.     |
 | margin               | margin      | Add margin to element.        |
+| max-height           | dimensions  | Set maximum element height.   |
+| max-width            | dimensions  | Set maximum element width.    |
 | medium               | size        | Medium font size.             |
 | medium               | border      | Medium border width.          |
 | medium-weight        | font-weight | Medium font weight.           |
+| min-height           | dimensions  | Set minimum element height.   |
+| min-width            | dimensions  | Set minimum element width.    |
 | monospace            | font        | Monospaced font.              |
 | norepeat             | background  | Do not repeat background.     |
 | none                 | list        | No list markers.              |
@@ -504,4 +488,50 @@ Micro-class reference
 | xx-small             | size        | Very very small font-size.    |
 | warn                 | colors      | Warning color.                |
 | white-space-normal   | white-space | Restore white space.          |
-| zero                 | padding, margin     | Zero padding or margin. |
+| width                | dimensions  | Set element width.            |
+
+## Other notes
+
+### Defininig your own classes
+
+What if I want to **include** the `padding` functionality into my own class definition?
+We would caution against this approach, which goes against the grain of the micro-class philosophy.
+However, it does have the "advantage" of allowing me to simply say `<div class="my-class">`.
+You can do this using the `postcss-inherit` plug-in, which provides an `@inherit` pseudo-property, as follows:
+
+```
+.myclass {
+  color: red;
+  @inherit: .padding .2 .em;
+}
+```
+
+If you really want to go this route, you'll have to make sure to add `postcss-inherit` to your package,
+and arrange for it to be added to the list of plug-ins used in the preprocessing step.
+
+### Performance
+
+CSS is rarely the major bottleneck in application performance.
+Of course there may be exceptions involving huge systems,
+or poorly written CSS rules,
+or use of CSS properites with known performance implications.
+
+Human CSS classes offer improved performance because the dozens or hundreds of CSS files often seen in
+poorly-engineered applications are much smaller (or not needed at all).
+This reduces both download and processing time.
+
+### Floats
+
+We do not use or support floats, and neither should you.
+
+### `!important`
+
+We neither needs nor uses `!important`, and we recommend you do not either.
+
+### Inline styles
+
+Some element-specific styling can obviously not be handled with micro-classes,
+`background-image` for example.
+If a page has only one or two such cases, we suggest inlining the rule with the `style` attribute.
+We are not religious zealots, and this can be a better approach than creating a separate CSS file
+and defining an additional class merely in order to target the element.

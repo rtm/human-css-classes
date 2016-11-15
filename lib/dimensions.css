@@ -4,5 +4,20 @@ lib/modifiers/dimension.css
 Widths and heights.
 */
 
-.width  { width:  var(--length); }
-.height { height: var(--length); }
+.width      { width:      var(--length); }
+.height     { height:     var(--length); }
+.max-height { max-height: var(--length); }
+.min-height { min-height: var(--length); }
+.max-width  { max-width:  var(--length); }
+.min-width  { min-width:  var(--length); }
+.block-size { block-size: var(--length); }
+.max-block-size { max-block-size: var(--length); }
+.min-block-size { min-block-size: var(--length); }
+
+.max-content        { --length: max-content; }
+.min-content        { --length: min-content; }
+.available          { --length: available;   }
+.fit-content        { --length: fit-content; }
+
+.border-box         { --box: border-box; }
+.content-box        { --box: content-box; }

@@ -93,3 +93,6 @@ Border-related microclasses.
   border-color: hsla(var(--border-hue), var(--border-saturation), var(--border-lightness), var(--border-alpha));
   border-width: var(--border-width);
 }
+
+/* TODO */
+/* block-end, block-start, inline-start, inline-end */

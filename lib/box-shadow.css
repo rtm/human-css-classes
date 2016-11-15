@@ -1,0 +1,17 @@
+/**
+* box-shadow.css
+*
+* Morass micro-classes for simple box shadow,
+with identical x and y and no blur or spread radius.
+*/
+
+.box-shadow {
+  --inset: ;
+  --box-shadow-offset: var(--length);
+
+  box-shadow: var(--inset) var(--box-shadow-offset) var(--box-shadow-offset) var(--color); }
+}
+
+ .box-shadow.inset {
+   --inset: inset;
+}
