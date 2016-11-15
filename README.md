@@ -116,14 +116,14 @@ We take a different approach, which is to place the classes on individual, neste
 </div>
 ```
 
-oAlthough this does result in more deeply nested HTML,
+Although this does result in more deeply nested HTML,
 it also has major advantages.
-Each element has a single, well-define purpose,
+Each element has a single, well-defined purpose,
 and as mentioned above we need only generic classes such as `blue` which work everywhere.
 
 ### Colors
 
-Human CSS classes uses a companion library for (human CSS colors)[ttp://github.com/rtm/human-css-colors].
+Human CSS classes uses a companion library for [human CSS colors](http://github.com/rtm/human-css-colors).
 This HSL-based library allows you to easily think of colors in terms of their hue, lightness, and saturation,
 using micro-classes for hues (`red`), as well as saturations such as ``bright` and ligthnesses such as `dark`.
 
@@ -134,7 +134,7 @@ See that library for more details.
 Many micro-class frameworks suffer from a proliferation of classes such as `width-75`.
 This limits the user to only the classes the designer provides.
 In contrast, human CSS classes provide separate micro-classes for numbers, lengths, and units,
-via a companion library for (human CSS numbers)[ttp://github.com/rtm/human-css-numbers],
+via a companion library for [human CSS numbers](http://github.com/rtm/human-css-numbers)
 so we can write
 
 ```
@@ -311,7 +311,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | alpha                | list        | Alpha list markers.           |
 | backmost             | z-index     | Set element to very back.     |
 | background           | background  | Set background color.         |
-| body                 | font-family | Body font family.             |
 | behind               | z-index     | Set element behind.           |
 | bold                 | text        | Bold font.                    |
 | bolder               | text        | Increase boldness.            |
@@ -320,11 +319,11 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | bottom               | margin      | Add margin on bottom.         |
 | capitalize           | text-transform | Capitalized text.          |
 | circle               | list        | Circle list marker.           |
+| column(s)            | columns     | Number of columns.            |
 | condensed            | letter-spacing | Condense space between letters. |
 | contain              | background  | Clip background image         |
 | cover                | background  | Letterbox background image    |
 | decimal              | list        | Decimal list markers.         |
-| default              | colors      | Default color.                |
 | delay                | transition  | Delay transition.             |
 | dashed               | border      | Dashed border.                |
 | delay-less           | transition  | Shorter delay transition.     |
@@ -338,7 +337,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | ease-out             | transition  | Transition timing "ease-out"  |
 | ease-in-out          | transition  | Transition timing "ease-in-out" |
 | emphasis             | font-style  | Italics.                      |
-| error                | colors      | Error color.                  |
 | expanded             | letter-spacing | Expand space between letters. |
 | expanded-more        | letter-spacing | More space between letters. |
 | extra-bold           | font-weight | Font weight 800.              |
@@ -348,24 +346,17 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | first                | flex        | Place item first in flex order. |
 | fixed                | position    | Fixed positioniong.           |
 | flex                 | flex        | Set up flex container.        |
-| four-columns         | column      | Split content into 4 columns. |
 | front                | z-index     | Set element in front.         |
 | frontmost            | z-index     | Set element to very front.    |
-| full-height          | dimension   | Occupy full height.           |
-| full-width           | dimension   | Occupy full width.            |
 | groove               | border      | Groove-style border.          |
 | grow                 | flex        | Allow this item to grow.      |
 | hair                 | padding, margin     | Padding or margin of 1/6 em.            |
 | hairline             | font-weight | Lightest font.                |
-| half-height          | dimension   | Occupy half height.           |
-| half-width           | dimension   | Occupy half width.            |
-| heading              | font-family | Heading font family.          |
 | heavy                | font-weight | Heaviest font.                |
 | height               | dimensions  | Set element height.            |
 | hide, hidden         | display     | Hide element.                 |
 | honor-newline        | white-space | Treat newlines as newlines.   |
 | horizontal           | flex        | Row-oriented flex container.  |
-| horizontal           | padding, margin     | Padding or margin on left and right.    |
 | horizontal           | overflow    | Set horizontal overflow.      |
 | in-front             | z-index     | Set element in front.         |
 | indent               | indent      | Indent text.                  |
@@ -376,7 +367,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | inset                | border      | Inset-style border.           |
 | inside               | list        | Inside list markers.          |
 | inter-character      | ruby        | Ruby between characters.      |
-| invert               | background  | Invert background dark/light. |
 | invisible            | visibility  | Make invisible.               |
 | italic               | font-style  | Italics.                      |
 | justify              | flex        | Justify flexbox items.        |
@@ -420,7 +410,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | padding              | padding     | Pad an element.               |
 | pointer              | cursor      | Pointing cursor.              |
 | preserve-whitespace  | white-space | Do not collapse whitespace.   |
-| primary              | colors      | Primary color.                |
 | relative             | position    | Relative positioniong.        |
 | repeat-x             | background  | Repeat background in x direction. |
 | repeat-y             | background  | Repeat background in y direction. |
@@ -445,7 +434,7 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | semi-bold            | font-weight | Weight between normal and bold. |
 | semi-opaque          | opacity     | 50% opacity.                  |
 | show                 | display     | Display as block.             |
-| single-spaced        | line-height | Normal (single) line spacing. |
+| single               | spacing     | Single spacing.               |
 | slow                 | transition  | Slow transition.              |
 | slower               | transition  | Very slow transition.         |
 | small                | size        | Small font size.              |
@@ -457,14 +446,11 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | step-start           | transition  | Transition timing "step-start" |
 | step-end             | transition  | Transition timing "step-end"  |
 | strong               | font-weight | Bold text.                    |
-| success              | colors      | Success color.                |
 | tight                | space       | Tighter inter-item spacing.   |
 | thick                | border      | Thick border.                  |
 | thin                 | border      | Thin border.                  |
 | top                  | padding, margin     | Padding or margin on top. |
 | transparent          | opacity     | Zero opacity.                 |
-| two-columns          | column      | Split content into 2 columns. |
-| three-columns        | column      | Split content into 3 columns. |
 | ultra-bold           | font-weight | Bolder than bold.             |
 | ultra-light          | font-weight | Extra-light font.             |
 | under                | ruby        | Ruby on bottom.               |
@@ -472,7 +458,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | upper                | text-transform | Uppercased text.           |
 | upper                | list        | Uppercased list marker.       |
 | vertical             | flex        | Column-oriented flex container. |
-| vertical             | padding, margin     | Padding or margin on top and bottom. |
 | vertical             | overflow    | Set vertical                  |
 | visible              | visibility  | Make visible.                 |
 | wrap                 | flex        | Wrap flexbox items.           |
@@ -486,8 +471,6 @@ This table omits the micro-classes from the human CSS numbers and human CSS colo
 | xx-bold              | font-weight | Font weight 900.              |
 | xx-large             | size        | Very very large font size.    |
 | xx-small             | size        | Very very small font-size.    |
-| warn                 | colors      | Warning color.                |
-| white-space-normal   | white-space | Restore white space.          |
 | width                | dimensions  | Set element width.            |
 
 ## Other notes
