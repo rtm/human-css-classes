@@ -10,49 +10,49 @@ index.css: entry point for @rtm/human-css-numbers.
 
 /* UNITS */
 
-.em                 { --length: calc(var(--number) * 1em);  }
+[em]                   { --length: calc(var(--number) * 1em);  }
 
-.in, .inch, .inches { --length: calc(var(--number) * 1in);  }
+[in], [inch], [inches] { --length: calc(var(--number) * 1in);  }
 
-.rem                { --length: calc(var(--number) * 1rem); }
+[rem]                  { --length: calc(var(--number) * 1rem); }
 
-.px                 { --length: calc(var(--number) * 1px);  }
+[px]                   { --length: calc(var(--number) * 1px);  }
 
-.pc, .picas         { --length: calc(var(--number) * 1pc);  }
+[pc], [picas]          { --length: calc(var(--number) * 1pc);  }
 
-.pt, .points        { --length: calc(var(--number) * 1pt);  }
+[pt], [points]         { --length: calc(var(--number) * 1pt);  }
 
-.px, .pixels        { --length: calc(var(--number) * 1px);  }
+[px], [pixels]         { --length: calc(var(--number) * 1px);  }
 
-.ex                 { --length: calc(var(--number) * 1ex);  }
+[ex]                   { --length: calc(var(--number) * 1ex);  }
 
-.q                  { --length: calc(var(--number) * 1q;)   }
+[q]                    { --length: calc(var(--number) * 1q;)   }
 
-.cm, .cms, .centimeter, .centimeters   { --length: calc(var(--number) * 1cm);  }
+[cm], [cms], [centimeter], [centimeters]   { --length: calc(var(--number) * 1cm);  }
 
-.mm, .mms, .millimeter, .millimeters   { --length: calc(var(--number) * 1mm);  }
+[mm], [mms], [millimeter], [millimeters]   { --length: calc(var(--number) * 1mm);  }
 
-.ch                 { --length: calc(var(--number) * 1ch);   }
+[ch]                   { --length: calc(var(--number) * 1ch);   }
 
-.vw                 { --length: calc(var(--number) * 1vw);   }
+[vw]                   { --length: calc(var(--number) * 1vw);   }
 
-.vh                 { --length: calc(var(--number) * 1vh);   }
+[vh]                   { --length: calc(var(--number) * 1vh);   }
 
-.vmin               { --length: calc(var(--number) * 1vmin); }
+[vmin]                 { --length: calc(var(--number) * 1vmin); }
 
-.vmax               { --length: calc(var(--number) * 1vmax); }
+[vmax]                 { --length: calc(var(--number) * 1vmax); }
 
-.ms, .milliseconds  { --length: calc(var(--number) * 1ms);   }
+[ms], [milliseconds]   { --length: calc(var(--number) * 1ms);   }
 
-.s, .seconds, .second { --length: calc(var(--number) * 1s;)  }
+[s], [seconds], [second] { --length: calc(var(--number) * 1s;)  }
 
-.deg, .degrees      { --length: calc(var(--number) * 1deg);  }
+[deg], [degrees]       { --length: calc(var(--number) * 1deg);  }
 
-.grad, .gradian, .gradians    { --length: calc(var(--number) * 1grad); }
+[grad], [gradian], [gradians] { --length: calc(var(--number) * 1grad); }
 
-.rad, .radian, .radians      { --length: calc(var(--number) * 1rad);  }
+[rad], [radian], [radians]    { --length: calc(var(--number) * 1rad);  }
 
-.turn, .turns       { --length: calc(var(--number) * 1turn); }
+[turn], [turns]        { --length: calc(var(--number) * 1turn); }
 
 * {
   --denominator: 1;
@@ -64,372 +64,372 @@ index.css: entry point for @rtm/human-css-numbers.
   --number: calc(var(--unsigned-number) * var(--sign));
 }
 
-:not(.hundred) {
+:not([hundred]) {
   --unsigned-number: calc((10 * var(--tens) + var(--ones)) / var(--denominator));
 }
 
 /* NUMBERS */
 
-.hundred   { --unsigned-number: calc(100 * var(--ones) + 10 * var(--tens)); --ones: 0; }
+[hundred]   { --unsigned-number: calc(100 * var(--ones) + 10 * var(--tens)); --ones: 0; }
 
-.ten       { --tens: 1; --ones: 0; }
+[ten]       { --tens: 1; --ones: 0; }
 
-.twenty    { --tens: 2; --ones: 0; }
+[twenty]    { --tens: 2; --ones: 0; }
 
-.thirty    { --tens: 3; --ones: 0; }
+[thirty]    { --tens: 3; --ones: 0; }
 
-.forty     { --tens: 4; --ones: 0; }
+[forty]     { --tens: 4; --ones: 0; }
 
-.fifty     { --tens: 5; --ones: 0; }
+[fifty]     { --tens: 5; --ones: 0; }
 
-.sixty     { --tens: 6; --ones: 0; }
+[sixty]     { --tens: 6; --ones: 0; }
 
-.seventy   { --tens: 7; --ones: 0; }
+[seventy]   { --tens: 7; --ones: 0; }
 
-.eighty    { --tens: 8; --ones: 0; }
+[eighty]    { --tens: 8; --ones: 0; }
 
-.ninety    { --tens: 9; --ones: 0; }
+[ninety]    { --tens: 9; --ones: 0; }
 
 /* "Ones" values are used in calculating unsigned number. */
 
-.zero      { --number: 0; }
+[zero]      { --number: 0; }
 
-.one       { --ones: 1; }
+[one]       { --ones: 1; }
 
-.two       { --ones: 2; }
+[two]       { --ones: 2; }
 
-.three     { --ones: 3; }
+[three]     { --ones: 3; }
 
-.four      { --ones: 4; }
+[four]      { --ones: 4; }
 
-.five      { --ones: 5; }
+[five]      { --ones: 5; }
 
-.six       { --ones: 6; }
+[six]       { --ones: 6; }
 
-.seven     { --ones: 7; }
+[seven]     { --ones: 7; }
 
-.eight     { --ones: 8; }
+[eight]     { --ones: 8; }
 
-.nine      { --ones: 9; }
+[nine]      { --ones: 9; }
 
-.eleven    { --ones: 11; }
+[eleven]    { --ones: 11; }
 
-.twelve    { --ones: 12; }
+[twelve]    { --ones: 12; }
 
-.thirteen  { --ones: 13; }
+[thirteen]  { --ones: 13; }
 
-.fourteen  { --ones: 14; }
+[fourteen]  { --ones: 14; }
 
-.fifteen   { --ones: 15; }
+[fifteen]   { --ones: 15; }
 
-.sixteen   { --ones: 16; }
+[sixteen]   { --ones: 16; }
 
-.seventeen { --ones: 17; }
+[seventeen] { --ones: 17; }
 
-.eighteen  { --ones: 18; }
+[eighteen]  { --ones: 18; }
 
-.nineteen  { --ones: 19; }
+[nineteen]  { --ones: 19; }
 
 /* If `hundred` is present, they apply to it. */
 
 /* FRACTIONS */
 
-.\30 \.1   { --unsigned-number: 0.1;  }
+[\30 .1]    { --unsigned-number: 0.1;  }
 
-.\30 \.2   { --unsigned-number: 0.2;  }
+[\30 .2]   { --unsigned-number: 0.2;  }
 
-.\30 \.25  { --unsigned-number: 0.25; }
+[\30 .25]  { --unsigned-number: 0.25; }
 
-.\30 \.3   { --unsigned-number: 0.3;  }
+[\30 .3]   { --unsigned-number: 0.3;  }
 
-.\30 \.4   { --unsigned-number: 0.4;  }
+[\30 .4]   { --unsigned-number: 0.4;  }
 
-.\30 \.5   { --unsigned-number: 0.5;  }
+[\30 .5]   { --unsigned-number: 0.5;  }
 
-.\30 \.6   { --unsigned-number: 0.6;  }
+[\30 .6]   { --unsigned-number: 0.6;  }
 
-.\30 \.7   { --unsigned-number: 0.7;  }
+[\30 .7]   { --unsigned-number: 0.7;  }
 
-.\30 \.75  { --unsigned-number: 0.75; }
+[\30 .75]  { --unsigned-number: 0.75; }
 
-.\30 \.8   { --unsigned-number: 0.8;  }
+[\30 .8]   { --unsigned-number: 0.8;  }
 
-.\31 \.0   { --unsigned-number: 1.0;  }
+[\31 .0]   { --unsigned-number: 1.0;  }
 
-.\31 \.5   { --unsigned-number: 1.5;  }
+[\31 .5]   { --unsigned-number: 1.5;  }
 
-.\32 \.0   { --unsigned-number: 2.0;  }
+[\32 .0]   { --unsigned-number: 2.0;  }
 
-.-\30 \.1   { --number: -0.1;  }
+[\-0.1]   { --number: -0.1;  }
 
-.-\30 \.2   { --number: -0.2;  }
+[\-0.2]   { --number: -0.2;  }
 
-.-\30 \.25  { --number: -0.25; }
+[\-0.25]  { --number: -0.25; }
 
-.-\30 \.3   { --number: -0.3;  }
+[\-0.3]   { --number: -0.3;  }
 
-.-\30 \.4   { --number: -0.4;  }
+[\-0.4]   { --number: -0.4;  }
 
-.-\30 \.5   { --number: -0.5;  }
+[\-0.5]   { --number: -0.5;  }
 
-.-\30 \.6   { --number: -0.6;  }
+[\-0.6]   { --number: -0.6;  }
 
-.-\30 \.7   { --number: -0.7;  }
+[\-0.7]   { --number: -0.7;  }
 
-.-\30 \.75  { --number: -0.75; }
+[\-0.75]  { --number: -0.75; }
 
-.-\30 \.8   { --number: -0.8;  }
+[\-0.8]   { --number: -0.8;  }
 
-.-\31 \.0   { --number: -1.0;  }
+[\-1.0]   { --number: -1.0;  }
 
-.-\31 \.5   { --number: -1.5;  }
+[\-1.5]   { --number: -1.5;  }
 
-.-\32 \.0   { --number: -2.0;  }
+[\-2.0]   { --number: -2.0;  }
 
 /* Raw numbers. */
 
-.\31     { --unsigned-number: 1; }
+[\31]     { --unsigned-number: 1; }
 
-.\32     { --unsigned-number: 2; }
+[\32]     { --unsigned-number: 2; }
 
-.\33     { --unsigned-number: 3; }
+[\33]     { --unsigned-number: 3; }
 
-.\34     { --unsigned-number: 4; }
+[\34]     { --unsigned-number: 4; }
 
-.\35     { --unsigned-number: 5; }
+[\35]     { --unsigned-number: 5; }
 
-.\36     { --unsigned-number: 6; }
+[\36]     { --unsigned-number: 6; }
 
-.\37     { --unsigned-number: 7; }
+[\37]     { --unsigned-number: 7; }
 
-.\38     { --unsigned-number: 8; }
+[\38]     { --unsigned-number: 8; }
 
-.\39     { --unsigned-number: 9; }
+[\39]     { --unsigned-number: 9; }
 
-.\31 0   { --unsigned-number: 10; }
+[\31 0]   { --unsigned-number: 10; }
 
-.\32 0   { --unsigned-number: 20; }
+[\32 0]   { --unsigned-number: 20; }
 
-.\33 0   { --unsigned-number: 30; }
+[\33 0]   { --unsigned-number: 30; }
 
-.\34 0   { --unsigned-number: 40; }
+[\34 0]   { --unsigned-number: 40; }
 
-.\35 0   { --unsigned-number: 50; }
+[\35 0]   { --unsigned-number: 50; }
 
-.\36 0   { --unsigned-number: 60; }
+[\36 0]   { --unsigned-number: 60; }
 
-.\37 0   { --unsigned-number: 70; }
+[\37 0]   { --unsigned-number: 70; }
 
-.\38 0   { --unsigned-number: 80; }
+[\38 0]   { --unsigned-number: 80; }
 
-.\39 0   { --unsigned-number: 90; }
+[\39 0]   { --unsigned-number: 90; }
 
-.\31 00  { --unsigned-number: 100; }
+[\31 00]  { --unsigned-number: 100; }
 
-.\32 00  { --unsigned-number: 200; }
+[\32 00]  { --unsigned-number: 200; }
 
-.\33 00  { --unsigned-number: 300; }
+[\33 00]  { --unsigned-number: 300; }
 
-.\34 00  { --unsigned-number: 400; }
+[\34 00]  { --unsigned-number: 400; }
 
-.\35 00  { --unsigned-number: 500; }
+[\35 00]  { --unsigned-number: 500; }
 
-.\36 00  { --unsigned-number: 600; }
+[\36 00]  { --unsigned-number: 600; }
 
-.\37 00  { --unsigned-number: 700; }
+[\37 00]  { --unsigned-number: 700; }
 
-.\38 00  { --unsigned-number: 800; }
+[\38 00]  { --unsigned-number: 800; }
 
-.\39 00  { --unsigned-number: 900; }
+[\39 00]  { --unsigned-number: 900; }
 
-.\31 000 { --unsigned-number: 1000; }
+[\31 000] { --unsigned-number: 1000; }
 
-.\32 000 { --unsigned-number: 2000; }
+[\32 000] { --unsigned-number: 2000; }
 
-/* Negative numberbs. */
+/* /\* Negative numberbs. *\/ */
 
-.-\31     { --number: -1; }
+/* [-]\31     { --number: -1; } */
 
-.-\32     { --number: -2; }
+/* [-]\32     { --number: -2; } */
 
-.-\33     { --number: -3; }
+/* [-]\33     { --number: -3; } */
 
-.-\34     { --number: -4; }
+/* [-]\34     { --number: -4; } */
 
-.-\35     { --number: -5; }
+/* [-]\35     { --number: -5; } */
 
-.-\36     { --number: -6; }
+/* [-]\36     { --number: -6; } */
 
-.-\37     { --number: -7; }
+/* [-]\37     { --number: -7; } */
 
-.-\38     { --number: -8; }
+/* [-]\38     { --number: -8; } */
 
-.-\39     { --number: -9; }
+/* [-]\39     { --number: -9; } */
 
-.-\31 0   { --number: -10; }
+/* [-]\31 0   { --number: -10; } */
 
-.-\32 0   { --number: -20; }
+/* [-]\32 0   { --number: -20; } */
 
-.-\33 0   { --number: -30; }
+/* [-]\33 0   { --number: -30; } */
 
-.-\34 0   { --number: -40; }
+/* [-]\34 0   { --number: -40; } */
 
-.-\35 0   { --number: -50; }
+/* [-]\35 0   { --number: -50; } */
 
-.-\36 0   { --number: -60; }
+/* [-]\36 0   { --number: -60; } */
 
-.-\37 0   { --number: -70; }
+/* [-]\37 0   { --number: -70; } */
 
-.-\38 0   { --number: -80; }
+/* [-]\38 0   { --number: -80; } */
 
-.-\39 0   { --number: -90; }
+/* [-]\39 0   { --number: -90; } */
 
-.-\31 00  { --number: -100; }
+/* [-]\31 00  { --number: -100; } */
 
-.-\32 00  { --number: -200; }
+/* [-]\32 00  { --number: -200; } */
 
-.-\33 00  { --number: -300; }
+/* [-]\33 00  { --number: -300; } */
 
-.-\34 00  { --number: -400; }
+/* [-]\34 00  { --number: -400; } */
 
-.-\35 00  { --number: -500; }
+/* [-]\35 00  { --number: -500; } */
 
-.-\36 00  { --number: -600; }
+/* [-]\36 00  { --number: -600; } */
 
-.-\37 00  { --number: -700; }
+/* [-]\37 00  { --number: -700; } */
 
-.-\38 00  { --number: -800; }
+/* [-]\38 00  { --number: -800; } */
 
-.-\39 00  { --number: -900; }
+/* [-]\39 00  { --number: -900; } */
 
-.-\31 000 { --number: -1000; }
+/* [-]\31 000 { --number: -1000; } */
 
-.-\32 000 { --number: -2000; }
+/* [-]\32 000 { --number: -2000; } */
 
 /* PERCENTAGES */
 
-.full         { --number: 1; }
+[full]         { --number: 1; }
 
 /* RATIONALS */
 
-.\31 \/2      { --unsigned-number: calc(1 / 2); }
+[\31 \/2]      { --unsigned-number: calc(1 / 2); }
 
-.\31 \/3      { --unsigned-number: calc(1 / 3); }
+[\31 \/3]      { --unsigned-number: calc(1 / 3); }
 
-.\31 \/4      { --unsigned-number: calc(1 / 5); }
+[\31 \/4]      { --unsigned-number: calc(1 / 5); }
 
-.\31 \/5      { --unsigned-number: calc(1 / 5); }
+[\31 \/5]      { --unsigned-number: calc(1 / 5); }
 
-.\31 \/6      { --unsigned-number: calc(1 / 6); }
+[\31 \/6]      { --unsigned-number: calc(1 / 6); }
 
-.\31 \/7      { --unsigned-number: calc(1 / 7); }
+[\31 \/7]      { --unsigned-number: calc(1 / 7); }
 
-.\31 \/8      { --unsigned-number: calc(1 / 8); }
+[\31 \/8]      { --unsigned-number: calc(1 / 8); }
 
-.\31 \/9      { --unsigned-number: calc(1 / 9); }
+[\31 \/9]      { --unsigned-number: calc(1 / 9); }
 
-.\31 \/10     { --unsigned-number: calc(1 / 10); }
+[\31 \/10]     { --unsigned-number: calc(1 / 10); }
 
-.-\31 \/2      { --number: calc(-1 / 2); }
+[\-\31 \/2]    { --number: calc(-1 / 2); }
 
-.-\31 \/3      { --number: calc(-1 / 3); }
+[\-\31 \/3]    { --number: calc(-1 / 3); }
 
-.-\31 \/4      { --number: calc(-1 / 5); }
+[\-\31 \/4]    { --number: calc(-1 / 5); }
 
-.-\31 \/5      { --number: calc(-1 / 5); }
+[\-\31 \/5]    { --number: calc(-1 / 5); }
 
-.-\31 \/6      { --number: calc(-1 / 6); }
+[\-\31 \/6]    { --number: calc(-1 / 6); }
 
-.-\31 \/7      { --number: calc(-1 / 7); }
+[\-\31 \/7]    { --number: calc(-1 / 7); }
 
-.-\31 \/8      { --number: calc(-1 / 8); }
+[\-\31 \/8]    { --number: calc(-1 / 8); }
 
-.-\31 \/9      { --number: calc(-1 / 9); }
+[\-\31 \/9]    { --number: calc(-1 / 9); }
 
-.-\31 \/10     { --number: calc(-1 / 10); }
+[\-\31 \/10]    { --number: calc(-1 / 10); }
 
 /* Support "10%" etc. */
 
-.\31 0\%       { --length: 10%; }
+[\31 0\%]       { --length: 10%; }
 
-.\32 0\%       { --length: 20%; }
+[\32 0\%]       { --length: 20%; }
 
-.\32 5\%       { --length: 25%; }
+[\32 5\%]       { --length: 25%; }
 
-.\33 0\%       { --length: 30%; }
+[\33 0\%]       { --length: 30%; }
 
-.\34 0\%       { --length: 40%; }
+[\34 0\%]       { --length: 40%; }
 
-.\34 0\%       { --length: 50%; }
+[\34 0\%]       { --length: 50%; }
 
-.\36 0\%       { --length: 60%; }
+[\36 0\%]       { --length: 60%; }
 
-.\37 0\%       { --length: 70%; }
+[\37 0\%]       { --length: 70%; }
 
-.\37 5\%       { --length: 75%; }
+[\37 5\%]       { --length: 75%; }
 
-.\38 0\%       { --length: 80%; }
+[\38 0\%]       { --length: 80%; }
 
-.\39 0\%       { --length: 90%; }
+[\39 0\%]       { --length: 90%; }
 
-.\31 00\%      { --length: 100%; }
+[\31 00\%]      { --length: 100%; }
 
-.-\31 0\%      { --length: -10%; }
+/* [-]\31 0\%      { --length: -10%; } */
 
-.-\32 0\%      { --length: -20%; }
+/* [-]\32 0\%      { --length: -20%; } */
 
-.-\32 5\%      { --length: -25%; }
+/* [-]\32 5\%      { --length: -25%; } */
 
-.-\33 0\%      { --length: -30%; }
+/* [-]\33 0\%      { --length: -30%; } */
 
-.-\34 0\%      { --length: -40%; }
+/* [-]\34 0\%      { --length: -40%; } */
 
-.-\34 0\%      { --length: -50%; }
+/* [-]\34 0\%      { --length: -50%; } */
 
-.-\36 0\%      { --length: -60%; }
+/* [-]\36 0\%      { --length: -60%; } */
 
-.-\37 0\%      { --length: -70%; }
+/* [-]\37 0\%      { --length: -70%; } */
 
-.-\37 5\%      { --length: -75%; }
+/* [-]\37 5\%      { --length: -75%; } */
 
-.-\38 0\%      { --length: -80%; }
+/* [-]\38 0\%      { --length: -80%; } */
 
-.-\39 0\%      { --length: -90%; }
+/* [-]\39 0\%      { --length: -90%; } */
 
-.-\31 00\%     { --lenngth: -100%; }
+/* [-]\31 00\%     { --lenngth: -100%; } */
 
-.\30           { --length: 0; }
+[\30]           { --length: 0; }
 
 /* Support "three fifths" etc. */
 
-.halves, .half      { --denominator: 2; }
+[halves], [half]      { --denominator: 2; }
 
-.thirds, .third     { --denominator: 3; }
+[thirds], [third]     { --denominator: 3; }
 
-.fourths, .fourth   { --denominator: 4; }
+[fourths], [fourth]   { --denominator: 4; }
 
-.fifths, .fifth     { --denominator: 5; }
+[fifths], [fifth]     { --denominator: 5; }
 
-.sixths, .sixth     { --denominator: 6; }
+[sixths], [sixth]     { --denominator: 6; }
 
-.sevenths, .seventh { --denominator: 7; }
+[sevenths], [seventh] { --denominator: 7; }
 
-.eighths, .eighth   { --denominator: 8; }
+[eighths], [eighth]   { --denominator: 8; }
 
-.ninths, .ninth     { --denominator: 9; }
+[ninths], [ninth]     { --denominator: 9; }
 
-.tenths, .tenth     { --denominator: 10; }
+[tenths], [tenth]     { --denominator: 10; }
 
-.minus   { --sign: -1; }
+[minus]   { --sign: -1; }
 
-.size    { --length: calc(100% * var(--number)); }
+[size]    { --length: calc(100% * var(--number)); }
 
-.percent { --length: calc(1% * var(--number)); }
+[percent] { --length: calc(1% * var(--number)); }
 
-/* human-css-colors/index.css: main code */
+/* human-css-colors/index[css]: main code */
 
 /**
- * styles/variables/hsl.css
+ * styles/variables/hsl[css]
  *
  * Variables for HSL.
  */
@@ -465,16 +465,16 @@ index.css: entry point for @rtm/human-css-numbers.
   --lightness-x-dark:    20%;
   --lightness-black:     0%;
 
-  --alpha-opaque:        1.0;
-  --alpha-translucent:   0.8;
-  --alpha-x-translucent: 0.6;
-  --alpha-transparent:   0.0;
+  --alpha-opaque:        1[0];
+  --alpha-translucent:   0[8];
+  --alpha-x-translucent: 0[6];
+  --alpha-transparent:   0[0];
 
   /* Overfide these values to change global defaults. */
   --default-hue:         240;
   --default-saturation:  75%;
   --default-lightness:   50%;
-  --default-alpha:       1.0;
+  --default-alpha:       1[0];
 
   --global-hue:          var(--default-hue);
   --global-saturation:   var(--default-saturation);
@@ -488,418 +488,418 @@ index.css: entry point for @rtm/human-css-numbers.
   --saturation: var(--global-saturation);
   --alpha:      var(--global-alpha);
 
-  --color: hsla(var(--hue, 0), var(--saturation, 50%), var(--lightness, 50%), var(--alpha, 1.0));
+  --color: hsla(var(--hue, 0), var(--saturation, 50%), var(--lightness, 50%), var(--alpha, 1[0]));
 }
 
-.red        { --hue: var(--hue-red);        }
+[red]        { --hue: var(--hue-red);        }
 
-.orange     { --hue: var(--hue-orange);     }
+[orange]     { --hue: var(--hue-orange);     }
 
-.yellow     { --hue: var(--hue-yellow);     }
+[yellow]     { --hue: var(--hue-yellow);     }
 
-.lime       { --hue: var(--hue-lime);       }
+[lime]       { --hue: var(--hue-lime);       }
 
-.green      { --hue: var(--hue-green);      }
+[green]      { --hue: var(--hue-green);      }
 
-.aquamarine { --hue: var(--hue-aquamarine); }
+[aquamarine] { --hue: var(--hue-aquamarine); }
 
-.cyan       { --hue: var(--hue-cyan);       }
+[cyan]       { --hue: var(--hue-cyan);       }
 
-.azure      { --hue: var(--hue-azure);      }
+[azure]      { --hue: var(--hue-azure);      }
 
-.blue       { --hue: var(--hue-blue);       }
+[blue]       { --hue: var(--hue-blue);       }
 
-.purple     { --hue: var(--hue-purple);     }
+[purple]     { --hue: var(--hue-purple);     }
 
-.magenta    { --hue: var(--hue-magenta);    }
+[magenta]    { --hue: var(--hue-magenta);    }
 
-.pink       { --hue: var(--hue-pink);       }
+[pink]       { --hue: var(--hue-pink);       }
 
-.pure       { --saturation: var(--saturation-pure);     }
+[pure]       { --saturation: var(--saturation-pure);     }
 
-.x-bright   { --saturation: var(--saturation-x-bright); }
+[x-bright]   { --saturation: var(--saturation-x-bright); }
 
-.bright     { --saturation: var(--saturation-bright);   }
+[bright]     { --saturation: var(--saturation-bright);   }
 
-.dull       { --saturation: var(--saturation-dull);     }
+[dull]       { --saturation: var(--saturation-dull);     }
 
-.x-dull     { --saturation: var(--saturation-x-dull);   }
+[x-dull]     { --saturation: var(--saturation-x-dull);   }
 
-.gray       { --saturation: var(--saturation-gray);     }
+[gray]       { --saturation: var(--saturation-gray);     }
 
-.purer      { --saturation: calc(var(--global-saturation) + 10%); }
+[purer]      { --saturation: calc(var(--global-saturation) + 10%); }
 
-.brighter   { --saturation: calc(var(--global-saturation) + 10%); }
+[brighter]   { --saturation: calc(var(--global-saturation) + 10%); }
 
-.duller     { --saturation: calc(var(--global-saturation) - 10%); }
+[duller]     { --saturation: calc(var(--global-saturation) - 10%); }
 
-.grayer     { --saturation: calc(var(--global-saturation) - 10%); }
+[grayer]     { --saturation: calc(var(--global-saturation) - 10%); }
 
-.x-purer      { --saturation: calc(var(--global-saturation) + 20%); }
+[x-purer]      { --saturation: calc(var(--global-saturation) + 20%); }
 
-.x-brighter   { --saturation: calc(var(--global-saturation) + 20%); }
+[x-brighter]   { --saturation: calc(var(--global-saturation) + 20%); }
 
-.x-duller     { --saturation: calc(var(--global-saturation) - 20%); }
+[x-duller]     { --saturation: calc(var(--global-saturation) - 20%); }
 
-.x-grayer     { --saturation: calc(var(--global-saturation) - 20%); }
+[x-grayer]     { --saturation: calc(var(--global-saturation) - 20%); }
 
-.white      { --lightness: var(--lightness-white);      }
+[white]      { --lightness: var(--lightness-white);      }
 
-.x-light    { --lightness: var(--lightness-x-light);    }
+[x-light]    { --lightness: var(--lightness-x-light);    }
 
-.light      { --lightness: var(--lightness-light);      }
+[light]      { --lightness: var(--lightness-light);      }
 
-.dark       { --lightness: var(--lightness-dark);       }
+[dark]       { --lightness: var(--lightness-dark);       }
 
-.x-dark     { --lightness: var(--lightness-x-dark);     }
+[x-dark]     { --lightness: var(--lightness-x-dark);     }
 
-.black      { --lightness: var(--lightness-black);      }
+[black]      { --lightness: var(--lightness-black);      }
 
-.whiter     { --lightness: calc(var(--global-lightness) + 10%); }
+[whiter]     { --lightness: calc(var(--global-lightness) + 10%); }
 
-.lighter    { --lightness: calc(var(--global-lightness) + 10%); }
+[lighter]    { --lightness: calc(var(--global-lightness) + 10%); }
 
-.x-whiter   { --lightness: calc(var(--global-lightness) + 20%); }
+[x-whiter]   { --lightness: calc(var(--global-lightness) + 20%); }
 
-.x-lighter  { --lightness: calc(var(--global-lightness) + 20%); }
+[x-lighter]  { --lightness: calc(var(--global-lightness) + 20%); }
 
-.darker     { --lightness: calc(var(--global-lightness) - 10%); }
+[darker]     { --lightness: calc(var(--global-lightness) - 10%); }
 
-.blacker    { --lightness: calc(var(--global-lightness) - 10%); }
+[blacker]    { --lightness: calc(var(--global-lightness) - 10%); }
 
-.x-darker   { --lightness: calc(var(--global-lightness) - 20%); }
+[x-darker]   { --lightness: calc(var(--global-lightness) - 20%); }
 
-.x-blacker  { --lightness: calc(var(--global-lightness) - 20%); }
+[x-blacker]  { --lightness: calc(var(--global-lightness) - 20%); }
 
--opaque        { --alpha: var(--alpha-opaque);          }
+/* -opaque        { --alpha: var(--alpha-opaque);          } */
 
--translucent   { --alpha: var(--translucent);           }
+/* -translucent   { --alpha: var(--translucent);           } */
 
--x-translucent { --alpha: var(--alpha-x-translucent);   }
+/* -x-translucent { --alpha: var(--alpha-x-translucent);   } */
 
--transparent   { --alpha: var(--alpha-transparent);     }
+/* -transparent   { --alpha: var(--alpha-transparent);     } */
 
-.currentColor { --color: currentColor; }
+[currentColor] { --color: currentColor; }
 
 /* RESET GLOBALS USING `hue`, `saturation`, `lightness` and `alpha` classes */
 
-.hue.red             { --global-hue: var(--hue-red);        }
+[hue][red]             { --global-hue: var(--hue-red);        }
 
-.hue.orange          { --global-hue: var(--hue-orange);     }
+[hue][orange]          { --global-hue: var(--hue-orange);     }
 
-.hue.yellow          { --global-hue: var(--hue-yellow);     }
+[hue][yellow]          { --global-hue: var(--hue-yellow);     }
 
-.hue.lime            { --global-hue: var(--hue-lime);       }
+[hue][lime]            { --global-hue: var(--hue-lime);       }
 
-.hue.green           { --global-hue: var(--hue-green);      }
+[hue][green]           { --global-hue: var(--hue-green);      }
 
-.hue.aquamarine      { --global-hue: var(--hue-aquamarine); }
+[hue][aquamarine]      { --global-hue: var(--hue-aquamarine); }
 
-.hue.cyan            { --global-hue: var(--hue-cyan);       }
+[hue][cyan]            { --global-hue: var(--hue-cyan);       }
 
-.hue.azure           { --global-hue: var(--hue-azure);      }
+[hue][azure]           { --global-hue: var(--hue-azure);      }
 
-.hue.blue            { --global-hue: var(--hue-blue);       }
+[hue][blue]            { --global-hue: var(--hue-blue);       }
 
-.hue.purple          { --global-hue: var(--hue-purple);     }
+[hue][purple]          { --global-hue: var(--hue-purple);     }
 
-.hue.magenta         { --global-hue: var(--hue-magenta);    }
+[hue][magenta]         { --global-hue: var(--hue-magenta);    }
 
-.hue.pine            { --global-hue: var(--hue-pink);       }
+[hue][pine]            { --global-hue: var(--hue-pink);       }
 
-.saturation.pure     { --global-saturation: var(--saturation-pure);     }
+[saturation][pure]     { --global-saturation: var(--saturation-pure);     }
 
-.saturation.x-bright { --global-saturation: var(--saturation-x-bright); }
+[saturation][x-bright] { --global-saturation: var(--saturation-x-bright); }
 
-.saturation.bright   { --global-saturation: var(--saturation-bright);   }
+[saturation][bright]   { --global-saturation: var(--saturation-bright);   }
 
-.saturation.dull     { --global-saturation: var(--saturation-dull);     }
+[saturation][dull]     { --global-saturation: var(--saturation-dull);     }
 
-.saturaation.x-dull  { --global-saturation: var(--saturation-x-dull);   }
+[saturaation][x-dull]  { --global-saturation: var(--saturation-x-dull);   }
 
-.satuation.gray      { --global-saturation: var(--saturation-gray);     }
+[satuation][gray]      { --global-saturation: var(--saturation-gray);     }
 
-.lightness.white     { --global-lightness: var(--lightness-white);      }
+[lightness][white]     { --global-lightness: var(--lightness-white);      }
 
-.lightness.x-light   { --global-lightness: var(--lightness-x-light);    }
+[lightness][x-light]   { --global-lightness: var(--lightness-x-light);    }
 
-.lightness.light     { --global-lightness: var(--lightness-light);      }
+[lightness][light]     { --global-lightness: var(--lightness-light);      }
 
-.lightness.dark      { --global-lightness: var(--lightness-dark);       }
+[lightness][dark]      { --global-lightness: var(--lightness-dark);       }
 
-.lightness.x-dark    { --global-lightness: var(--lightness-x-dark);     }
+[lightness][x-dark]    { --global-lightness: var(--lightness-x-dark);     }
 
-.lightness.black     { --global-lightness: var(--lightness-black);      }
+[lightness][black]     { --global-lightness: var(--lightness-black);      }
 
-.alpha-opaque        { --global-alpha: var(--alpha-opaque);             }
+[alpha-opaque]        { --global-alpha: var(--alpha-opaque);             }
 
-.alpha-translucent   { --global-alpha: var(--translucent);              }
+[alpha-translucent]   { --global-alpha: var(--translucent);              }
 
-.alpha-x-translucent { --global-alpha: var(--alpha-x-translucent);      }
+[alpha-x-translucent] { --global-alpha: var(--alpha-x-translucent);      }
 
 /* HTML COLORS */
 
-.aliceblue { --color: aliceblue; }
+[aliceblue] { --color: aliceblue; }
 
-.antiquewhite { --color: antiquewhite; }
+[antiquewhite] { --color: antiquewhite; }
 
-.aqua { --color: aqua; }
+[aqua] { --color: aqua; }
 
-.aquamarine.color { --color: aquamarine; }
+[aquamarine][color] { --color: aquamarine; }
 
-.azure.color { --color: azure; }
+[azure][color] { --color: azure; }
 
-.beige { --color: beige; }
+[beige] { --color: beige; }
 
-.bisque { --color: bisque; }
+[bisque] { --color: bisque; }
 
-.blanchedalmond { --color: blanchedalmond; }
+[blanchedalmond] { --color: blanchedalmond; }
 
-.blue.color { --color: blue; }
+[blue][color] { --color: blue; }
 
-.blueviolet { --color: blueviolet; }
+[blueviolet] { --color: blueviolet; }
 
-.brown { --color: brown; }
+[brown] { --color: brown; }
 
-.burlywood { --color: burlywood; }
+[burlywood] { --color: burlywood; }
 
-.cadet { --color: cadet; }
+[cadet] { --color: cadet; }
 
-.chartreuse { --color: chartreuse; }
+[chartreuse] { --color: chartreuse; }
 
-.chocolate { --color: chocolate; }
+[chocolate] { --color: chocolate; }
 
-.coral { --color: coral; }
+[coral] { --color: coral; }
 
-.cornflower { --color: cornflower; }
+[cornflower] { --color: cornflower; }
 
-.cornsilk { --color: cornsilk; }
+[cornsilk] { --color: cornsilk; }
 
-.crimson { --color: crimson; }
+[crimson] { --color: crimson; }
 
-.cyan.color { --color: cyan; }
+[cyan][color] { --color: cyan; }
 
-.darkblue { --color: darkblue; }
+[darkblue] { --color: darkblue; }
 
-.darkcyan { --color: darkcyan; }
+[darkcyan] { --color: darkcyan; }
 
-.darkgoldenrod { --color: darkgoldenrod; }
+[darkgoldenrod] { --color: darkgoldenrod; }
 
-.darkgray { --color: darkgray; }
+[darkgray] { --color: darkgray; }
 
-.darkgreen { --color: darkgreen; }
+[darkgreen] { --color: darkgreen; }
 
-.darkkhaki { --color: darkkhaki; }
+[darkkhaki] { --color: darkkhaki; }
 
-.darkmagenta { --color: darkmagenta; }
+[darkmagenta] { --color: darkmagenta; }
 
-.darkolivegreen { --color: darkolivegreen; }
+[darkolivegreen] { --color: darkolivegreen; }
 
-.darkorange { --color: darkorange; }
+[darkorange] { --color: darkorange; }
 
-.darkorchid { --color: darkorchid; }
+[darkorchid] { --color: darkorchid; }
 
-.darkred { --color: darkred; }
+[darkred] { --color: darkred; }
 
-.darksalmon { --color: darksalmon; }
+[darksalmon] { --color: darksalmon; }
 
-.darkseagreen { --color: darkseagreen; }
+[darkseagreen] { --color: darkseagreen; }
 
-.darkslateblue { --color: darkslateblue; }
+[darkslateblue] { --color: darkslateblue; }
 
-.darkslategray { --color: darkslategray; }
+[darkslategray] { --color: darkslategray; }
 
-.darkturquoise { --color: darkturquoise; }
+[darkturquoise] { --color: darkturquoise; }
 
-.darkviolet { --color: darkviolet; }
+[darkviolet] { --color: darkviolet; }
 
-.deeppink { --color: deeppink; }
+[deeppink] { --color: deeppink; }
 
-.deepskyblue { --color: deepskyblue; }
+[deepskyblue] { --color: deepskyblue; }
 
-.dimgray { --color: dimgray; }
+[dimgray] { --color: dimgray; }
 
-.dodger { --color: dodger; }
+[dodger] { --color: dodger; }
 
-.gainsboro { --color: gainsboro; }
+[gainsboro] { --color: gainsboro; }
 
-.green.color { --color: webgreen; }
+[green][color] { --color: webgreen; }
 
-.greenyellow { --color: greenyellow; }
+[greenyellow] { --color: greenyellow; }
 
-.honeydew { --color: honeydew; }
+[honeydew] { --color: honeydew; }
 
-.hotpink { --color: hotpink; }
+[hotpink] { --color: hotpink; }
 
-.indianred { --color: indianred; }
+[indianred] { --color: indianred; }
 
-.indigo { --color: indigo; }
+[indigo] { --color: indigo; }
 
-.ivory { --color: ivory; }
+[ivory] { --color: ivory; }
 
-.khaki { --color: khaki; }
+[khaki] { --color: khaki; }
 
-.lavender { --color: lavender; }
+[lavender] { --color: lavender; }
 
-.lavenderblush { --color: lavenderblush; }
+[lavenderblush] { --color: lavenderblush; }
 
-.lawngreen { --color: lawngreen; }
+[lawngreen] { --color: lawngreen; }
 
-.lemonchiffon { --color: lemonchiffon; }
+[lemonchiffon] { --color: lemonchiffon; }
 
-.lightblue { --color: lightblue; }
+[lightblue] { --color: lightblue; }
 
-.lightcoral { --color: lightcoral; }
+[lightcoral] { --color: lightcoral; }
 
-.lightcyan { --color: lightcyan; }
+[lightcyan] { --color: lightcyan; }
 
-.lightgoldenrod { --color: lightgoldenrod; }
+[lightgoldenrod] { --color: lightgoldenrod; }
 
-.lightgray { --color: lightgray; }
+[lightgray] { --color: lightgray; }
 
-.lightgreen { --color: lightgreen; }
+[lightgreen] { --color: lightgreen; }
 
-.lightpink { --color: lightpink; }
+[lightpink] { --color: lightpink; }
 
-.lightsalmon { --color: lightsalmon; }
+[lightsalmon] { --color: lightsalmon; }
 
-.lightseagreen { --color: lightseagreen; }
+[lightseagreen] { --color: lightseagreen; }
 
-.lightskyblue { --color: lightskyblue; }
+[lightskyblue] { --color: lightskyblue; }
 
-.lightslategray { --color: lightslategray; }
+[lightslategray] { --color: lightslategray; }
 
-.lightsteelblue { --color: lightsteelblue; }
+[lightsteelblue] { --color: lightsteelblue; }
 
-.lightyellow { --color: lightyellow; }
+[lightyellow] { --color: lightyellow; }
 
-.lime.color { --color: lime; }
+[lime][color] { --color: lime; }
 
-.limegreen { --color: limegreen; }
+[limegreen] { --color: limegreen; }
 
-.linen { --color: linen; }
+[linen] { --color: linen; }
 
-.magenta.color { --color: magenta; }
+[magenta][color] { --color: magenta; }
 
-.maroon { --color: maroon; }
+[maroon] { --color: maroon; }
 
-.webmaroon { --color: webmaroon; }
+[webmaroon] { --color: webmaroon; }
 
-.mediumaquamarine { --color: mediumaquamarine; }
+[mediumaquamarine] { --color: mediumaquamarine; }
 
-.mediumblue { --color: mediumblue; }
+[mediumblue] { --color: mediumblue; }
 
-.mediumorchid { --color: mediumorchid; }
+[mediumorchid] { --color: mediumorchid; }
 
-.mediumpurple { --color: mediumpurple; }
+[mediumpurple] { --color: mediumpurple; }
 
-.mediumseagreen { --color: mediumseagreen; }
+[mediumseagreen] { --color: mediumseagreen; }
 
-.mediumslateblue { --color: mediumslateblue; }
+[mediumslateblue] { --color: mediumslateblue; }
 
-.mediumspringgreen { --color: mediumspringgreen; }
+[mediumspringgreen] { --color: mediumspringgreen; }
 
-.mediumturquoise { --color: mediumturquoise; }
+[mediumturquoise] { --color: mediumturquoise; }
 
-.mediumvioletred { --color: mediumvioletred; }
+[mediumvioletred] { --color: mediumvioletred; }
 
-.midnightblue { --color: midnightblue; }
+[midnightblue] { --color: midnightblue; }
 
-.mintcream { --color: mintcream; }
+[mintcream] { --color: mintcream; }
 
-.mistyrose { --color: mistyrose; }
+[mistyrose] { --color: mistyrose; }
 
-.moccasin { --color: moccasin; }
+[moccasin] { --color: moccasin; }
 
-.navajowhite { --color: navajowhite; }
+[navajowhite] { --color: navajowhite; }
 
-.oldlace { --color: oldlace; }
+[oldlace] { --color: oldlace; }
 
-.olive { --color: olive; }
+[olive] { --color: olive; }
 
-.olivedrab { --color: olivedrab; }
+[olivedrab] { --color: olivedrab; }
 
-.orange.color { --color: orange; }
+[orange][color] { --color: orange; }
 
-.orangered { --color: orangered; }
+[orangered] { --color: orangered; }
 
-.orchid { --color: orchid; }
+[orchid] { --color: orchid; }
 
-.palegoldenrod { --color: palegoldenrod; }
+[palegoldenrod] { --color: palegoldenrod; }
 
-.paleturquoise { --color: paleturquoise; }
+[paleturquoise] { --color: paleturquoise; }
 
-.palevioletred { --color: palevioletred; }
+[palevioletred] { --color: palevioletred; }
 
-.papayawhip { --color: papayawhip; }
+[papayawhip] { --color: papayawhip; }
 
-.peachpuff { --color: peachpuff; }
+[peachpuff] { --color: peachpuff; }
 
-.peru { --color: peru; }
+[peru] { --color: peru; }
 
-.pink.color { --color: pink; }
+[pink][color] { --color: pink; }
 
-.plum { --color: plum; }
+[plum] { --color: plum; }
 
-.powderblue { --color: powderblue; }
+[powderblue] { --color: powderblue; }
 
-.purple.color { --color: purple; }
+[purple][color] { --color: purple; }
 
-.webpurple { --color: webpurple; }
+[webpurple] { --color: webpurple; }
 
-.rebeccapurple { --color: rebeccapurple; }
+[rebeccapurple] { --color: rebeccapurple; }
 
-.red.color { --color: red; }
+[red][color] { --color: red; }
 
-.rosybrown { --color: rosybrown; }
+[rosybrown] { --color: rosybrown; }
 
-.royalblue { --color: royalblue; }
+[royalblue] { --color: royalblue; }
 
-.saddlebrown { --color: saddlebrown; }
+[saddlebrown] { --color: saddlebrown; }
 
-.salmon { --color: salmon; }
+[salmon] { --color: salmon; }
 
-.sandybrown { --color: sandybrown; }
+[sandybrown] { --color: sandybrown; }
 
-.seagreen { --color: seagreen; }
+[seagreen] { --color: seagreen; }
 
-.seashell { --color: seashell; }
+[seashell] { --color: seashell; }
 
-.sienna { --color: sienna; }
+[sienna] { --color: sienna; }
 
-.silver { --color: silver; }
+[silver] { --color: silver; }
 
-.skyblue { --color: skyblue; }
+[skyblue] { --color: skyblue; }
 
-.slateblue { --color: slateblue; }
+[slateblue] { --color: slateblue; }
 
-.slategray { --color: slategray; }
+[slategray] { --color: slategray; }
 
-.snow { --color: snow; }
+[snow] { --color: snow; }
 
-.springgreen { --color: springgreen; }
+[springgreen] { --color: springgreen; }
 
-.steelblue { --color: steelblue; }
+[steelblue] { --color: steelblue; }
 
-.tan { --color: tan; }
+[tan] { --color: tan; }
 
-.teal { --color: teal; }
+[teal] { --color: teal; }
 
-.thistle { --color: thistle; }
+[thistle] { --color: thistle; }
 
-.tomato { --color: tomato; }
+[tomato] { --color: tomato; }
 
-.turquoise { --color: turquoise; }
+[turquoise] { --color: turquoise; }
 
-.violet { --color: violet; }
+[violet] { --color: violet; }
 
-.wheat { --color: wheat; }
+[wheat] { --color: wheat; }
 
-.whitesmoke { --color: whitesmoke; }
+[whitesmoke] { --color: whitesmoke; }
 
-.yellow.color { --color: yellow; }
+[yellow][color] { --color: yellow; }
 
-.yellowgreen { --color: yellowgreen; }
+[yellowgreen] { --color: yellowgreen; }
 
 /*
 morass/lib/elements/index.css
