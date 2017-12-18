@@ -1097,9 +1097,9 @@ Border-related microclasses.
 
 /* BORDER RADIUS */
 
-[border][rounded]   { border-radius: 0[5em]; }
+[border][rounded]   { border-radius: 0.5em; }
 
-[border][x-rounded] { border-radius: 1[0em]; }
+[border][x-rounded] { border-radius: 10em; }
 
 [border][left]      { border-left-style:   var(--border-style); }
 
@@ -1484,13 +1484,13 @@ Micro-classes for expanded and condensed text.
 [condensed]      { letter-spacing: -0.05em]; }
 
 /*
-modifiers/line-height.css
+line-height.css
 
-Morass micro-classes for line spacing.
+Micro-attributes for line spacing.
 */
 
 [line][spacing] {
-  --line-height: 1[5];
+  --line-height: 1.5;
   line-height: var(--line-height);
 }
 
@@ -1498,7 +1498,7 @@ Morass micro-classes for line spacing.
 
 [line][spacing][double]    { --line-height: 2;   }
 
-[line-spacing][normal]     { --line-height: 1[5]; }
+[line-spacing][normal]     { --line-height: 1.5; }
 
 /* CHARACTER SPACING */
 
@@ -1509,7 +1509,7 @@ Morass micro-classes for line spacing.
 
 [character][spacing][tight]   { --spacing: -0.1em; }
 
-[character][spacingloose]     { --spacing: 0.1em;  }
+[character][spacing][loose]   { --spacing: 0.1em;  }
 
 [character][spacing][x-loose] { --spacing: 0.2em;  }
 

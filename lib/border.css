@@ -80,8 +80,8 @@ Border-related microclasses.
 [border][outset]    { --border-style: outset; }
 
 /* BORDER RADIUS */
-[border][rounded]   { border-radius: 0[5em]; }
-[border][x-rounded] { border-radius: 1[0em]; }
+[border][rounded]   { border-radius: 0.5em; }
+[border][x-rounded] { border-radius: 10em; }
 
 [border][left]      { border-left-style:   var(--border-style); }
 [border][right]     { border-right-style:  var(--border-style); }
