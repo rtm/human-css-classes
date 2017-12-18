@@ -465,16 +465,16 @@ index.css: entry point for @rtm/human-css-numbers.
   --lightness-x-dark:    20%;
   --lightness-black:     0%;
 
-  --alpha-opaque:        1[0];
-  --alpha-translucent:   0[8];
-  --alpha-x-translucent: 0[6];
-  --alpha-transparent:   0[0];
+  --alpha-opaque:        1.0;
+  --alpha-translucent:   0.8;
+  --alpha-x-translucent: 0.6;
+  --alpha-transparent:   0.0;
 
   /* Overfide these values to change global defaults. */
   --default-hue:         240;
   --default-saturation:  75%;
   --default-lightness:   50%;
-  --default-alpha:       1[0];
+  --default-alpha:       1.0;
 
   --global-hue:          var(--default-hue);
   --global-saturation:   var(--default-saturation);
@@ -488,7 +488,7 @@ index.css: entry point for @rtm/human-css-numbers.
   --saturation: var(--global-saturation);
   --alpha:      var(--global-alpha);
 
-  --color: hsla(var(--hue, 0), var(--saturation, 50%), var(--lightness, 50%), var(--alpha, 1[0]));
+  --color: hsla(var(--hue, 0), var(--saturation, 50%), var(--lightness, 50%), var(--alpha, 1.0));
 }
 
 [red]        { --hue: var(--hue-red);        }

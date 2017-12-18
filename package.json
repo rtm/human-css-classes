@@ -1,6 +1,6 @@
 {
   "name": "@rtm/human-css-classes",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Human-friendly CSS micro-classes",
   "main": "dist/index.css",
   "scripts": {
@@ -26,7 +26,7 @@
     "postcss-import": "^8.2.0"
   },
   "dependencies": {
-    "@rtm/human-css-colors": "^0.2.0",
+    "@rtm/human-css-colors": "^0.2.1",
     "@rtm/human-css-numbers": "^0.2.1"
   }
 }
