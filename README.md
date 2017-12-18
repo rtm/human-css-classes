@@ -1,25 +1,26 @@
 Human CSS Classes
 ======
 
-Human CSS classes is a system of **micro-classes** which allow HTML to be styled much more semantically and readably,
-while graetly reducing the need for individual CSS rules.
-The great majority of common styling needs can be met by a suitable combination of micro-classes.
-In the micro-class philosophy, elements are styled within HTML by specifying one or more micro-classes.
+Human CSS classes is a system of **micro-attributes** which allow HTML to be styled much more semantically and readably,
+while greatly reducing the need for individual CSS rules.
+The great majority of common styling needs can be met by a suitable combination of micro-attributes.
+In the micro-class philosophy, elements are styled within HTML by specifying one or more micro-classes,
+or in this case, micro-attributes.
 With human CSS classes, many pages may need no specific CSS rules whatsoever.
 
 For instance, consider:
 
 ```
-<span class="large dark red bold text">
-<div class="thin light green top border">
-<div class="one third width">
+<span large dark red bold text>
+<div thin light green top border>
+<div one third width>
 ```
 
 Human CSS classes provide an easy interface to using flexbox,
 removing the need for the baroque grid systems some frameworks and libraries try to provide.
 For instance, the classic `float: right` is written as
 
-    <div class="flex justify">
+    <div flex justify>
       <div>I'm on the left</div>
       <div>I'm on the right</div>
     </div>
@@ -84,30 +85,30 @@ Design Principles, Concepts and Features
 
 ### Micro-classes
 
-Human CSS classes is a collection of micro-classes: CSS classes with very specific meaning.
-These classes are assigned to HTML elements,
-which in this approach may have two or five or even ten classes.
+Human CSS classes is a collection of micro-attributes: HTML attributes with very particular meaning.
+These attributes are assigned to HTML elements,
+which in this approach may have two or five or even ten attributes.
 **We are moving the styling logic back into the HTML!**
 The styling in the HTML becomes semnatic and readable.
 Instead of having a class "book-list-entry" which contains 20 properties over in some distant CSS file,
-we add three or four classes to HTML which clearly identify the styling behavior of the entry.
+we add three or four attributes to HTML which clearly identify the styling behavior of the entry.
 In the best case, which is readily realizable in practice, no element-specific class is necessary at all.
 
-### Combining micro-classes
+### Combining micro-attributes
 
-Human CSS classes use a relatively limited number of general-purpose micro-classes.
+Human CSS classes use a relatively limited number of general-purpose micro-attributes.
 So `green` means green for text, or borders, or backgrounds.
 But what if I want to specify both text color **and** border color on an element?
 How do I know which color is which?
 Other micro-class frameworks solve this by a proliferation of classes such as `green-border`, and `green-text`.
-We take a different approach, which is to place the classes on individual, nested HTML elements:
+We take a different approach, which is to place the attributes on individual, nested HTML elements:
 
 ```
-<div class="one em margin">
-  <div class="thick dark blue border">
-    <div class="x-light pink background">
-      <div class="five percent padding">
-        <div class="large bold white text">
+<div one em margin>
+  <div thick dark blue border>
+    <div x-light pink background>
+<div five percent padding>
+        <div large bold white text>
           Bob
         </div>
       </div>
@@ -119,13 +120,13 @@ We take a different approach, which is to place the classes on individual, neste
 Although this does result in more deeply nested HTML,
 it also has major advantages.
 Each element has a single, well-defined purpose,
-and as mentioned above we need only generic classes such as `blue` which work everywhere.
+and as mentioned above we need only generic attributes such as `blue` which work everywhere.
 
 ### Colors
 
 Human CSS classes uses a companion library for [human CSS colors](http://github.com/rtm/human-css-colors).
 This HSL-based library allows you to easily think of colors in terms of their hue, lightness, and saturation,
-using micro-classes for hues (`red`), as well as saturations such as ``bright` and ligthnesses such as `dark`.
+using micro-attributes for hues (`red`), as well as saturations such as ``bright` and ligthnesses such as `dark`.
 
 See that library for more details.
 
@@ -133,28 +134,28 @@ See that library for more details.
 
 Many micro-class frameworks suffer from a proliferation of classes such as `width-75`.
 This limits the user to only the classes the designer provides.
-In contrast, human CSS classes provide separate micro-classes for numbers, lengths, and units,
+In contrast, human CSS classes provide separate micro-attributes for numbers, lengths, and units,
 via a companion library for [human CSS numbers](http://github.com/rtm/human-css-numbers)
 so we can write
 
 ```
-<div class="50% width">
-<div class="two rem border">
-<div class="three columns">
+<div 50% width>
+<div two rem border>
+<div three columns>
 ```
 
-All standard CSS units are provided as micro-classes,
+All standard CSS units are provided as micro-attributes.
 including lengths such as `px`, `em`, and `rem`.
-Common numbers and percentages may also be used as micro-classes,
-in addition to built-in classes such as `1/2`.
+Common numbers and percentages may also be used as micro-attributes,
+in addition to built-in attributes such as `1/2`.
 
 See that library for more details.
 
 ### Text
 
-The text micro-class grouping provides control over text color, fonts, alignment, and so on.
-It is introduced by the micro-class `text`.
-`text` is combined with micro-classes for color,
+The text micro-attribute grouping provides control over text color, fonts, alignment, and so on.
+It is introduced by the micro-attribute `text`.
+`text` is combined with micro-attributes for color,
 font size using standard synonyms such as `large` (or any length),
 font weight using standard synonyms such as `bold`, and others.
 
@@ -162,30 +163,30 @@ Other text features include `italic`, `underline`, `upper`, `lower`, `capitalize
 
 ### Borders, margins, outlines, and padding
 
-Borders, margins, outlines, and padding are introduced by the `border`, `margin`, `outline`, and `padding` micro-classes.
-The classes `top`, `left`, `bottom`, and `right` may be given to indicate which side or sides are to be affected.
+Borders, margins, outlines, and padding are introduced by the `border`, `margin`, `outline`, and `padding` micro-attributes.
+The attributes `top`, `left`, `bottom`, and `right` may be given to indicate which side or sides are to be affected.
 A number or length, or keyword such as `thick` or `thin`,  specifies the size of the border, margin, outline, or padding.
-For borders and outlines, the standard types such as `solid` and `dotted` are available as micro-classes.
+For borders and outlines, the standard types such as `solid` and `dotted` are available as micro-attributes.
 Colors may also be specified for borders and padding.
 
 ### Background
 
-The `background` micro-class provides a background of the specified color.
+The `background` micro-atteribute provides a background of the specified color.
 
 ```
-<div class="beige background">
+<div beige background>
 ```
 
 ### Sizes
 
-Box sizes are indicated with micro-classes such as `width` and `height`,
-which are given together with other micro-classes indicating the size,
+Box sizes are indicated with micro-attributes such as `width` and `height`,
+which are given together with other micro-attributes indicating the size,
 as a length, percentage, or keyword such as `half`.
 
 ```
-<div class="half width">
-<div class="40% height">
-<div class="max-height 50 vh">
+<div half width>
+<div 40% height>
+<div max-height 50 vh>
 ```
 
 ### Spacing
@@ -193,13 +194,13 @@ as a length, percentage, or keyword such as `half`.
 People commonly use top margins and bottom margins and top padding and bottom padding and special spacing elements
 to space out their elements.
 Human CSS classes provide a simple mechanisms for controlling spacing.
-The `spaced` micro-class adds space between child elements.
-Variants of these (indicated by modifier micro-classes) provide more or less spacing.
+The `spaced` micro-attribute adds space between child elements.
+Variants of these (indicated by modifier micro-attributes) provide more or less spacing.
 
 Example of spaced children:
 
 ```
-<div class="spaced">
+<div spaced>
   <div></div>
   <div></div>
 </div>
@@ -208,62 +209,62 @@ Example of spaced children:
 ### flexbox
 
 Human CSS classes expect most layout to be done using flexbox,
-and provides a solid set of micro-classes to control them.
-The micro-classes available include ones to control direction, wrapping, and alignment.
+and provides a solid set of micro-attributes to control them.
+The micro-attributes available include ones to control direction, wrapping, and alignment.
 You'll no longer need to struggle with trying to remember the names or meanings or values of
 properties like `align-items`.
 
 Examples of flexbox:
 
 ```
-<div class="flex wrap">
-  <div class="basis one-third">
-  <div class="basis one-third">
-  <div class="basis one-third">
+<div flex wrap>
+  <div basis one-third>
+  <div basis one-third>
+  <div basis one-third>
 
-<div class="flex vertical justify align-center">
+<div flex vertical justify align-center>
 ```
 
 ### Display and visibility
 
 ```
-<div class="show">
-<div class="inline">
-<div class="hide">
-<div class="visible">
-<div class="invisible">
+<div show>
+<div inline>
+<div hide>
+<div visible>
+<div invisible>
 ```
 
 ### Opacity
 
 ```
-<div class="opaque">
-<div class="semi-opaque">
-<div class="transparent">
-<div class="opacity 0.8">
+<div opaque>
+<div semi-opaque>
+<div transparent>
+<div opacity 0.8>
 ```
 
 ### Z-index
 
 ```
-<div class="back">
-<div class="front">
-<div class="backmost">
-<div class="frontmost">
+<div back>
+<div front>
+<div backmost>
+<div frontmost>
 ```
 
 ### Position
 
 ```
-<div class="absolute">
-<div class="relative">
-<div class="fixed">
+<div absolute>
+<div relative>
+<div fixed>
 ```
 
 ### Transitions
 
 ```
-<div class="transition fast linear delay">
+<div transition fast linear delay>
 ```
 
 ### Things not supported
@@ -292,10 +293,10 @@ Notice, however, that this will not handle any variables you define yourself.
 Note that postCSS always uses the most recently defined variable value.
 Therefore, if you include your own variable definitions after importing human CSS classes, they will not take effect.
 
-Micro-class reference
+Micro-attribute reference
 ---------------
 
-This table omits the micro-classes from the human CSS numbers and human CSS colors libraries.
+This table omits the micro-attributes from the human CSS numbers and human CSS colors libraries.
 
  Name                 | Module      | Description                   |
 | -------------------- | ----------- | ----------------------------- |
@@ -509,7 +510,7 @@ We do not use or support floats, and neither should you.
 
 ### `!important`
 
-We neither needs nor uses `!important`, and we recommend you do not either.
+We neither need nor use `!important`, and we recommend you do not either.
 
 ### Inline styles
 

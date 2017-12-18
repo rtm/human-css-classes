@@ -18,9 +18,9 @@ To define the `heading` or `body` font families, use a `@font-face directive as 
 }
 ```
 */
-.heading    { font-family: heading;    }
-.body       { font-family: body;       }
+[heading]    { font-family: heading;    }
+[body]       { font-family: body;       }
 
-.serif      { font-family: serif;      }
-.sans-serif { font-family: sans-serif; }
-.monospace  { font-family: monospace;  }
+[serif]      { font-family: serif;      }
+[sans-serif] { font-family: sans-serif; }
+[monospace]  { font-family: monospace;  }

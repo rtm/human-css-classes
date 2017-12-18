@@ -1,31 +1,31 @@
 /*
-morass/modifiers/transition.css
+morass/modifiers/transition[css]
 
 Micro-classes to manage transitions.
 */
 
 /* TRANSITION ALL PROPERTIES */
-.transition {
+[transition] {
   transition-property: all;
   transition-duration: var(--length);
 }
 
 /* DURATION */
-.fast        { --length: 0.50s; }
-.faster      { --length: 0.25s; }
-.slow        { --length: 1.00s; }
-.slower      { --length: 2.00s; }
+[fast]        { --length: 0.50s; }
+[faster]      { --length: 0.25s; }
+[slow]        { --length: 1.00s; }
+[slower]      { --length: 2.00s; }
 
 /* TIMING FUNCTIONS */
-.ease        { transition-timing-function: ease;        }
-.ease-in     { transition-timing-function: ease-in;     }
-.ease-out    { transition-timing-function: ease-out;    }
-.ease-in-out { transition-timing-function: ease-in-out; }
-.linear      { transition-timing-function: linear;      }
-.step-start  { transition-timing-function: step-start;  }
-.step-end    { transition-timing-function: step-end;    }
+[ease]        { transition-timing-function: ease;        }
+[ease-in]     { transition-timing-function: ease-in;     }
+[ease-out]    { transition-timing-function: ease-out;    }
+[ease-in-out] { transition-timing-function: ease-in-out; }
+[linear]      { transition-timing-function: linear;      }
+[step-start]  { transition-timing-function: step-start;  }
+[step-end]    { transition-timing-function: step-end;    }
 
 /* DELAY */
-.delay       { transition-delay: 0.8s; }
-.delay-more  { transition-delay: 1.6s; }
-.delay-less  { transition-delay: 0.4s; }
+[delay]       { transition-delay: 0.8s; }
+[delay-more]  { transition-delay: 1.6s; }
+[delay-less]  { transition-delay: 0.4s; }

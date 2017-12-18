@@ -1,5 +1,5 @@
 /*
-modifiers/outline.css
+modifiers/outline[css]
 
 Outline-related microclasses.
 */
@@ -14,30 +14,29 @@ Outline-related microclasses.
   --outline-alpha-global:      var(--alpha-global);;
 }
 
-.outline {
+[outline] {
   --outline-style:  var(--outline-style-global);
   --outline-width:  var(--length);
   --outline-color:  var(--color);
 }
-}
 
-.outline            { --outline-width: medium; }
-.outline.medium     { --outline-width: medium; }
-.outline.thin       { --outline-width: thin;   }
-.outline.thick      { --outline-width: thick;  }
+[outline]            { --outline-width: medium; }
+[outline][medium]    { --outline-width: medium; }
+[outline][thin]      { --outline-width: thin;   }
+[outline][thick]     { --outline-width: thick;  }
 
 /* STYLES */
-.outline           { --outline-style: solid;  }
-.outline.solid     { --outline-style: solid;  }
-.outline.dotted    { --outline-style: dotted; }
-.outline.dashed    { --outline-style: dashed; }
-.outline.groove    { --outline-style: groove; }
-.outline.ridge     { --outline-style: ridge;  }
-.outline-inset     { --outline-style: insert; }
-.outline.outset    { --outline-style: outset; }
+[outline]            { --outline-style: solid;  }
+[outline][solid]     { --outline-style: solid;  }
+[outline][dotted]    { --outline-style: dotted; }
+[outline][dashed]    { --outline-style: dashed; }
+[outline][groove]    { --outline-style: groove; }
+[outline][ridge]     { --outline-style: ridge;  }
+[outline-inset]      { --outline-style: insert; }
+[outline][outset]    { --outline-style: outset; }
 
-.outline.left   { outline-left-style:   var(--outline-style); }
-.outline.right  { outline-right-style:  var(--outline-style); }
-.outline.top    { outline-top-style:    var(--outline-style); }
-.outline.bottom { outline-bottom-style: var(--outline-style); }
-.outline:not(.top):not(.bottom):not(.left):not(.right) { outline-style: var(--outline-style); }
+[outline][left]   { outline-left-style:   var(--outline-style); }
+[outline][right]  { outline-right-style:  var(--outline-style); }
+[outline][top]    { outline-top-style:    var(--outline-style); }
+[outline][bottom] { outline-bottom-style: var(--outline-style); }
+[outline]:not([top]):not([bottom]):not([left]):not([right]) { outline-style: var(--outline-style); }

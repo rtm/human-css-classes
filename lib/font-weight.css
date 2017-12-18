@@ -4,15 +4,15 @@ morass/modifiers/font-weight.css
 font-weight microclasses.
 */
 
-.hairline                            { font-weight: 100; }
-.extra-light, .x-light, .ultra-light { font-weight: 200; }
-.light                               { font-weight: 300; }
-.normal                              { font-weight: 400; }
-.medium-weight                       { font-weight: 500; }
-.semi-bold, .demi-bold               { font-weight: 600; }
-.strong, .bold                       { font-weight: 700; }
-.extra-bold, .x-bold, .ultra-bold    { font-weight: 800; }
-.heavy                               { font-weight: 900; }
+[hairline]                              { font-weight: 100; }
+[extra-light], [x-light], [ultra-light] { font-weight: 200; }
+[light]                                 { font-weight: 300; }
+[normal]                                { font-weight: 400; }
+[medium-weight]                         { font-weight: 500; }
+[semi-bold], [demi-bold]                { font-weight: 600; }
+[strong], [bold]                        { font-weight: 700; }
+[extra-bold], [x-bold], [ultra-bold]    { font-weight: 800; }
+[heavy]                                 { font-weight: 900; }
 
-.lighter                             { font-weight: lighter; }
-.bolder                              { font-weight: bolder;  }
+[lighter]                               { font-weight: lighter; }
+[bolder]                                { font-weight: bolder;  }

@@ -1,22 +1,22 @@
 /*
-modifiers/space.css
+modifiers/space[css]
 
 Vertical spacing between elements.
 
-The `.spaced` class adds space to each child element except the last.
-The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
+The `[spaced]` class adds space to each child element except the last.
+The `[loose]`. and `[tight]` modifiers expand and reduce that space, respectively.
 */
 
-.spaced > *::after {
+[spaced] > *::after {
   content: '\10';
   display: block;
 }
 
 /* Do not apply the spacing to the last child. */
-.spaced  > *::after:last-child { content: ''; }
+[spaced]          > *::after:last-child { content: ''; }
 
-.spaced         > *::after { line-height: 1; }
-.spaced.loose   > *::after { line-height: 1.5;   }
-.spaced.x-loose > *::after { line-height: 2;   }
-.spaced.tight   > *::after { line-height: 0.5; }
-.spaced.x-tight > *::after { line-height: 0.25; }
+[spaced]          > *::after { line-height: 1;    }
+[spaced][loose]   > *::after { line-height: 1.5;  }
+[spaced][x-loose] > *::after { line-height: 2;    }
+[spaced][tight]   > *::after { line-height: 0.5;  }
+[spaced][x-tight] > *::after { line-height: 0.25; }

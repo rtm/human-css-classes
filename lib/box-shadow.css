@@ -5,7 +5,7 @@
 with identical x and y and no blur or spread radius.
 */
 
-.box-shadow {
+[.box-shadow] {
   --inset: ;
   --box-shadow-offset: var(--length);
 
@@ -14,4 +14,4 @@ with identical x and y and no blur or spread radius.
 
  .box-shadow.inset {
    --inset: inset;
-}
+ }

@@ -5,15 +5,15 @@ Morass micro-classes for padding.
 Default is `em`.
 */
 
-.padding      { --length: 1em; }
+[padding]      { --length: 1em; }
 
-.padding.left   { padding-left:   var(--length);   }
-.padding.right  { padding-right:  var(--length);   }
-.padding.top    { padding-top:    var(--length);   }
-.padding.bottom { padding-bottom: var(--length);   }
+[padding][left]   { padding-left:   var(--length);   }
+[padding][right]  { padding-right:  var(--length);   }
+[padding][top]    { padding-top:    var(--length);   }
+[padding][bottom] { padding-bottom: var(--length);   }
 
 /* With no side modifier, set on all sides. */
-.padding:not(.top):not(.bottom):not(.left):not(.right) { padding: var(--length); }
+[padding]:not([top]):not([bottom]):not([left]):not([right]) { padding: var(--length); }
 
 /* TODO: handle
 padding-block-end

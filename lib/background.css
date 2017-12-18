@@ -1,12 +1,12 @@
 /*
-modifiers/background.css
+background.css
 
 Background-related microclasses.
 */
 
-.background {
+[background] {
   background-color: var(--color);
 }
 
-.background.cover { background-size: cover; }
-.background.contain { background-size: contain; }
+[background][cover]   { background-size: cover; }
+[background][contain] { background-size: contain; }

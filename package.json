@@ -1,8 +1,8 @@
 {
   "name": "@rtm/human-css-classes",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Human-friendly CSS micro-classes",
-  "main": "index.js",
+  "main": "dist/index.css",
   "scripts": {
     "build": "postcss --use postcss-import --dir dist index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +26,7 @@
     "postcss-import": "^8.2.0"
   },
   "dependencies": {
-    "@rtm/human-css-numbers": "^0.1.0"
+    "@rtm/human-css-colors": "^0.2.0",
+    "@rtm/human-css-numbers": "^0.2.0"
   }
 }

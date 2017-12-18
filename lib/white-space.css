@@ -24,12 +24,12 @@ white-space-normal   Set things back.
 Honor newlines, but do not preserve whitespace and wrap.
 This corresponds to the common case of displaying a user post.
 */
-.honor-newline { white-space: pre-line; }
+[honor-newline] { white-space: pre-line; }
 
 /*
 Honor newlines while also preserving whitespace.
 */
-.honor-newline.preserve-whitespace { white-space: pre-wrap; }
+[honor-newline][preserve-whitespace] { white-space: pre-wrap; }
 
 /*
 Honor newlines, preserve whitespace, and do not wrap.
@@ -37,19 +37,19 @@ This replicates the behavior of `<pre>'.
 You are probably better off using `pre`, although it will
 also give you a monospaced font and vertical padding.
 */
-.honor-newline.preserve-whitespace.nowrap { white-space: pre; }
+[honor-newline][preserve-whitespace][nowrap] { white-space: pre; }
 
 /*
 Without honoring newlines, no wrapping means that the output will be on a single line.
 In this case, whitespace is never preserved.
 CSS offers no alternative for preserving whitespace while not honoring newlines and not wrapping.
 */
-.nowrap { white-space: nowrap; }
+[nowrap] { white-space: nowrap; }
 
 /*
 `white-space` is an inherited property.
 Therefore, in some obscure cases we may need a way to turn it off.
 */
-.white-space-normal { white-space: normal; }
+[white-space-normal] { white-space: normal; }
 
-.break-word { overflow-wrap: break-word; }
+[break-word] { overflow-wrap: break-word; }

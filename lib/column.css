@@ -5,10 +5,10 @@ Column-related microclasses.
 The `--number` variable will be set by classes such as "two".
 */
 
-.columns, .column { column-count: var(--number, 1); }
+[columns], [column] { column-count: var(--number, 1); }
 
-.column.balance { column-fill: balance; }
-.column.auto    { column-fill: auto; }
-.column.span    { column-span: all; -webkit-column-span: all; }
+[column][balance] { column-fill: balance; }
+[column][auto]    { column-fill: auto; }
+[column][span]    { column-span: all; -webkit-column-span: all; }
 
 /* TODO: column-rule, column-gap */

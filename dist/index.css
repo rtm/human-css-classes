@@ -908,40 +908,40 @@ Bring in Morass CSS.
 */
 
 /**
-* modifiers/align.css
+* align.css
 *
 * Alignment-related modifiers.
 **/
 
-.align.left        { text-align: left;        }
+[align][left]        { text-align: left;        }
 
-.align.right       { text-align: right;       }
+[align][right]       { text-align: right;       }
 
-.align.center      { text-align: center;      }
+[align][center]      { text-align: center;      }
 
-.align.justify     { text-align: justify;     }
+[align][justify]     { text-align: justify;     }
 
-.align.justify-all { text-align: justify-all; }
+[align][justify-all] { text-align: justify-all; }
 
-.align.top         { vertical-align: top;     }
+[align][top]         { vertical-align: top;     }
 
-.align.bottom      { vertical-align: bottom;  }
+[align][bottom]      { vertical-align: bottom;  }
 
-.align.middle      { vertical-align: middle;  }
+[align][middle]      { vertical-align: middle;  }
 
 /*
-modifiers/background.css
+background.css
 
 Background-related microclasses.
 */
 
-.background {
+[background] {
   background-color: var(--color);
 }
 
-.background.cover { background-size: cover; }
+[background][cover]   { background-size: cover; }
 
-.background.contain { background-size: contain; }
+[background][contain] { background-size: contain; }
 
 /*
 elements/body.css
@@ -960,19 +960,19 @@ body {
 }
 
 /*
-modifiers/cursor.css
+modifiers/cursor[css]
 
 Morass micro-classes for cursor and pointer events.
 */
 
-.pointer { cursor: pointer; }
+[pointer] { cursor: pointer; }
 
-.pointer-events, .pointer-events.auto {pointer-events: auto; }
+[pointer-events], [pointer-events][auto] {pointer-events: auto; }
 
-.pointer-events.no, .pointer-events.none { pointer-events: none; }
+[pointer-events][no], [pointer-events][none] { pointer-events: none; }
 
 /*
-modifiers/border.css
+modifiers/border[css]
 
 Border-related microclasses.
 */
@@ -988,7 +988,7 @@ Border-related microclasses.
   --border-alpha-global:      var(--alpha-global);;
 }
 
-.border {
+[border] {
   --border-width:      var(--border-width-global);
   --border-style:      var(--border-style-global);
   --border-hue:        var(--border-hue-global, var(--hue-global));
@@ -997,121 +997,121 @@ Border-related microclasses.
   --border-alpha:      var(--border-alpha-globaal, var(--alpha-global));
 }
 
-.border            { --border-width: medium; }
+[border]             { --border-width: medium; }
 
-.border.medium     { --border-width: medium; }
+[border][medium]     { --border-width: medium; }
 
-.border.thin       { --border-width: thin;   }
+[border][thin]       { --border-width: thin;   }
 
-.border.thick      { --border-width: thick;  }
+[border][thick]      { --border-width: thick;  }
 
-.border.hair       { --border-width: var(--hair); }
+[border][hair]       { --border-width: var(--hair); }
 
-.border.em         { --border-width: var(--em); }
+[border][em]         { --border-width: var(--em); }
 
 /* COLORS */
 
-.border.primary    { --border-hue: var(--hue-primary);    }
+[border][primary]    { --border-hue: var(--hue-primary);    }
 
-.border.secondary  { --border-hue: var(--hue-secondary);  }
+[border][secondary]  { --border-hue: var(--hue-secondary);  }
 
-.border.success    { --border-hue: var(--hue-success);    }
+[border][success]    { --border-hue: var(--hue-success);    }
 
-.border.warn       { --border-hue: var(--hue-warn);       }
+[border][warn]       { --border-hue: var(--hue-warn);       }
 
-.border.error      { --border-hue: var(--hue-error);      }
+[border][error]      { --border-hue: var(--hue-error);      }
 
-.border.red        { --border-hue: var(--hue-red);        }
+[border][red]        { --border-hue: var(--hue-red);        }
 
-.border.orange     { --border-hue: var(--hue-orange);     }
+[border][orange]     { --border-hue: var(--hue-orange);     }
 
-.border.yellow     { --border-hue: var(--hue-yellow);     }
+[border][yellow]     { --border-hue: var(--hue-yellow);     }
 
-.border.lime       { --border-hue: var(--hue-lime);       }
+[border][lime]       { --border-hue: var(--hue-lime);       }
 
-.border.green      { --border-hue: var(--hue-green);      }
+[border][green]      { --border-hue: var(--hue-green);      }
 
-.border.aquamarine { --border-hue: var(--hue-aquamarine); }
+[border][aquamarine] { --border-hue: var(--hue-aquamarine); }
 
-.border.cyan       { --border-hue: var(--hue-cyan);       }
+[border][cyan]       { --border-hue: var(--hue-cyan);       }
 
-.border.azure      { --border-hue: var(--hue-azure);      }
+[border][azure]      { --border-hue: var(--hue-azure);      }
 
-.border.blue       { --border-hue: var(--hue-blue);       }
+[border][blue]       { --border-hue: var(--hue-blue);       }
 
-.border.purple     { --border-hue: var(--hue-purple);     }
+[border][purple]     { --border-hue: var(--hue-purple);     }
 
-.border.magenta    { --border-hue: var(--hue-magenta);    }
+[border][magenta]    { --border-hue: var(--hue-magenta);    }
 
-.border.pink       { --border-hue: var(--hue-pink);       }
+[border][pink]       { --border-hue: var(--hue-pink);       }
 
-.border.pure       { --border-saturation: var(--saturation-pure);     }
+[border][pure]       { --border-saturation: var(--saturation-pure);     }
 
-.border.x-bright   { --border-saturation: var(--saturation-x-bright); }
+[border][x-bright]   { --border-saturation: var(--saturation-x-bright); }
 
-.border.bright     { --border-saturation: var(--saturation-bright);   }
+[border][bright]     { --border-saturation: var(--saturation-bright);   }
 
-.border.dull       { --border-saturation: var(--saturation-dull);     }
+[border][dull]       { --border-saturation: var(--saturation-dull);     }
 
-.border.x-dull     { --border-saturation: var(--saturation-x-dull);   }
+[border][x-dull]     { --border-saturation: var(--saturation-x-dull);   }
 
-.border.gray       { --border-saturation: var(--saturation-gray);     }
+[border][gray]       { --border-saturation: var(--saturation-gray);     }
 
-.border.white      { --border-lightness: var(--lightness-white);      }
+[border][white]      { --border-lightness: var(--lightness-white);      }
 
-.border.x-light    { --border-lightness: var(--lightness-x-light);    }
+[border][x-light]    { --border-lightness: var(--lightness-x-light);    }
 
-.border.light      { --border-lightness: var(--lightness-light);      }
+[border][light]      { --border-lightness: var(--lightness-light);      }
 
-.border.dark       { --border-lightness: var(--lightness-dark);       }
+[border][dark]       { --border-lightness: var(--lightness-dark);       }
 
-.border.x-dark     { --border-lightness: var(--lightness-x-dark);     }
+[border][x-dark]     { --border-lightness: var(--lightness-x-dark);     }
 
-.border.black      { --border-lightness: var(--lightness-black);      }
+[border][black]      { --border-lightness: var(--lightness-black);      }
 
-.border-opaque        { --border-alpha: var(--alpha-opaque);          }
+[border][opaque]        { --border-alpha: var(--alpha-opaque);          }
 
-.border-translucent   { --border-alpha: var(--translucent);           }
+[border][translucent]   { --border-alpha: var(--translucent);           }
 
-.border-x-translucent { --border-alpha: var(--alpha-x-translucent);   }
+[border][x-translucent] { --border-alpha: var(--alpha-x-translucent);   }
 
-.border-transparent   { --border-alpha: var(--alpha-transparent);     }
+[border][transparent]   { --border-alpha: var(--alpha-transparent);     }
 
 /* STYLES */
 
-.border           { --border-style: solid;  }
+[border]           { --border-style: solid;  }
 
-.border.solid     { --border-style: solid;  }
+[border][solid]     { --border-style: solid;  }
 
-.border.dotted    { --border-style: dotted; }
+[border][dotted]    { --border-style: dotted; }
 
-.border.dashed    { --border-style: dashed; }
+[border][dashed]    { --border-style: dashed; }
 
-.border.groove    { --border-style: groove; }
+[border][groove]    { --border-style: groove; }
 
-.border.ridge     { --border-style: ridge;  }
+[border][ridge]     { --border-style: ridge;  }
 
-.border-inset     { --border-style: insert; }
+[border][inset]     { --border-style: inset;  }
 
-.border.outset    { --border-style: outset; }
+[border][outset]    { --border-style: outset; }
 
 /* BORDER RADIUS */
 
-.border.rounded   { border-radius: 0.5em; }
+[border][rounded]   { border-radius: 0[5em]; }
 
-.border.x-rounded { border-radius: 1.0em; }
+[border][x-rounded] { border-radius: 1[0em]; }
 
-.border.left   { border-left-style:   var(--border-style); }
+[border][left]      { border-left-style:   var(--border-style); }
 
-.border.right  { border-right-style:  var(--border-style); }
+[border][right]     { border-right-style:  var(--border-style); }
 
-.border.top    { border-top-style:    var(--border-style); }
+[border][top]       { border-top-style:    var(--border-style); }
 
-.border.bottom { border-bottom-style: var(--border-style); }
+[border][bottom]    { border-bottom-style: var(--border-style); }
 
-.border:not(.top):not(.bottom):not(.left):not(.right) { border-style: var(--border-style); }
+[border]:not([top]):not([bottom]):not([left]):not([right]) { border-style: var(--border-style); }
 
-.border           {
+[border]            {
   border-color: hsla(var(--border-hue), var(--border-saturation), var(--border-lightness), var(--border-alpha));
   border-width: var(--border-width);
 }
@@ -1127,13 +1127,13 @@ Column-related microclasses.
 The `--number` variable will be set by classes such as "two".
 */
 
-.columns, .column { column-count: var(--number, 1); }
+[columns], [column] { column-count: var(--number, 1); }
 
-.column.balance { column-fill: balance; }
+[column][balance] { column-fill: balance; }
 
-.column.auto    { column-fill: auto; }
+[column][auto]    { column-fill: auto; }
 
-.column.span    { column-span: all; -webkit-column-span: all; }
+[column][span]    { column-span: all; -webkit-column-span: all; }
 
 /* TODO: column-rule, column-gap */
 
@@ -1143,39 +1143,39 @@ lib/modifiers/dimension.css
 Widths and heights.
 */
 
-.width      { width:      var(--length); }
+[width]      { width:      var(--length); }
 
-.height     { height:     var(--length); }
+[height]     { height:     var(--length); }
 
-.max-height { max-height: var(--length); }
+[max-height] { max-height: var(--length); }
 
-.min-height { min-height: var(--length); }
+[min-height] { min-height: var(--length); }
 
-.max-width  { max-width:  var(--length); }
+[max-width]  { max-width:  var(--length); }
 
-.min-width  { min-width:  var(--length); }
+[min-width]  { min-width:  var(--length); }
 
-.block-size { block-size: var(--length); }
+[block-size] { block-size: var(--length); }
 
-.max-block-size { max-block-size: var(--length); }
+[max-block-size] { max-block-size: var(--length); }
 
-.min-block-size { min-block-size: var(--length); }
+[min-block-size] { min-block-size: var(--length); }
 
-.max-content        { --length: max-content; }
+[max-content]        { --length: max-content; }
 
-.min-content        { --length: min-content; }
+[min-content]        { --length: min-content; }
 
-.available          { --length: available;   }
+[available]          { --length: available;   }
 
-.fit-content        { --length: fit-content; }
+[fit-content]        { --length: fit-content; }
 
-.border-box         { --box: border-box; }
+[border-box]         { --box: border-box; }
 
-.content-box        { --box: content-box; }
+[content-box]        { --box: content-box; }
 
-.ltr { direction: ltr; }
+[ltr] { direction: ltr; }
 
-.rtl { direction: rtl; }
+[rtl] { direction: rtl; }
 
 /**
 * styles/modifiers/display.css
@@ -1183,15 +1183,15 @@ Widths and heights.
 * CSS classes for `display` property.
 */
 
-.show, .block            { display: block; }
+[show], [block]            { display: block; }
 
-.hide, .hidden, [hidden] { display: none; }
+[hide], [hidden], [hidden] { display: none; }
 
-.inline                  { display: inline; }
+[inline]                  { display: inline; }
 
-/* .inline.flex will yield flex-inline */
+/* [inline][flex] will yield flex-inline */
 
-.inline-block            { display: inline-block; }
+[inline-block]            { display: inline-block; }
 
 /*
 styles/modifiers/flex.css
@@ -1243,19 +1243,19 @@ Basic display types for flex.
 `inline` is overloaded; by itself it yields `display: inline`.
 */
 
-.flex                  { display: flex;          }
+[flex]                  { display: flex;          }
 
-.flex.inline           { display: inline-flex;   }
+[flex][inline]           { display: inline-flex;   }
 
 /*
 FLEX DIRECTION.
 Note that `vertical` and `horizontal` are also overloaded,
-as defined in `direction.css`.
+as defined in `direction[css]`.
 */
 
-.flex.vertical         { flex-direction: column; }
+[flex][vertical]         { flex-direction: column; }
 
-.flex.horizontal       { flex-direction: row;    }
+[flex][horizontal]       { flex-direction: row;    }
 
 /*
 WRAPPING AND REVERSING.
@@ -1264,11 +1264,11 @@ into its wrapped variants.
 Note: `wrap` is an overloaded property with a different meaning without `flex`.
 */
 
-.flex.wrap             { flex-wrap: wrap; }
+[flex][wrap]             { flex-wrap: wrap; }
 
-.flex.reverse          { flex-direction: row-reverse;    }
+[flex][reverse]          { flex-direction: row-reverse;    }
 
-.flex.vertical.reverse { flex-direction: column-reverse; }
+[flex][vertical][reverse] { flex-direction: column-reverse; }
 
 /*
 JUSTIFYING AND ALIGNING.
@@ -1287,96 +1287,96 @@ or for specifying justification on the cross-axis.
 `justify-gap` requests distributing space to start and end as well as between.
 */
 
-.flex.justify           { justify-content: space-between; }
+[flex][justify]           { justify-content: space-between; }
 
-.flex.justify-gap       { justify-content: space-around; }
+[flex][justify-gap]       { justify-content: space-around; }
 
-.flex.align-top         { align-items: flex-start; }
+[flex][align-top]         { align-items: flex-start; }
 
-.flex.align-bottom      { align-items: flex-end;   }
+[flex][align-bottom]      { align-items: flex-end;   }
 
-.flex.align-middle      { align-items: center;     }
+[flex][align-middle]      { align-items: center;     }
 
-.flex.align-left        { justify-content: flex-start; }
+[flex][align-left]        { justify-content: flex-start; }
 
-.flex.align-right       { justify-content: flex-end;   }
+[flex][align-right]       { justify-content: flex-end;   }
 
-.flex.align-center      { justify-content: center;     }
+[flex][align-center]      { justify-content: center;     }
 
 /* For horizontal containers, `justify-h` is the same as `justify`. */
 
-.flex.justify-h         { justify-content: space-between; }
+[flex][justify-h]         { justify-content: space-between; }
 
-.flex.justify-h-gap     { justify-content: space-around;  }
+[flex][justify-h-gap]     { justify-content: space-around;  }
 
-.flex.justify-v         { align-items: space-between;     }
+[flex][justify-v]         { align-items: space-between;     }
 
-.flex.justify-v-gap     { align-items: space-around;      }
+[flex][justify-v-gap]     { align-items: space-around;      }
 
-.flex.vertical.justify  { justify-content: space-between;   }
+[flex][vertical][justify]  { justify-content: space-between;   }
 
-.flex.vertical.justify-gap { justify-content: space-around; }
+[flex][vertical][justify-gap] { justify-content: space-around; }
 
-.flex.vertical.align-top    { justify-content: flex-start; }
+[flex][vertical][align-top]    { justify-content: flex-start; }
 
-.flex.vertical.align-bottom { justify-content: flex-end;   }
+[flex][vertical][align-bottom] { justify-content: flex-end;   }
 
-.flex.vertical.align-middle { justify-content: center;     }
+[flex][vertical][align-middle] { justify-content: center;     }
 
-.flex.vertical.align-left   { align-items: flex-start; }
+[flex][vertical][align-left]   { align-items: flex-start; }
 
-.flex.vertical.align-right  { align-items: flex-end;   }
+[flex][vertical][align-right]  { align-items: flex-end;   }
 
-.flex.vertical.align-center { align-items: center;     }
+[flex][vertical][align-center] { align-items: center;     }
 
 /* For vertical containers, `justify-v` is the same as `justify`. */
 
-.flex.vertical.justify-h      { align-items: space-between;     }
+[flex][vertical][justify-h]      { align-items: space-between;     }
 
-.flex.vertical.justify-h-gap  { align-items: space-around;      }
+[flex][vertical][justify-h-gap]  { align-items: space-around;      }
 
-.flex.vertical.justify-v      { justify-content: space-between; }
+[flex][vertical][justify-v]      { justify-content: space-between; }
 
-.flex.vertical.justify-v-gap  { justify-content: space-around;  }
+[flex][vertical][justify-v-gap]  { justify-content: space-around;  }
 
 /*
 GROWING AND SHRINKING.
 Provide micro-classes for common cases of grow and shrink.
 */
 
-.grow { flex-grow: 1; }
+[grow] { flex-grow: 1; }
 
-.x-grow { flex-grow: 2; }
+[x-grow] { flex-grow: 2; }
 
-.no-shrink { flex-shrink: 0; }
+[no-shrink] { flex-shrink: 0; }
 
 /* TODO: add other self items */
 
-.self-stretch { align-self: stretch; }
+[self-stretch] { align-self: stretch; }
 
 /* ORDER */
 
-.first { order: -99; }
+[first] { order: -99; }
 
-.last  { order: +99; }
+[last]  { order: +99; }
 
 /* Self-alignment (of flex children) */
 
-.flex .self-top      { align-self: flex-start; }
+[flex] [self-top]      { align-self: flex-start; }
 
-.flex .self-middle   { align-self: center; }
+[flex] [self-middle]   { align-self: center; }
 
-.flex .self-bottom   { align-self: flex-end; }
+[flex] [self-bottom]   { align-self: flex-end; }
 
-.flex .self-left     { align-self: flex-start; }
+[flex] [self-left]     { align-self: flex-start; }
 
-.flex .self-center   { align-self: center; }
+[flex] [self-center]   { align-self: center; }
 
-.flex .self-right    { align-self: flex-end; }
+[flex] [self-right]    { align-self: flex-end; }
 
-.flex .self-stretch  { align-self: stretch; }
+[flex] [self-stretch]  { align-self: stretch; }
 
-.flex .self-baseline { align-self: baseline; }
+[flex] [self-baseline] { align-self: baseline; }
 
 /*
 modifiers/font-family.css
@@ -1399,15 +1399,15 @@ To define the `heading` or `body` font families, use a `@font-face directive as 
 ```
 */
 
-.heading    { font-family: heading;    }
+[heading]    { font-family: heading;    }
 
-.body       { font-family: body;       }
+[body]       { font-family: body;       }
 
-.serif      { font-family: serif;      }
+[serif]      { font-family: serif;      }
 
-.sans-serif { font-family: sans-serif; }
+[sans-serif] { font-family: sans-serif; }
 
-.monospace  { font-family: monospace;  }
+[monospace]  { font-family: monospace;  }
 
 /*
 modifiers/font-variant.css
@@ -1415,7 +1415,7 @@ modifiers/font-variant.css
 Micro-classes for font variants.
 */
 
-.small-caps { font-variant: small-caps; }
+[small-caps] { font-variant: small-caps; }
 
 /*
 morass/modifiers/font-weight.css
@@ -1423,27 +1423,27 @@ morass/modifiers/font-weight.css
 font-weight microclasses.
 */
 
-.hairline                            { font-weight: 100; }
+[hairline]                              { font-weight: 100; }
 
-.extra-light, .x-light, .ultra-light { font-weight: 200; }
+[extra-light], [x-light], [ultra-light] { font-weight: 200; }
 
-.light                               { font-weight: 300; }
+[light]                                 { font-weight: 300; }
 
-.normal                              { font-weight: 400; }
+[normal]                                { font-weight: 400; }
 
-.medium-weight                       { font-weight: 500; }
+[medium-weight]                         { font-weight: 500; }
 
-.semi-bold, .demi-bold               { font-weight: 600; }
+[semi-bold], [demi-bold]                { font-weight: 600; }
 
-.strong, .bold                       { font-weight: 700; }
+[strong], [bold]                        { font-weight: 700; }
 
-.extra-bold, .x-bold, .ultra-bold    { font-weight: 800; }
+[extra-bold], [x-bold], [ultra-bold]    { font-weight: 800; }
 
-.heavy                               { font-weight: 900; }
+[heavy]                                 { font-weight: 900; }
 
-.lighter                             { font-weight: lighter; }
+[lighter]                               { font-weight: lighter; }
 
-.bolder                              { font-weight: bolder;  }
+[bolder]                                { font-weight: bolder;  }
 
 /*
 elements/heading.css
@@ -1453,7 +1453,7 @@ To make this work, enclose your `h1` tags etc. in `heading` tags.
 This design is intended to localize the effect of specifying the `heading` font-family.
 */
 
-heading {
+[heading] {
   /* To define the `heading` font-family, use a `@font-face` directive.
      For instance, `@font-face { font-family: heading; src: local(Arial), local(Helvetica); }`.
      The counterpart of `heading` for body elements is `body`.
@@ -1462,26 +1462,26 @@ heading {
 }
 
 /**
-* styles/modifiers/indent.css
+* indent.css
 *
 * Test indents.
 **/
 
-.indent      { text-indent: 2em; }
+[indent]      { text-indent: 2em; }
 
-.indent-more { text-indent: 4em; }
+[indent-more] { text-indent: 4em; }
 
 /*
-morass/modifiers/letter-spacing.css
+morass/modifiers/letter-spacing[css]
 
 Micro-classes for expanded and condensed text.
 */
 
-.expanded       { letter-spacing:  0.20em; }
+[expanded]       { letter-spacing:  0.20em]; }
 
-.expanded-more  { letter-spacing:  0.40em; }
+[expanded-more]  { letter-spacing:  0.40em]; }
 
-.condensed      { letter-spacing: -0.05em; }
+[condensed]      { letter-spacing: -0.05em]; }
 
 /*
 modifiers/line-height.css
@@ -1489,69 +1489,69 @@ modifiers/line-height.css
 Morass micro-classes for line spacing.
 */
 
-.line.spacing {
-  --line-height: 1.5;
+[line][spacing] {
+  --line-height: 1[5];
   line-height: var(--line-height);
 }
 
-.line.spacing.single    { --line-height: 1;   }
+[line][spacing][single]    { --line-height: 1;   }
 
-.line.spacing.double    { --line-height: 2;   }
+[line][spacing][double]    { --line-height: 2;   }
 
-.line-spacing.normal    { --line-height: 1.5; }
+[line-spacing][normal]     { --line-height: 1[5]; }
 
 /* CHARACTER SPACING */
 
-.character.spacing {
+[character][spacing] {
   --spacing: var(--length);
   letter-spacing: var(--spacing);
 }
 
-.character.spacing.tight   { --spacing: -0.1em; }
+[character][spacing][tight]   { --spacing: -0.1em; }
 
-.character.spacing.loose   { --spacing: 0.1em;  }
+[character][spacingloose]     { --spacing: 0.1em;  }
 
-.character.spacing.x-loose { --spacing: 0.2em;  }
+[character][spacing][x-loose] { --spacing: 0.2em;  }
 
-.character.spacing.normal  { --spacing: normal; }
+[character][spacing][normal]  { --spacing: normal; }
 
 /*
-modifiers/list.css
+modifiers/list[css]
 
 Morass pseudo-classes for lists.
 */
 
-.list.inside      { list-style-position: inside;  }
+[list][inside]      { list-style-position: inside;  }
 
-.list.outside     { list-style-position: outside; }
+[list][outside]     { list-style-position: outside; }
 
-ul.list           { list-style-type: circle;      }
+ul[list]           { list-style-type: circle;      }
 
-ol.list           { list-style-type: decimal;     }
+ol[list]           { list-style-type: decimal;     }
 
-.list.alpha       { list-style-type: lower-alpha; }
+[list][alpha]       { list-style-type: lower-alpha; }
 
-.list.alpha.lower { list-style-type: lower-alpha; }
+[list][alpha][lower] { list-style-type: lower-alpha; }
 
-.list.alpha.upper { list-style-type: upper-alpha; }
+[list][alpha][upper] { list-style-type: upper-alpha; }
 
-.list.circle      { list-style-type: circle;      }
+[list][circle]      { list-style-type: circle;      }
 
-.list.decimal     { list-style-type: decimal;     }
+[list][decimal]     { list-style-type: decimal;     }
 
-.list.disc        { list-style-type: disc;        }
+[list][disc]        { list-style-type: disc;        }
 
-.list.none        { list-style-type: none;        }
+[list][none]        { list-style-type: none;        }
 
-.list.roman       { list-style-type: lower-roman; }
+[list][roman]       { list-style-type: lower-roman; }
 
-.list.roman.lower { list-style-type: lower-roman; }
+[list][roman][lower] { list-style-type: lower-roman; }
 
-.list.roman.upper { list-style-type: upper-roman; }
+[list][roman][upper] { list-style-type: upper-roman; }
 
-.list.square      { list-style-type: square;      }
+[list][square]      { list-style-type: square;      }
 
-.list > * { display: list-item; }
+[list] > * { display: list-item; }
 
 /*
 modifiers/padding.css
@@ -1560,19 +1560,19 @@ Morass micro-classes for padding.
 Default is `em`.
 */
 
-.padding      { --length: 1em; }
+[padding]      { --length: 1em; }
 
-.padding.left   { padding-left:   var(--length);   }
+[padding][left]   { padding-left:   var(--length);   }
 
-.padding.right  { padding-right:  var(--length);   }
+[padding][right]  { padding-right:  var(--length);   }
 
-.padding.top    { padding-top:    var(--length);   }
+[padding][top]    { padding-top:    var(--length);   }
 
-.padding.bottom { padding-bottom: var(--length);   }
+[padding][bottom] { padding-bottom: var(--length);   }
 
 /* With no side modifier, set on all sides. */
 
-.padding:not(.top):not(.bottom):not(.left):not(.right) { padding: var(--length); }
+[padding]:not([top]):not([bottom]):not([left]):not([right]) { padding: var(--length); }
 
 /* TODO: handle
 padding-block-end
@@ -1588,61 +1588,61 @@ modifiers/margin.css
 Morass micro-classes for margins.
 */
 
-.margin      { --length: 1em; }
+[margin]      { --length: 1em; }
 
-.margin.left   { margin-left:   var(--length); }
+[margin][left]   { margin-left:   var(--length); }
 
-.margin.right  { margin-right:  var(--length); }
+[margin][right]  { margin-right:  var(--length); }
 
-.margin.top    { margin-top:    var(--length); }
+[margin][top]    { margin-top:    var(--length); }
 
-.margin.bottom { margin-bottom: var(--length); }
+[margin][bottom] { margin-bottom: var(--length); }
 
 /* With no side modifier, set on all sides. */
 
-.margin:not(.top):not(.bottom):not(.left):not(.right) { margin: var(--length); }
+[margin]:not([top]):not([bottom]):not([left]):not([right]) { margin: var(--length); }
 
 /*
-modifiers/opacity.css
+modifiers/opacity[css]
 
 Morass pseudo-classes for opacity.
 */
 
-.opaque      { opacity: 1;   }
+[opaque]      { opacity: 1;   }
 
-.semi-opaque { opacity: 0.5; }
+[semi-opaque] { opacity: 0.5; }
 
-.transparent { opacity: 0;   }
+[transparent] { opacity: 0;   }
 
-.opacity { opacity: var(--number); }
+[opacity] { opacity: var(--number); }
 
-/* overflow.css -- Morass classes related to overflow */
+/* overflow[css] -- Morass classes related to overflow */
 
-.overflow.scroll { --overflow: scroll; }
+[overflow][scroll] { --overflow: scroll; }
 
-.overflow.hidden { --overflow: hidden; }
+[overflow][hidden] { --overflow: hidden; }
 
-.overflow.x, .overflow.horizontal { overflow-x: var(--overflow); }
+[overflow][x], [overflow][horizontal] { overflow-x: var(--overflow); }
 
-.overflow.y, .overflow.vertical   { overflow-y: var(--overflow); }
+[overflow][y], [overflow][vertical]   { overflow-y: var(--overflow); }
 
-.overflow:not(.x):not(.horizontal):not(.y):not(.vertical) { overflow: var(--overflow); }
+[overflow]:not([x]):not([horizontal]):not([y]):not([vertical]) { overflow: var(--overflow); }
 
 /*
-morass/modifiers/position.css
+morass/modifiers/position[css]
 
 Micro-classes for CSS `position` property.
 */
 
-.absolute { position: absolute; }
+[absolute] { position: absolute; }
 
-.relative { position: relative; }
+[relative] { position: relative; }
 
-.fixed    { position: fixed;    }
+[fixed]    { position: fixed;    }
 
-.sticky   { position: sticky;   }
+[sticky]   { position: sticky;   }
 
-.top-left { top: 0; left: 0; }
+[top-left] { top: 0; left: 0; }
 
 /*
 lib/elements/q.css
@@ -1659,74 +1659,74 @@ q::before { content: open-quote; }
 q::after  { content: close-quote; }
 
 /*
-modifiers/resize.css
+modifiers/resize[css]
 
 Morass micro-classes for resizing.
 */
 
-.resize, .resize.horizontal.vertical { resize: both;       }
+[resize], [resize][x][y], [resize][horizontal][vertical] { resize: both;       }
 
-.resize-x, .resize.horizontal        { resize: horizontal; }
+[resize-x], [resize][horizontal]         { resize: horizontal; }
 
-.resize-y, .resize.vertical          { resize: vertical;   }
+[resize-y], [resize][vertical]           { resize: vertical;   }
 
 /*
-modifiers/ruby.css
+modifiers/ruby[css]
 
 Morass pseudo-classes for ruby.
 */
 
-.ruby.inter-character { ruby-position: inter-character; }
+[ruby][inter-character] { ruby-position: inter-character; }
 
-.ruby.left            { ruby-position: left;       }
+[ruby][left]            { ruby-position: left;       }
 
-.ruby.over            { ruby-position: over;       }
+[ruby][over]            { ruby-position: over;       }
 
-.ruby.right           { ruby-position: right;      }
+[ruby][right]           { ruby-position: right;      }
 
-.ruby.under           { ruby-position: under;      }
+[ruby][under]           { ruby-position: under;      }
 
-.ruby.align-start     { ruby-align: start;         }
+[ruby][align-start]     { ruby-align: start;         }
 
-.ruby-align-center    { ruby-align: center;        }
+[ruby-align-center]    { ruby-align: center;        }
 
 /* These class names are meant to be aligned with those for flex. */
 
-.ruby.justify         { ruby-align: space-between; }
+[ruby][justify]         { ruby-align: space-between; }
 
-.ruby.justify-gap     { ruby-align: space-around;  }
+[ruby][justify-gap]     { ruby-align: space-around;  }
 
-.ruby-separate        { ruby-merge: separate;      }
+[ruby-separate]        { ruby-merge: separate;      }
 
-.ruby-collapse        { ruby-merge: collapse;      }
+[ruby-collapse]        { ruby-merge: collapse;      }
 
 /*
-modifiers/space.css
+modifiers/space[css]
 
 Vertical spacing between elements.
 
-The `.spaced` class adds space to each child element except the last.
-The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
+The `[spaced]` class adds space to each child element except the last.
+The `[loose]`. and `[tight]` modifiers expand and reduce that space, respectively.
 */
 
-.spaced > *::after {
+[spaced] > *::after {
   content: '\10';
   display: block;
 }
 
 /* Do not apply the spacing to the last child. */
 
-.spaced  > *::after:last-child { content: ''; }
+[spaced]          > *::after:last-child { content: ''; }
 
-.spaced         > *::after { line-height: 1; }
+[spaced]          > *::after { line-height: 1;    }
 
-.spaced.loose   > *::after { line-height: 1.5;   }
+[spaced][loose]   > *::after { line-height: 1.5;  }
 
-.spaced.x-loose > *::after { line-height: 2;   }
+[spaced][x-loose] > *::after { line-height: 2;    }
 
-.spaced.tight   > *::after { line-height: 0.5; }
+[spaced][tight]   > *::after { line-height: 0.5;  }
 
-.spaced.x-tight > *::after { line-height: 0.25; }
+[spaced][x-tight] > *::after { line-height: 0.25; }
 
 /**
  * Text-related utilities.
@@ -1734,151 +1734,151 @@ The `.loose`. and `.tight` modifiers expand and reduce that space, respectively.
 
 /* COLORS */
 
-.test {
+[test] {
   color: var(--color);
   font-size: var(--length);
 }
 
 /* FONT WEIGHT */
 
-.text.hairline    { font-weight: 100; }
+[text][hairline]    { font-weight: 100; }
 
-.text.xx-light    { font-weight: 100; }
+[text][xx-light]    { font-weight: 100; }
 
-.text.extra-light { font-weight: 200; }
+[text][extra-light] { font-weight: 200; }
 
-.text.x-light     { font-weight: 200; }
+[text][x-light]     { font-weight: 200; }
 
-.text.ultra-light { font-weight: 200; }
+[text][ultra-light] { font-weight: 200; }
 
-.text.light       { font-weight: 300; }
+[text][light]       { font-weight: 300; }
 
-.text.normal      { font-weight: 400; }
+[text][normal]      { font-weight: 400; }
 
-.text.medium      { font-weight: 500; }
+[text][medium]      { font-weight: 500; }
 
-.text.semi-bold   { font-weight: 600; }
+[text][semi-bold]   { font-weight: 600; }
 
-.text.demi-bold   { font-weight: 600; }
+[text][demi-bold]   { font-weight: 600; }
 
-.text.bold        { font-weight: 700; }
+[text][bold]        { font-weight: 700; }
 
-.text.strong      { font-weight: 700; }
+[text][strong]      { font-weight: 700; }
 
-.text.extra-bold  { font-weight: 800; }
+[text][extra-bold]  { font-weight: 800; }
 
-.text.x-bold      { font-weight: 800; }
+[text][x-bold]      { font-weight: 800; }
 
-.text.ultra-bold  { font-weight: 800; }
+[text][ultra-bold]  { font-weight: 800; }
 
-.text.heavy       { font-weight: 900; }
+[text][heavy]       { font-weight: 900; }
 
-.text.xx-bold     { font-weight: 900; }
+[text][xx-bold]     { font-weight: 900; }
 
-.text.lighter     { font-weight: lighter; }
+[text][lighter]     { font-weight: lighter; }
 
-.text.bolder      { font-weight: bolder;  }
+[text][bolder]      { font-weight: bolder;  }
 
 /* SIZE */
 
-.text.xx-small    { --length: xx-small; }
+[text][xx-small]    { --length: xx-small; }
 
-.text.x-small     { --length: x-small;  }
+[text][x-small]     { --length: x-small;  }
 
-.text.small       { --length: small;    }
+[text][small]       { --length: small;    }
 
-.text.medium      { --length: medium;   }
+[text][medium]      { --length: medium;   }
 
-.text.large       { --length: large;    }
+[text][large]       { --length: large;    }
 
-.text.x-large     { --length: x-large;  }
+[text][x-large]     { --length: x-large;  }
 
-.text.xx-large    { --length: xx-large; }
+[text][xx-large]    { --length: xx-large; }
 
-.text.larger      { --length: larger;   }
+[text][larger]      { --length: larger;   }
 
-.text.smaller     { --length: smaller;  }
+[text][smaller]     { --length: smaller;  }
 
 /* ITALICS */
 
-.emphasis         { font-style: italic;   }
+[emphasis]           { font-style: italic;  }
 
-.italic           { font-style: italic;   }
+[italic]             { font-style: italic;  }
 
 /* TEXT-TRANSFORM */
 
-.text.upper       { text-transform: uppercase;  }
+[text][upper]        { text-transform: uppercase;  }
 
-.text.lower       { text-transform: lowercase;  }
+[text][lower]        { text-transform: lowercase;  }
 
-.text.capitalize  { text-transform: capitalize; }
+[text][capitalize]   { text-transform: capitalize; }
 
-.underline        { text-decoration: underline; }
+[underline]          { text-decoration: underline; }
 
 /* ALIGNMENT */
 
-.text.align-right  { text-align: right;   }
+[text][align-right]  { text-align: right;   }
 
-.text.align-center { text-align: center;  }
+[text][align-center] { text-align: center;  }
 
-.text.align-left   { text-align: left;    }
+[text][align-left]   { text-align: left;    }
 
 /*
-morass/modifiers/visibility.css
+morass/modifiers/visibility[css]
 
 Morass micro-classes related to the `visibility` property.
 */
 
-.visible   { visibility: visible; }
+[visible]   { visibility: visible; }
 
-.invisible { visibility: hidden;  }
+[invisible] { visibility: hidden;  }
 
 /*
-morass/modifiers/transition.css
+morass/modifiers/transition[css]
 
 Micro-classes to manage transitions.
 */
 
 /* TRANSITION ALL PROPERTIES */
 
-.transition {
+[transition] {
   transition-property: all;
   transition-duration: var(--length);
 }
 
 /* DURATION */
 
-.fast        { --length: 0.50s; }
+[fast]        { --length: 0.50s; }
 
-.faster      { --length: 0.25s; }
+[faster]      { --length: 0.25s; }
 
-.slow        { --length: 1.00s; }
+[slow]        { --length: 1.00s; }
 
-.slower      { --length: 2.00s; }
+[slower]      { --length: 2.00s; }
 
 /* TIMING FUNCTIONS */
 
-.ease        { transition-timing-function: ease;        }
+[ease]        { transition-timing-function: ease;        }
 
-.ease-in     { transition-timing-function: ease-in;     }
+[ease-in]     { transition-timing-function: ease-in;     }
 
-.ease-out    { transition-timing-function: ease-out;    }
+[ease-out]    { transition-timing-function: ease-out;    }
 
-.ease-in-out { transition-timing-function: ease-in-out; }
+[ease-in-out] { transition-timing-function: ease-in-out; }
 
-.linear      { transition-timing-function: linear;      }
+[linear]      { transition-timing-function: linear;      }
 
-.step-start  { transition-timing-function: step-start;  }
+[step-start]  { transition-timing-function: step-start;  }
 
-.step-end    { transition-timing-function: step-end;    }
+[step-end]    { transition-timing-function: step-end;    }
 
 /* DELAY */
 
-.delay       { transition-delay: 0.8s; }
+[delay]       { transition-delay: 0.8s; }
 
-.delay-more  { transition-delay: 1.6s; }
+[delay-more]  { transition-delay: 1.6s; }
 
-.delay-less  { transition-delay: 0.4s; }
+[delay-less]  { transition-delay: 0.4s; }
 
 /*
 morass/modifiers/white-space.css
@@ -1907,13 +1907,13 @@ Honor newlines, but do not preserve whitespace and wrap.
 This corresponds to the common case of displaying a user post.
 */
 
-.honor-newline { white-space: pre-line; }
+[honor-newline] { white-space: pre-line; }
 
 /*
 Honor newlines while also preserving whitespace.
 */
 
-.honor-newline.preserve-whitespace { white-space: pre-wrap; }
+[honor-newline][preserve-whitespace] { white-space: pre-wrap; }
 
 /*
 Honor newlines, preserve whitespace, and do not wrap.
@@ -1922,7 +1922,7 @@ You are probably better off using `pre`, although it will
 also give you a monospaced font and vertical padding.
 */
 
-.honor-newline.preserve-whitespace.nowrap { white-space: pre; }
+[honor-newline][preserve-whitespace][nowrap] { white-space: pre; }
 
 /*
 Without honoring newlines, no wrapping means that the output will be on a single line.
@@ -1930,16 +1930,16 @@ In this case, whitespace is never preserved.
 CSS offers no alternative for preserving whitespace while not honoring newlines and not wrapping.
 */
 
-.nowrap { white-space: nowrap; }
+[nowrap] { white-space: nowrap; }
 
 /*
 `white-space` is an inherited property.
 Therefore, in some obscure cases we may need a way to turn it off.
 */
 
-.white-space-normal { white-space: normal; }
+[white-space-normal] { white-space: normal; }
 
-.break-word { overflow-wrap: break-word; }
+[break-word] { overflow-wrap: break-word; }
 
 /*
 modifiers/z-index.js
@@ -1947,10 +1947,10 @@ modifiers/z-index.js
 Define simple z-index-related micro-classes.
 */
 
-.behind, .back    { z-index: -1;   }
+[behind], [back]    { z-index: -1;   }
 
-.in-front, .front { z-index: +1;   }
+[in-front], [front] { z-index: +1;   }
 
-.backmost         { z-index: -999; }
+[backmost]          { z-index: -999; }
 
-.frontmost        { z-index: +999; }
+[frontmost]         { z-index: +999; }

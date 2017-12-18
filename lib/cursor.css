@@ -1,10 +1,10 @@
 /*
-modifiers/cursor.css
+modifiers/cursor[css]
 
 Morass micro-classes for cursor and pointer events.
 */
 
-.pointer { cursor: pointer; }
+[pointer] { cursor: pointer; }
 
-.pointer-events, .pointer-events.auto {pointer-events: auto; }
-.pointer-events.no, .pointer-events.none { pointer-events: none; }
+[pointer-events], [pointer-events][auto] {pointer-events: auto; }
+[pointer-events][no], [pointer-events][none] { pointer-events: none; }

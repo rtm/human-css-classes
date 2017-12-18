@@ -1,9 +1,9 @@
 /*
-modifiers/resize.css
+modifiers/resize[css]
 
 Morass micro-classes for resizing.
 */
 
-.resize, .resize.horizontal.vertical { resize: both;       }
-.resize-x, .resize.horizontal        { resize: horizontal; }
-.resize-y, .resize.vertical          { resize: vertical;   }
+[resize], [resize][x][y], [resize][horizontal][vertical] { resize: both;       }
+[resize-x], [resize][horizontal]         { resize: horizontal; }
+[resize-y], [resize][vertical]           { resize: vertical;   }

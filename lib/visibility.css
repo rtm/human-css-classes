@@ -1,8 +1,8 @@
 /*
-morass/modifiers/visibility.css
+morass/modifiers/visibility[css]
 
 Morass micro-classes related to the `visibility` property.
 */
 
-.visible   { visibility: visible; }
-.invisible { visibility: hidden;  }
+[visible]   { visibility: visible; }
+[invisible] { visibility: hidden;  }

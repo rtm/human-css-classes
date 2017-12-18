@@ -47,16 +47,16 @@ self-baselnie     Align flex child to baseline.
 Basic display types for flex.
 `inline` is overloaded; by itself it yields `display: inline`.
 */
-.flex                  { display: flex;          }
-.flex.inline           { display: inline-flex;   }
+[flex]                  { display: flex;          }
+[flex][inline]           { display: inline-flex;   }
 
 /*
 FLEX DIRECTION.
 Note that `vertical` and `horizontal` are also overloaded,
-as defined in `direction.css`.
+as defined in `direction[css]`.
 */
-.flex.vertical         { flex-direction: column; }
-.flex.horizontal       { flex-direction: row;    }
+[flex][vertical]         { flex-direction: column; }
+[flex][horizontal]       { flex-direction: row;    }
 
 /*
 WRAPPING AND REVERSING.
@@ -64,10 +64,10 @@ A `wrap` class turns the `flex-direction` property
 into its wrapped variants.
 Note: `wrap` is an overloaded property with a different meaning without `flex`.
 */
-.flex.wrap             { flex-wrap: wrap; }
+[flex][wrap]             { flex-wrap: wrap; }
 
-.flex.reverse          { flex-direction: row-reverse;    }
-.flex.vertical.reverse { flex-direction: column-reverse; }
+[flex][reverse]          { flex-direction: row-reverse;    }
+[flex][vertical][reverse] { flex-direction: column-reverse; }
 
 /*
 JUSTIFYING AND ALIGNING.
@@ -85,61 +85,61 @@ There are also `justify-v` and `justify-h` variants for clarity
 or for specifying justification on the cross-axis.
 `justify-gap` requests distributing space to start and end as well as between.
 */
-.flex.justify           { justify-content: space-between; }
-.flex.justify-gap       { justify-content: space-around; }
+[flex][justify]           { justify-content: space-between; }
+[flex][justify-gap]       { justify-content: space-around; }
 
-.flex.align-top         { align-items: flex-start; }
-.flex.align-bottom      { align-items: flex-end;   }
-.flex.align-middle      { align-items: center;     }
+[flex][align-top]         { align-items: flex-start; }
+[flex][align-bottom]      { align-items: flex-end;   }
+[flex][align-middle]      { align-items: center;     }
 
-.flex.align-left        { justify-content: flex-start; }
-.flex.align-right       { justify-content: flex-end;   }
-.flex.align-center      { justify-content: center;     }
+[flex][align-left]        { justify-content: flex-start; }
+[flex][align-right]       { justify-content: flex-end;   }
+[flex][align-center]      { justify-content: center;     }
 
 /* For horizontal containers, `justify-h` is the same as `justify`. */
-.flex.justify-h         { justify-content: space-between; }
-.flex.justify-h-gap     { justify-content: space-around;  }
-.flex.justify-v         { align-items: space-between;     }
-.flex.justify-v-gap     { align-items: space-around;      }
+[flex][justify-h]         { justify-content: space-between; }
+[flex][justify-h-gap]     { justify-content: space-around;  }
+[flex][justify-v]         { align-items: space-between;     }
+[flex][justify-v-gap]     { align-items: space-around;      }
 
-.flex.vertical.justify  { justify-content: space-between;   }
-.flex.vertical.justify-gap { justify-content: space-around; }
+[flex][vertical][justify]  { justify-content: space-between;   }
+[flex][vertical][justify-gap] { justify-content: space-around; }
 
-.flex.vertical.align-top    { justify-content: flex-start; }
-.flex.vertical.align-bottom { justify-content: flex-end;   }
-.flex.vertical.align-middle { justify-content: center;     }
+[flex][vertical][align-top]    { justify-content: flex-start; }
+[flex][vertical][align-bottom] { justify-content: flex-end;   }
+[flex][vertical][align-middle] { justify-content: center;     }
 
-.flex.vertical.align-left   { align-items: flex-start; }
-.flex.vertical.align-right  { align-items: flex-end;   }
-.flex.vertical.align-center { align-items: center;     }
+[flex][vertical][align-left]   { align-items: flex-start; }
+[flex][vertical][align-right]  { align-items: flex-end;   }
+[flex][vertical][align-center] { align-items: center;     }
 
 /* For vertical containers, `justify-v` is the same as `justify`. */
-.flex.vertical.justify-h      { align-items: space-between;     }
-.flex.vertical.justify-h-gap  { align-items: space-around;      }
-.flex.vertical.justify-v      { justify-content: space-between; }
-.flex.vertical.justify-v-gap  { justify-content: space-around;  }
+[flex][vertical][justify-h]      { align-items: space-between;     }
+[flex][vertical][justify-h-gap]  { align-items: space-around;      }
+[flex][vertical][justify-v]      { justify-content: space-between; }
+[flex][vertical][justify-v-gap]  { justify-content: space-around;  }
 
 /*
 GROWING AND SHRINKING.
 Provide micro-classes for common cases of grow and shrink.
 */
-.grow { flex-grow: 1; }
-.x-grow { flex-grow: 2; }
-.no-shrink { flex-shrink: 0; }
+[grow] { flex-grow: 1; }
+[x-grow] { flex-grow: 2; }
+[no-shrink] { flex-shrink: 0; }
 
 /* TODO: add other self items */
-.self-stretch { align-self: stretch; }
+[self-stretch] { align-self: stretch; }
 
 /* ORDER */
-.first { order: -99; }
-.last  { order: +99; }
+[first] { order: -99; }
+[last]  { order: +99; }
 
 /* Self-alignment (of flex children) */
-.flex .self-top      { align-self: flex-start; }
-.flex .self-middle   { align-self: center; }
-.flex .self-bottom   { align-self: flex-end; }
-.flex .self-left     { align-self: flex-start; }
-.flex .self-center   { align-self: center; }
-.flex .self-right    { align-self: flex-end; }
-.flex .self-stretch  { align-self: stretch; }
-.flex .self-baseline { align-self: baseline; }
+[flex] [self-top]      { align-self: flex-start; }
+[flex] [self-middle]   { align-self: center; }
+[flex] [self-bottom]   { align-self: flex-end; }
+[flex] [self-left]     { align-self: flex-start; }
+[flex] [self-center]   { align-self: center; }
+[flex] [self-right]    { align-self: flex-end; }
+[flex] [self-stretch]  { align-self: stretch; }
+[flex] [self-baseline] { align-self: baseline; }
